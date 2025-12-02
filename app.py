@@ -126,7 +126,18 @@ RAW_DATA = [
         "resposta": "D"
     },
     {
-        "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake? \nAnswer : C \n• \nA. A data lakehouse provides storage solutions for structured and unstructured data. \n• \nB. A data lakehouse supports ACID-compliant transactions. \n• \nC. A data lakehouse allows the use of SQL queries to examine data. \n• \nD. A data lakehouse stores data in open formats. \n• \nE. A data lakehouse enables machine learning and artificial Intelligence workloads. \n \nQuestion 10 ( Exam A ) - A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their \nproject using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks Notebooks \nversioning?",
+        "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake?",
+        "alternativas": [
+            "A. A data lakehouse provides storage solutions for structured and unstructured data.",
+            "B. A data lakehouse supports ACID-compliant transactions.",
+            "C. A data lakehouse allows the use of SQL queries to examine data.",
+            "D. A data lakehouse stores data in open formats.",
+            "E. A data lakehouse enables machine learning and artificial Intelligence workloads."
+        ],
+        "resposta": "C"
+    },
+    {
+        "pergunta": "A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their project using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks Notebooks versioning?",
         "alternativas": [
             "A. Databricks Repos automatically saves development progress",
             "B. Databricks Repos supports the use of multiple branches",
