@@ -1440,7 +1440,7 @@ else:
                 st.session_state.answer_state = "incorrect"
                 st.error(f"❌ Errado! A resposta correta era {correct_letter}.")
             
-            time.sleep(1.5) # Pequena pausa para ler o feedback
+            time.sleep(5.5) # Pequena pausa para ler o feedback
             
             # Avança para próxima
             if step + 1 < total_q:
