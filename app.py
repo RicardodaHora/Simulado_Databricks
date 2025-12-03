@@ -189,7 +189,7 @@ RAW_DATA = [
             "D. COMMENT \"Contains PII\"",
             "E. PII"
         ],
-        "resposta": "C"
+        "resposta": "D"
     },
     {
         "pergunta": "Which of the following benefits is provided by the array functions from Spark SQL?",
