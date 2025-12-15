@@ -1852,7 +1852,7 @@ else:
     st.caption(f"Questão {step + 1} de {total_q}")
     
     # Exibe Pergunta
-    st.subheader(question_data["pergunta"])
+    st.subheader(question_data["question"])
     
     # Opções
     options = question_data["alternativas"]
@@ -1866,7 +1866,7 @@ else:
         
         if submitted and choice:
             letter = choice.split(".")[0].strip() # Pega o "A" de "A. Texto..."
-            correct_letter = question_data["resposta"].strip().upper()
+            correct_letter = question_data["Answer"].strip().upper()
             
             if letter == correct_letter:
                 st.session_state.answer_state = "correct"
