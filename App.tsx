@@ -1,9 +1,14 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { RAW_DATA } from './data';
 import { Question, QuizState, QuizResult } from './types';
+// Está tentando importar ícones de 'lucide-react', mas parece que o módulo/livraria 'lucide-react' não está instalado no projeto ou está faltando declaração de tipos.
+// Para resolver, instale o pacote usando: 
+// npm install lucide-react
+// ou 
+// yarn add lucide-react
 import { ChartPie, CheckCircle, XCircle, ArrowRight, RotateCcw, Award } from 'lucide-react';
 
-const QUESTIONS_PER_SESSION = 45;
+const QUESTIONS_PER_SESSION = 50;
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<QuizState>(QuizState.INTRO);
