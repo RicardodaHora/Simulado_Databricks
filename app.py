@@ -126,7 +126,7 @@ RAW_DATA = [
     "resposta": "D"
   },
   {
-    "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake? \nAnswer : C \n• \nA. A data lakehouse provides storage solutions for structured and unstructured data. \n• \nB. A data lakehouse supports ACID-compliant transactions. \n• \nC. A data lakehouse allows the use of SQL queries to examine data. \n• \nD. A data lakehouse stores data in open formats. \n• \nE. A data lakehouse enables machine learning and artificial Intelligence workloads. \n \nQuestion 10 ( Exam A ) - A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their \nproject using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks Notebooks \nversioning?",
+    "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake? Answer: C • A. A data lakehouse provides storage solutions for structured and unstructured data. • B. A data lakehouse supports ACID-compliant transactions. • C. A data lakehouse allows the use of SQL queries to examine data. • D. A data lakehouse stores data in open formats. • E. A data lakehouse enables machine learning and artificial Intelligence workloads. Question 10 ( Exam A ) - A data engineer needs to determine whether to use the built-in Databricks notebooks versioning or version their project using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks notebooks versioning?",
     "alternativas": [
       "A. Databricks Repos automatically saves development progress",
       "B. Databricks Repos supports the use of multiple branches",
@@ -139,11 +139,11 @@ RAW_DATA = [
   {
     "pergunta": "A data engineer has left the organization. The data team needs to transfer ownership of the data engineers \nDelta tables to a new data engineer. The new data engineer is the lead engineer on the data team. Assuming the original data engineer \nno longer has access, which of the following individuals must be the one to transfer ownership of the Delta tables in Data Explorer? ",
     "alternativas": [
-      "A. Databricks account representative ",
-      "B. This transfer is not possible ",
-      "C. Workspace administrator ",
-      "D. New lead data engineer ",
-      "E. Original data engineer "
+      "A. Databricks account representative",
+      "B. This transfer is not possible",
+      "C. Workspace administrator",
+      "D. New lead data engineer",
+      "E. Original data engineer"
     ],
     "resposta": "C"
   },
@@ -151,10 +151,10 @@ RAW_DATA = [
     "pergunta": "A data analyst has created a Delta table sales that is used by the entire data analysis team. They want help from \nthe data engineering team to implement a series of tests to ensure the data is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following commands could the data engineering team use to access sales in PySpark?",
     "alternativas": [
       "A. SELECT * FROM sales",
-      "B. There is no way to share data between PySpark and SQL. ",
-      "C. spark.sql(\"sales\") ",
-      "D. spark.delta.table(\"sales\") ",
-      "E. spark.table(\"sales\") "
+      "B. There is no way to share data between PySpark and SQL.",
+      "C. spark.sql(\"sales\")",
+      "D. spark.delta.table(\"sales\")",
+      "E. spark.table(\"sales\")"
     ],
     "resposta": "E"
   },
@@ -170,7 +170,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "A data engineer wants to create a new table containing the names of customers that live in France. \nThey have written the following command: \n \nA senior data engineer mentions that it is organization policy to include a table property indicating that the new table includes personally \nidentifiable information (PII). \nWhich of the following lines of code fills in the above blank to successfully complete the task?",
+    "pergunta": "A data engineer wants to create a new table containing the names of customers that live in France. They have written the following command: A senior data engineer mentions that it is organization policy to include a table property indicating that the new table includes personally identifiable information (PII). Which of the following lines of code fills in the above blank to successfully complete the task?",
     "alternativas": [
       "A. There is no way to indicate whether a table contains PII.",
       "B. \"COMMENT PII\"",
@@ -248,11 +248,11 @@ RAW_DATA = [
   {
     "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table. The data engineer wants to delete all table \nmetadata and data. \nThey run the following command: \nDROP TABLE IF EXISTS my_table - \nWhile the object no longer appears when they run SHOW TABLES, the data files still exist. \nWhich of the following describes why the data files still exist and the metadata files were deleted?",
     "alternativas": [
-      "A. The tables data was larger than 10 GB ",
-      "B. The tables data was smaller than 10 GB ",
-      "C. The table was external ",
-      "D. The table did not have a location ",
-      "E. The table was managed "
+      "A. The tables data was larger than 10 GB",
+      "B. The tables data was smaller than 10 GB",
+      "C. The table was external",
+      "D. The table did not have a location",
+      "E. The table was managed"
     ],
     "resposta": "C"
   },
@@ -312,11 +312,11 @@ RAW_DATA = [
   {
     "pergunta": " A data engineer needs to create a table in Databricks using data from their organizations existing SQLite \ndatabase. \nThey run the following command: \nWhich of the following lines of code fills in the above blank to successfully complete the task? ",
     "alternativas": [
-      "A. org.apache.spark.sql.jdbc ",
-      "B. autoloader ",
-      "C. DELTA ",
-      "D. sqlite ",
-      "E. org.apache.spark.sql.sqlite "
+      "A. org.apache.spark.sql.jdbc",
+      "B. autoloader",
+      "C. DELTA",
+      "D. sqlite",
+      "E. org.apache.spark.sql.sqlite"
     ],
     "resposta": "E"
   },
@@ -332,7 +332,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source data is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. Which of the following tools can the data engineer use to solve this problem?",
     "alternativas": [
       "A. Unity Catalog",
       "B. Data Explorer",
@@ -343,7 +343,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source data is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. Which of the following tools can the data engineer use to solve this problem?",
     "alternativas": [
       "A. Auto Loader",
       "B. Unity Catalog",
@@ -481,7 +481,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A data engineer is designing a data pipeline. The source system generates files in a shared directory that is also \nused by other processes. As a result, the files should be kept as is and will accumulate in the directory. The data engineer needs to \nidentify which files are new since the previous run in the pipeline, and set up the pipeline to only ingest those new files with each run. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "pergunta": "A data engineer is designing a data pipeline. The source system generates files in a shared directory that is also used by other processes. As a result, the files should be kept as is and will accumulate in the directory. The data engineer needs to identify which files are new since the previous run in the pipeline, and set up the pipeline to only ingest those new files with each run. Which of the following tools can the data engineer use to solve this problem?",
     "alternativas": [
       "A. Unity Catalog",
       "B. Delta Lake",
@@ -503,7 +503,7 @@ RAW_DATA = [
     "resposta": "E"
   },
   {
-    "pergunta": "A data engineer has three tables in a Delta Live Tables (DLT) pipeline. They have configured the pipeline to drop \ninvalid records at each table. They notice that some data is being dropped due to quality concerns at some point in the DLT pipeline. They \nwould like to determine at which table in their pipeline the data is being dropped. Which approach can the data engineer take to identify \nthe table that is dropping the records?",
+    "pergunta": "A data engineer has three tables in a Delta Live Tables (DLT) pipeline. They have configured the pipeline to drop invalid records at each table. They notice that some data is being dropped due to quality concerns at some point in the DLT pipeline. They would like to determine at which table in their pipeline the data is being dropped. Which approach can the data engineer take to identify the table that is dropping the records?",
     "alternativas": [
       "A. They can set up separate expectations for each table when developing their DLT pipeline.",
       "B. They can navigate to the DLT pipeline page, click on the “Error” button, and review the present errors.",
@@ -640,7 +640,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A new data engineering team team. has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the database customers to fully manage the project. \nWhich of the following commands can be used to grant full permissions on the database to the new data engineering team?",
+    "pergunta": "A new data engineering team team. has been assigned to an ELT project. The new data engineering team will need full privileges on the database customers to fully manage the project. Which of the following commands can be used to grant full permissions on the database to the new data engineering team?",
     "alternativas": [
       "A. GRANT USAGE ON DATABASE customers TO team;",
       "B. GRANT ALL PRIVILEGES ON DATABASE team TO customers;",
@@ -651,7 +651,7 @@ RAW_DATA = [
     "resposta": "E"
   },
   {
-    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. \nWhich of the following commands can be used to grant the necessary permission on the entire database to the new team?",
+    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database customers in order to see what tables already exist. The team has its own group team. Which of the following commands can be used to grant the necessary permission on the entire database to the new team?",
     "alternativas": [
       "A. GRANT VIEW ON CATALOG customers TO team;",
       "B. GRANT CREATE ON DATABASE customers TO team;",
@@ -664,16 +664,16 @@ RAW_DATA = [
   {
     "pergunta": "Which of the following is a benefit of the Databricks Lakehouse Platform embracing open source technologies? ",
     "alternativas": [
-      "A. Cloud-specific integrations ",
-      "B. Simplified governance ",
-      "C. Ability to scale storage ",
-      "D. Ability to scale workloads ",
-      "E. Avoiding vendor lock-in "
+      "A. Cloud-specific integrations",
+      "B. Simplified governance",
+      "C. Ability to scale storage",
+      "D. Ability to scale workloads",
+      "E. Avoiding vendor lock-in"
     ],
     "resposta": "E"
   },
   {
-    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which of the following locations can the data engineer review their permissions on the table?",
+    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the appropriate permissions. In which of the following locations can the data engineer review their permissions on the table?",
     "alternativas": [
       "A. Databricks Filesystem",
       "B. Jobs",
@@ -794,7 +794,7 @@ RAW_DATA = [
     "resposta": "D"
   },
   {
-    "pergunta": "A data analyst has developed a query that runs against Delta table. They want help from the data engineering \nteam to implement a series of tests to ensure the data returned by the query is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following operations could the data engineering team use to run the query and operate with \nthe results in PySpark?",
+    "pergunta": "A data analyst has developed a query that runs against Delta table. They want help from the data engineering team to implement a series of tests to ensure the data returned by the query is clean. However, the data engineering team uses Python for its tests rather than SQL. Which of the following operations could the data engineering team use to run the query and operate with the results in PySpark?",
     "alternativas": [
       "A. SELECT * FROM sales",
       "B. spark.delta.table",
@@ -827,7 +827,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to \nconstruct a Python code block that will run the query using table_name. They have the following incomplete code block: \n____(f\"SELECT customer_id, spend FROM {table_name}\"). Which of the following can be used to fill in the blank to successfully complete \nthe task?",
+    "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to construct a Python code block that will run the query using table_name. They have the following incomplete code block: ____(f\"SELECT customer_id, spend FROM {table_name}\"). Which of the following can be used to fill in the blank to successfully complete the task?",
     "alternativas": [
       "A. spark.delta.sql",
       "B. spark.delta.table",
@@ -838,7 +838,7 @@ RAW_DATA = [
     "resposta": "E"
   },
   {
-    "pergunta": "A data engineer has created a new database using the following command: CREATE DATABASE IF NOT EXISTS \ncustomer360; In which of the following locations will the customer360 database be located?",
+    "pergunta": "A data engineer has created a new database using the following command: CREATE DATABASE IF NOT EXISTS customer360; In which of the following locations will the customer360 database be located?",
     "alternativas": [
       "A. dbfs:/user/hive/database/customer360",
       "B. dbfs:/user/hive/warehouse",
@@ -904,7 +904,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Which of \nthe following describes why Auto Loader inferred all of the columns to be of the string type?",
+    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the engineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed that all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Which of the following describes why Auto Loader inferred all of the columns to be of the string type?",
     "alternativas": [
       "A. There was a type mismatch between the specific schema and the inferred schema",
       "B. JSON data is a text-based format",
@@ -937,7 +937,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "A data engineer has joined an existing project and they see the following query in the project repository: \nCREATE STREAMING LIVE TABLE loyal_customers AS \nSELECT customer_id - \nFROM STREAM(LIVE.customers) \nWHERE loyalty_level = 'high'; \nWhich of the following describes why the STREAM function is included in the query? ",
+    "pergunta": "A data engineer has joined an existing project and they see the following query in the project repository: CREATE STREAMING LIVE TABLE loyal_customers AS SELECT customer_id - FROM STREAM(LIVE.customers) WHERE loyalty_level = 'high'; Which of the following describes why the STREAM function is included in the query?",
     "alternativas": [
       "A. The STREAM function is not needed and will cause an error.",
       "B. The table being created is a live table.",
@@ -948,12 +948,12 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "A data engineer is using the following code block as part of a batch ingestion pipeline to read from a composable transactions_df = (spark.read.schema(schema).format(\"delta\") .table(\"transactions\") ) ",
+    "pergunta": "A data engineer is using the following code block as part of a batch ingestion pipeline to read from a composable transactions_df = (spark.read.schema(schema).format(\"delta\").table(\"transactions\") )",
     "alternativas": [
       "A. Replace predict with a stream-friendly prediction function",
-      "B. Replace schema(schema) with option (\"maxFilesPerTrigger\", 1) ",
-      "C. Replace \"transactions\" with the path to the location of the Delta table ",
-      "D. Replace format(\"delta\") with format(\"stream\") ",
+      "B. Replace schema(schema) with option (\"maxFilesPerTrigger\", 1)",
+      "C. Replace \"transactions\" with the path to the location of the Delta table",
+      "D. Replace format(\"delta\") with format(\"stream\")",
       "E. Replace spark.read with spark.readStream"
     ],
     "resposta": "E"
@@ -1014,7 +1014,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "An engineering manager uses a Databricks SQL query to monitor ingestion latency for each data source. The \nmanager checks the results of the query every day, but they are manually rerunning the query each day and waiting for the results. \nWhich of the following approaches can the manager use to ensure the results of the query are updated each day?",
+    "pergunta": "An engineering manager uses a Databricks SQL query to monitor ingestion latency for each data source. The manager checks the results of the query every day, but they are manually rerunning the query each day and waiting for the results. Which of the following approaches can the manager use to ensure the results of the query are updated each day?",
     "alternativas": [
       "A. They can schedule the query to refresh every 1 day from the SQL endpoints page in Databricks SQL.",
       "B. They can schedule the query to refresh every 12 hours from the SQL endpoints page in Databricks SQL.",
@@ -1036,7 +1036,7 @@ RAW_DATA = [
     "resposta": "E"
   },
   {
-    "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to a \ndata analytics dashboard for a retail use case. The job has a Databricks SQL query that returns the number of store-level records where \nsales is equal to zero. The data engineer wants their entire team to be notified via a messaging webhook whenever this value is greater \nthan 0. Which of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the \nnumber of stores with $0 in sales is greater than zero?",
+    "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to a data analytics dashboard for a retail use case. The job has a Databricks SQL query that returns the number of store-level records where sales is equal to zero. The data engineer wants their entire team to be notified via a messaging webhook whenever this value is greater than 0. Which of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the number of stores with $0 in sales is greater than zero?",
     "alternativas": [
       "A. They can set up an Alert with a custom template.",
       "B. They can set up an Alert with a new email alert destination.",
@@ -1058,7 +1058,7 @@ RAW_DATA = [
     "resposta": "E"
   },
   {
-    "pergunta": "A data engineer needs access to a table new_table, but they do not have the correct permissions. They can ask \nthe table owner for permission, but they do not know who the table owner is. Which of the following approaches can be used to identify \nthe owner of new_table?",
+    "pergunta": "A data engineer needs access to a table new_table, but they do not have the correct permissions. They can ask the table owner for permission, but they do not know who the table owner is. Which of the following approaches can be used to identify the owner of new_table?",
     "alternativas": [
       "A. Review the Permissions tab in the tables page in Data Explorer",
       "B. All of these options can be used to identify the owner of the table",
@@ -1069,7 +1069,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which of the following commands can be used to grant full permissions \non the database to the new data engineering team?",
+    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will need full privileges on the table sales to fully manage the project. Which of the following commands can be used to grant full permissions on the database to the new data engineering team?",
     "alternativas": [
       "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
       "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
@@ -1093,7 +1093,7 @@ RAW_DATA = [
     "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake?",
     "alternativas": [
       "A. A data lakehouse provides storage solutions for structured and unstructured data.",
-      "B. A data lakehouse supports ACID-compliant transactions. ",
+      "B. A data lakehouse supports ACID-compliant transactions.",
       "C. A data lakehouse allows the use of SQL queries to examine data.",
       "D. A data lakehouse stores data in open formats.",
       "E. A data lakehouse enables machine learning and artificial Intelligence workloads."
@@ -1141,7 +1141,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which location can the data engineer review their permissions on the table?",
+    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the appropriate permissions. In which location can the data engineer review their permissions on the table?",
     "alternativas": [
       "A. Jobs",
       "B. Dashboards",
@@ -1221,7 +1221,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A data engineer has created a new database using the following command: \nCREATE DATABASE IF NOT EXISTS customer360; \nIn which location will the customer360 database be located?",
+    "pergunta": "A data engineer has created a new database using the following command: CREATE DATABASE IF NOT EXISTS customer360; In which location will the customer360 database be located?",
     "alternativas": [
       "A. dbfs:/user/hive/database/customer360",
       "B. dbfs:/user/hive/warehouse",
@@ -1291,7 +1291,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Why has \nAuto Loader inferred all of the columns to be of the string type?",
+    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the engineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed that all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Why has Auto Loader inferred all of the columns to be of the string type?",
     "alternativas": [
       "A. Auto Loader cannot infer the schema of ingested data",
       "B. JSON data is a text-based format",
@@ -1341,7 +1341,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. Which command can be used to grant the \nnecessary permission on the entire database to the new team?",
+    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database customers in order to see what tables already exist. The team has its own group team. Which command can be used to grant the necessary permission on the entire database to the new team?",
     "alternativas": [
       "A. GRANT VIEW ON CATALOG customers TO team;",
       "B. GRANT CREATE ON DATABASE customers TO team;",
@@ -1351,7 +1351,7 @@ RAW_DATA = [
     "resposta": "D"
   },
   {
-    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which command can be used to grant full permissions on the database \nto the new data engineering team?",
+    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will need full privileges on the table sales to fully manage the project. Which command can be used to grant full permissions on the database to the new data engineering team?",
     "alternativas": [
       "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
       "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
@@ -1361,9 +1361,9 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "Você precisa carregar diariamente uma tabela Bronze (Delta) a partir de arquivos novos em cloud storage, garantindo reprocessamento idempotente e evitando duplicidades. Qual abordagem é a mais adequada?",
+    "pergunta": "You need to load daily uma table Bronze (Delta) a partir de arquivos novos em cloud storage, garantindo reprocessamento idempotent e evitando duplicates. Which abordagem é a most appropriate?",
     "alternativas": [
-      "A. INSERT OVERWRITE diário na tabela Bronze",
+      "A. INSERT OVERWRITE diário na table Bronze",
       "B. COPY INTO com rastreio de arquivos + MERGE na Silver por chave natural",
       "C. VACUUM antes de cada carga",
       "D. OPTIMIZE antes de cada carga"
@@ -1371,27 +1371,27 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Você tem um stream chegando em Delta e precisa garantir exactly-once na escrita. O que é mais importante configurar?",
+    "pergunta": "You have um stream chegando em Delta e precisa ensure exactly-once na escrita. O que é most important configurar?",
     "alternativas": [
-      "A. Apenas trigger(once=True)",
-      "B. Apenas repartition() antes do write",
-      "C. Checkpoint location estável + sink transacional (Delta)",
+      "A. Only trigger(once=True)",
+      "B. Only repartition() antes do write",
+      "C. Checkpoint location stable + sink transacional (Delta)",
       "D. cache() do DataFrame"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Chega um JSON aninhado com dezenas de campos e mudanças frequentes. Você quer controlar evolução sem quebrar downstream. Melhor opção:",
+    "pergunta": "Chega um JSON aninhado com dezenas de campos e mudanças frequentes. You want to controlar evolução without breaking downstream. Best opção:",
     "alternativas": [
       "A. Inferir schema sempre e gravar tudo automaticamente",
-      "B. Definir schema explicitamente e versionar contrato; permitir evolução controlada quando necessário",
+      "B. Definir schema explicitamente e versionar contrato; permitir evolução controlada When necessário",
       "C. Converter tudo para CSV antes de persistir",
-      "D. Usar apenas views temporárias"
+      "D. Usar Only views temporárias"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Você recebe eventos com possível duplicidade (mesmo event_id). Qual padrão é mais robusto antes do MERGE?",
+    "pergunta": "You receive eventos com possível duplication (mesmo event_id). Which padrão é mais robusto antes do MERGE?",
     "alternativas": [
       "A. dropDuplicates(['event_id']) sem ordenação",
       "B. Window com row_number() por event_id ordenando por ingestion_time desc e filtrar rn=1",
@@ -1401,37 +1401,37 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Sua tabela Delta tem milhares de arquivos pequenos e consultas ficaram lentas. A ação mais apropriada:",
+    "pergunta": "Sua table Delta tem milhares de arquivos pequenos e consultas ficaram lentas. A ação most appropriate:",
     "alternativas": [
       "A. VACUUM 0 HOURS",
-      "B. OPTIMIZE para compactar arquivos (e considerar ZORDER quando fizer sentido)",
+      "B. OPTIMIZE para compactar arquivos (e considerar ZORDER When fizer sentido)",
       "C. CACHE TABLE permanentemente",
       "D. REFRESH TABLE repetidamente"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Quando o Z-ORDER tende a ajudar mais?",
+    "pergunta": "When o Z-ORDER tende a ajudar mais?",
     "alternativas": [
       "A. Consultas full scan sem filtros",
-      "B. Consultas com filtros seletivos recorrentes em colunas específicas",
-      "C. Somente em tabelas pequenas",
-      "D. Em tabelas que não são Delta"
+      "B. Consultas com filtros seletivos recorrentes em columns específicas",
+      "C. Only em tables pequenas",
+      "D. Em tables que No são Delta"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Você precisa garantir que um time veja somente linhas do próprio país (RLS) e que colunas sensíveis sejam mascaradas (CLM). Onde isso é implementado de forma mais governável?",
+    "pergunta": "You need to ensure que um time veja Only rows do próprio país (RLS) e que columns sensíveis sejam mascaradas (CLM). Where isso é implementado de forma mais governável?",
     "alternativas": [
       "A. Em cada notebook via filtros manuais",
-      "B. Na camada de storage via pastas por país",
-      "C. No Unity Catalog, com policies/recursos de governança (ex.: views/policies para RLS e masking)",
+      "B. Na layer de storage via pastas por país",
+      "C. No Unity Catalog, com policies/recursos de governance (ex.: views/policies para RLS e masking)",
       "D. No cluster, via init script"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Um usuário consegue abrir um notebook mas não consegue executá-lo em um cluster compartilhado. A causa mais provável:",
+    "pergunta": "Um user consegue abrir um notebook mas No consegue executá-lo em um cluster compartilhado. A causa mais provável:",
     "alternativas": [
       "A. Falta permissão no workspace para Can Read",
       "B. Falta permissão de uso no cluster (ex.: Can Attach To / uso equivalente conforme configuração)",
@@ -1441,17 +1441,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Você tem um pipeline com 5 tasks e quer evitar custos quando uma task falha, além de garantir reexecução controlada. Melhor prática:",
+    "pergunta": "You have um pipeline com 5 tasks e quer evitar costs When uma task failure, além de ensure re-run controlada. Best prática:",
     "alternativas": [
       "A. Rodar tudo em um único notebook monolítico",
       "B. Quebrar em tasks, usar dependências e políticas de retry/timeout por task",
-      "C. Rodar apenas manualmente",
+      "C. Rodar Only manualmente",
       "D. Remover alertas para reduzir ruído"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Você quer aplicar regras de qualidade e rastrear violações automaticamente em uma pipeline declarativa. Melhor recurso:",
+    "pergunta": "You want to aplicar regras de qualidade e rastrear violações automaticamente em uma pipeline declarativa. Best recurso:",
     "alternativas": [
       "A. VACUUM",
       "B. EXPECTATIONS em DLT com métricas de qualidade",
@@ -1461,47 +1461,47 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Para consumo analítico e BI, qual modelagem tende a ser preferida na camada Gold?",
+    "pergunta": "Para consumo analítico e BI, Which modelagem tende a ser preferida na layer Gold?",
     "alternativas": [
-      "A. Apenas 3NF em todas as camadas",
+      "A. Only 3NF em todas as camadas",
       "B. Data Vault somente",
-      "C. Modelo dimensional (fato/dimensões) na camada Gold",
+      "C. Modelo dimensional (fato/dimensões) na layer Gold",
       "D. JSON aninhado na Gold"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Você precisa manter histórico de alterações de atributos (ex.: endereço do cliente). Qual estratégia é a mais alinhada?",
+    "pergunta": "You need to manter histórico de alterações de atributos (ex.: endereço do cliente). Which estratégia é a mais alinhada?",
     "alternativas": [
       "A. Atualizar linha existente (Type 1)",
-      "B. Criar tabela de eventos e nunca atualizar nada",
+      "B. Criar table de eventos e nunca atualizar nada",
       "C. SCD Type 2 com MERGE gerenciando valid_from/valid_to/is_current",
-      "D. Salvar apenas a última versão em uma view"
+      "D. Salvar Only a última versão em uma view"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Você precisa compartilhar dados com consumidores externos sem expor credenciais do storage nem duplicar dados. Opção mais adequada:",
+    "pergunta": "You need to share dados com consumidores externos without exposing credenciais do storage nem duplicar dados. Opção most appropriate:",
     "alternativas": [
       "A. Enviar CSV por e-mail",
-      "B. Criar cópia da tabela em outro workspace manualmente",
-      "C. Delta Sharing (quando aplicável)",
+      "B. Criar cópia da table em outro workspace manualmente",
+      "C. Delta Sharing (When aplicável)",
       "D. Exportar para Parquet e subir em FTP"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Para investigar lentidão em um job Spark, qual sequência faz mais sentido?",
+    "pergunta": "Para investigar lentidão em um job Spark, Which sequência faz mais sentido?",
     "alternativas": [
       "A. Ignorar UI e só aumentar o cluster",
       "B. Ver Spark UI (stages/tasks/shuffle) e métricas de execução; identificar skew/shuffles e ajustes",
-      "C. Apenas rodar VACUUM",
-      "D. Apenas rodar REFRESH TABLE"
+      "C. Only rodar VACUUM",
+      "D. Only rodar REFRESH TABLE"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Seu job roda bem, mas está caro. Qual ação costuma trazer ganho real sem mudar semântica?",
+    "pergunta": "Seu job roda bem, mas está caro. Which ação costuma trazer ganho real sem mudar semântica?",
     "alternativas": [
       "A. Aumentar sempre o número de workers",
       "B. Ajustar paralelismo/particionamento, evitar shuffles desnecessários, escolher instâncias adequadas e autoscaling com limites",
@@ -1511,17 +1511,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Você precisa usar credenciais de API em notebooks. Boa prática:",
+    "pergunta": "You need to usar credenciais de API em notebooks. best practice:",
     "alternativas": [
       "A. Colar o token no notebook",
       "B. Guardar em variável de ambiente do driver e commitar no repo",
       "C. Usar Secret Scope/gerenciador de segredos e referenciar via dbutils.secrets (ou mecanismo equivalente)",
-      "D. Salvar em uma tabela Delta"
+      "D. Salvar em uma table Delta"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Você quer promover notebooks/pipelines entre dev → qa → prod com rastreabilidade. Melhor abordagem:",
+    "pergunta": "You want to promover notebooks/pipelines entre dev → qa → prod com rastreabilidade. Best abordagem:",
     "alternativas": [
       "A. Copiar/colar no workspace manualmente",
       "B. Usar controle de versão + automação (CI/CD) e parametrização por ambiente",
@@ -1531,17 +1531,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual é um teste mais útil para pipeline de dados?",
+    "pergunta": "What is um teste mais útil para pipeline de dados?",
     "alternativas": [
-      "A. Testar apenas se o notebook rodou sem erro",
-      "B. Testes de qualidade: contagens, chaves únicas, null checks, regras de negócio, amostras e reconciliação",
+      "A. Testar Only se o notebook rodou sem erro",
+      "B. Testes de qualidade: contagens, keys únicas, null checks, regras de negócio, amostras e reconciliação",
       "C. Só testar performance com cache()",
       "D. Só testar permissões do workspace"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Um relatório quebrou porque alguém fez um update incorreto ontem. Você quer recuperar dados do estado anterior rapidamente. Qual recurso ajuda?",
+    "pergunta": "Um relatório quebrou porque alguém fez um update incorreto ontem. You want to recuperar dados do estado anterior rapidamente. Which recurso helps?",
     "alternativas": [
       "A. OPTIMIZE",
       "B. DESCRIBE HISTORY + Time Travel (consulta por versão/timestamp) para restaurar/validar",
@@ -1551,57 +1551,57 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Sobre VACUUM em Delta, qual afirmação é mais correta?",
+    "pergunta": "Sobre VACUUM em Delta, Which afirmação é mais correta?",
     "alternativas": [
       "A. Deve ser executado sempre com retenção 0 horas em produção",
-      "B. Remove versões antigas e arquivos não referenciados, mas precisa respeitar retenção/segurança para não quebrar time travel/reprocessamentos",
+      "B. Remove versões antigas e arquivos No referenciados, mas precisa respeitar retenção/security para No quebrar time travel/reprocessamentos",
       "C. Substitui OPTIMIZE",
       "D. É obrigatório antes de cada MERGE"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual é a principal vantagem do Auto Loader em relação ao spark.read tradicional?",
+    "pergunta": "What is a main advantage do Auto Loader em relação ao spark.read tradicional?",
     "alternativas": [
       "A. Leitura mais rápida de CSV",
       "B. Suporte exclusivo a JSON",
-      "C. Escalabilidade e ingestão incremental eficiente",
+      "C. Escalabilidade e ingestion incremental eficiente",
       "D. Elimina a necessidade de Delta"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "No Auto Loader, o modo File Notification é preferido quando:",
+    "pergunta": "No Auto Loader, o modo File Notification is preferred When:",
     "alternativas": [
       "A. Há poucos arquivos",
-      "B. O storage não suporta eventos",
+      "B. O storage No suporta eventos",
       "C. Há milhões de arquivos novos frequentemente",
-      "D. Não existe checkpoint"
+      "D. No existe checkpoint"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Para garantir ingestão idempotente em Delta, o padrão mais correto é:",
+    "pergunta": "Para ensure ingestion idempotent em Delta, o padrão mais correto é:",
     "alternativas": [
       "A. INSERT OVERWRITE",
       "B. DELETE + INSERT",
-      "C. MERGE baseado em chave de negócio",
+      "C. MERGE baseado em key de negócio",
       "D. DROP TABLE"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "O que o checkpoint garante em Structured Streaming?",
+    "pergunta": "O que o checkpoint ensures em Structured Streaming?",
     "alternativas": [
       "A. Compactação de arquivos",
       "B. Controle de schema",
       "C. Recuperação de estado e exactly-once",
-      "D. Melhor paralelismo"
+      "D. Best paralelismo"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Qual comando ajuda a investigar alterações passadas em uma tabela Delta?",
+    "pergunta": "Which comando helps a investigar alterações passadas em uma table Delta?",
     "alternativas": [
       "A. OPTIMIZE",
       "B. DESCRIBE HISTORY",
@@ -1615,13 +1615,13 @@ RAW_DATA = [
     "alternativas": [
       "A. Dados atuais",
       "B. Metadados do catálogo",
-      "C. Arquivos não referenciados e versões antigas",
+      "C. Arquivos No referenciados e versões antigas",
       "D. Estatísticas de query"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Qual recurso permite restaurar dados para um estado anterior?",
+    "pergunta": "Which recurso allows restaurar dados para um estado anterior?",
     "alternativas": [
       "A. Photon",
       "B. Time Travel",
@@ -1631,7 +1631,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual problema o OPTIMIZE resolve?",
+    "pergunta": "Which problema o OPTIMIZE resolve?",
     "alternativas": [
       "A. Dados duplicados",
       "B. Pequenos arquivos",
@@ -1641,9 +1641,9 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual é o risco de rodar VACUUM RETAIN 0 HOURS em produção?",
+    "pergunta": "What is o risco de rodar VACUUM RETAIN 0 HOURS em produção?",
     "alternativas": [
-      "A. Aumentar custo",
+      "A. Aumentar cost",
       "B. Quebrar Time Travel e reprocessamentos",
       "C. Duplicar dados",
       "D. Aumentar latência de query"
@@ -1651,17 +1651,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Databricks Workflows permitem:",
+    "pergunta": "Databricks Workflows allow:",
     "alternativas": [
-      "A. Apenas execução manual",
+      "A. Only execução manual",
       "B. Orquestração com dependências entre tasks",
-      "C. Apenas SQL",
-      "D. Apenas clusters all-purpose"
+      "C. Only SQL",
+      "D. Only clusters all-purpose"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual é uma boa prática em Workflows?",
+    "pergunta": "What is uma best practice em Workflows?",
     "alternativas": [
       "A. Um notebook gigante",
       "B. Tasks pequenas e reutilizáveis",
@@ -1671,17 +1671,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Se uma task falha em um workflow:",
+    "pergunta": "Se uma task failure em um workflow:",
     "alternativas": [
       "A. Todo job precisa ser recriado",
-      "B. Apenas a task pode ser reexecutada",
+      "B. Only a task pode ser reexecutada",
       "C. Os dados são perdidos",
       "D. O cluster é deletado"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Onde analisar shuffle, skew e stages?",
+    "pergunta": "Where analisar shuffle, skew e stages?",
     "alternativas": [
       "A. Unity Catalog",
       "B. Spark UI",
@@ -1691,7 +1691,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Para alertas de falha de pipeline, você usa:",
+    "pergunta": "Para alertas de failure de pipeline, você usa:",
     "alternativas": [
       "A. VACUUM",
       "B. Notifications do Workflow",
@@ -1701,7 +1701,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual prática reduz custos em Jobs?",
+    "pergunta": "Which prática reduz costs em Jobs?",
     "alternativas": [
       "A. Clusters sempre ativos",
       "B. Autoscaling + auto-termination",
@@ -1711,17 +1711,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual métrica NÃO é típica de observabilidade?",
+    "pergunta": "Which métrica No é típica de observabilidade?",
     "alternativas": [
       "A. Tempo de execução",
       "B. Volume processado",
       "C. Quantidade de notebooks",
-      "D. Falhas"
+      "D. failures"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Para investigar custo por job, você usa:",
+    "pergunta": "Para investigar cost por job, você usa:",
     "alternativas": [
       "A. OPTIMIZE",
       "B. System Tables",
@@ -1731,17 +1731,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual vantagem de jobs serverless?",
+    "pergunta": "Which vantagem de jobs serverless?",
     "alternativas": [
-      "A. Menos governança",
+      "A. Menos governance",
       "B. Gerenciamento automático de compute",
-      "C. Menos segurança",
-      "D. Não usa Delta"
+      "C. Menos security",
+      "D. No usa Delta"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual erro comum em jobs?",
+    "pergunta": "Which erro comum em jobs?",
     "alternativas": [
       "A. Parâmetros por ambiente",
       "B. Hardcode de paths e secrets",
@@ -1753,15 +1753,15 @@ RAW_DATA = [
   {
     "pergunta": "Unity Catalog centraliza:",
     "alternativas": [
-      "A. Apenas storage",
+      "A. Only storage",
       "B. Metadados, permissões e lineage",
-      "C. Apenas clusters",
-      "D. Apenas notebooks"
+      "C. Only clusters",
+      "D. Only notebooks"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Row-Level Security é aplicada:",
+    "pergunta": "Row-Level Security is applied:",
     "alternativas": [
       "A. No storage",
       "B. No cluster",
@@ -1771,9 +1771,9 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Column Masking é avaliado:",
+    "pergunta": "Column Masking is evaluated:",
     "alternativas": [
-      "A. Em tempo de ingestão",
+      "A. Em tempo de ingestion",
       "B. Em tempo de query",
       "C. Em VACUUM",
       "D. No Auto Loader"
@@ -1781,17 +1781,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "System Tables permitem:",
+    "pergunta": "System Tables allow:",
     "alternativas": [
       "A. Criar dados",
       "B. Auditoria e billing",
-      "C. Ingestão de streaming",
-      "D. Compartilhamento externo"
+      "C. ingestion de streaming",
+      "D. sharing externo"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual System Table ajuda em custos?",
+    "pergunta": "Which System Table helps em costs?",
     "alternativas": [
       "A. lineage",
       "B. billing.usage",
@@ -1816,7 +1816,7 @@ RAW_DATA = [
       "A. No notebook",
       "B. No Git",
       "C. Em Secret Scopes",
-      "D. Em tabelas Delta"
+      "D. Em tables Delta"
     ],
     "resposta": "C"
   },
@@ -1825,15 +1825,15 @@ RAW_DATA = [
     "alternativas": [
       "A. Por notebook",
       "B. Por cluster",
-      "C. Granulares (catálogo, schema, tabela)",
-      "D. Apenas globais"
+      "C. Granulares (catálogo, schema, table)",
+      "D. Only globais"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Qual NÃO é função do UC?",
+    "pergunta": "Which No é função do UC?",
     "alternativas": [
-      "A. Governança",
+      "A. governance",
       "B. Lineage",
       "C. Execução de jobs",
       "D. Controle de acesso"
@@ -1841,30 +1841,30 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Mascaramento de dados serve para:",
+    "pergunta": "Mascaramento de dados is used for:",
     "alternativas": [
       "A. Performance",
       "B. Compliance",
-      "C. Ingestão",
+      "C. ingestion",
       "D. Streaming"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Delta Sharing permite:",
+    "pergunta": "Delta Sharing allows:",
     "alternativas": [
       "A. Escrita externa",
-      "B. Compartilhar dados sem expor storage",
+      "B. share dados without exposing storage",
       "C. Replicação física",
       "D. ETL automático"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Lakehouse Federation é usada quando:",
+    "pergunta": "Lakehouse Federation é usada When:",
     "alternativas": [
-      "A. Você quer copiar dados",
-      "B. Precisa consultar dados externos sem mover",
+      "A. You want to copiar dados",
+      "B. Precisa consultar dados externos without moving",
       "C. Precisa streaming",
       "D. Precisa DLT"
     ],
@@ -1886,7 +1886,7 @@ RAW_DATA = [
       "A. Federation escreve dados",
       "B. Delta Sharing executa queries remotas",
       "C. Federation consulta remoto",
-      "D. Não há diferença"
+      "D. No há diferença"
     ],
     "resposta": "C"
   },
@@ -1901,12 +1901,12 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Photon melhora:",
+    "pergunta": "Photon improves:",
     "alternativas": [
-      "A. Segurança",
+      "A. security",
       "B. SQL performance",
-      "C. Ingestão",
-      "D. Governança"
+      "C. ingestion",
+      "D. governance"
     ],
     "resposta": "B"
   },
@@ -1914,19 +1914,19 @@ RAW_DATA = [
     "pergunta": "Photon exige mudança de código?",
     "alternativas": [
       "A. Sim",
-      "B. Apenas SQL",
-      "C. Não",
-      "D. Apenas Python"
+      "B. Only SQL",
+      "C. No",
+      "D. Only Python"
     ],
     "resposta": "C"
   },
   {
     "pergunta": "Federation evita:",
     "alternativas": [
-      "A. Custo de compute",
+      "A. cost de compute",
       "B. Duplicação de dados",
-      "C. Governança",
-      "D. Segurança"
+      "C. governance",
+      "D. security"
     ],
     "resposta": "B"
   },
@@ -1935,13 +1935,13 @@ RAW_DATA = [
     "alternativas": [
       "A. Proprietário",
       "B. Open protocol",
-      "C. Apenas Azure",
-      "D. Apenas AWS"
+      "C. Only Azure",
+      "D. Only AWS"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Serverless é mais indicado quando:",
+    "pergunta": "Serverless é most suitable When:",
     "alternativas": [
       "A. Precisa controle total de cluster",
       "B. Carga imprevisível",
@@ -1955,33 +1955,33 @@ RAW_DATA = [
     "alternativas": [
       "A. Backup",
       "B. Versionar e promover assets",
-      "C. Ingestão",
-      "D. Compartilhar dados"
+      "C. ingestion",
+      "D. share dados"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Asset Bundles ajudam principalmente em:",
+    "pergunta": "Asset Bundles help principalmente em:",
     "alternativas": [
       "A. SQL performance",
       "B. CI/CD",
       "C. Streaming",
-      "D. Segurança"
+      "D. security"
     ],
     "resposta": "B"
   },
   {
     "pergunta": "Um Asset Bundle pode conter:",
     "alternativas": [
-      "A. Apenas notebooks",
-      "B. Apenas jobs",
+      "A. Only notebooks",
+      "B. Only jobs",
       "C. Notebooks, jobs, pipelines, configs",
-      "D. Apenas dados"
+      "D. Only dados"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Qual formato é usado nos Bundles?",
+    "pergunta": "Which formato é usado nos Bundles?",
     "alternativas": [
       "A. XML",
       "B. YAML",
@@ -1993,20 +1993,20 @@ RAW_DATA = [
   {
     "pergunta": "Vantagem clara dos Bundles:",
     "alternativas": [
-      "A. Mais custo",
+      "A. Mais cost",
       "B. Deploy manual",
       "C. Padronização e reprodutibilidade",
-      "D. Menos governança"
+      "D. Menos governance"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Bundles permitem:",
+    "pergunta": "Bundles allow:",
     "alternativas": [
       "A. Hardcode de paths",
       "B. Parametrização por ambiente",
       "C. Ignorar dev/qa/prod",
-      "D. Apenas produção"
+      "D. Only produção"
     ],
     "resposta": "B"
   },
@@ -2045,13 +2045,13 @@ RAW_DATA = [
     "alternativas": [
       "A. Notebooks soltos",
       "B. Asset Bundles + Git + CI/CD",
-      "C. Apenas UI",
-      "D. Apenas Jobs manuais"
+      "C. Only UI",
+      "D. Only Jobs manuais"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Você ingere milhões de arquivos/dia via Auto Loader. O time reclama de custo e latência crescente no listing. Qual configuração é mais adequada?",
+    "pergunta": "You ingest milhões de arquivos/dia via Auto Loader. O time reclama de cost e latência crescente no listing. Which configuração é most appropriate?",
     "alternativas": [
       "A. Directory listing + checkpoint",
       "B. File Notification + checkpoint",
@@ -2061,7 +2061,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Um stream é reiniciado após falha. Alguns arquivos são reprocessados. Por que não há duplicação em Delta?",
+    "pergunta": "Um stream é reiniciado após failure. Alguns arquivos são reprocessados. Why No há duplicação em Delta?",
     "alternativas": [
       "A. Porque o Spark ignora arquivos antigos",
       "B. Porque Delta é append-only",
@@ -2071,7 +2071,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Você precisa evoluir schema automaticamente, mas sem quebrar downstream. Qual abordagem é mais segura?",
+    "pergunta": "You need to evoluir schema automaticamente, mas without breaking downstream. Which abordagem é mais segura?",
     "alternativas": [
       "A. mergeSchema=true sempre",
       "B. Inferência automática sem validação",
@@ -2081,7 +2081,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Um MERGE está lento devido a skew em uma chave. Qual mitigação é mais apropriada?",
+    "pergunta": "Um MERGE está lento devido a skew em uma key. Which mitigação é most appropriate?",
     "alternativas": [
       "A. Z-ORDER",
       "B. Broadcast join",
@@ -2101,19 +2101,19 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Você quer garantir exactly-once lógico em streaming. Qual combinação é correta?",
+    "pergunta": "You want to ensure exactly-once lógico em streaming. Which combinação é correta?",
     "alternativas": [
       "A. Trigger once",
       "B. Cache + append",
-      "C. Checkpoint + chave de deduplicação",
+      "C. Checkpoint + key de deduplicação",
       "D. Repartition"
     ],
     "resposta": "C"
   },
   {
-    "pergunta": "Em uma tabela muito grande com filtros por data e customer_id, a melhor otimização é:",
+    "pergunta": "Em uma table muito grande com filtros por data e customer_id, a Best otimização é:",
     "alternativas": [
-      "A. Apenas OPTIMIZE",
+      "A. Only OPTIMIZE",
       "B. Z-ORDER por colunas filtradas",
       "C. VACUUM diário",
       "D. Cache global"
@@ -2121,7 +2121,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Pequenos arquivos continuam sendo gerados mesmo após OPTIMIZE. Qual a causa provável?",
+    "pergunta": "Pequenos arquivos continuam sendo gerados mesmo após OPTIMIZE. Which a causa provável?",
     "alternativas": [
       "A. Photon",
       "B. Auto Loader escrevendo micro-batches pequenos",
@@ -2131,7 +2131,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Para reprocessar apenas um período histórico sem impacto em produção, você deve:",
+    "pergunta": "Para reprocessar Only um período histórico sem impacto em produção, você deve:",
     "alternativas": [
       "A. DROP TABLE",
       "B. Time Travel + overwrite controlado",
@@ -2141,7 +2141,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual prática aumenta risco de perda de recuperabilidade histórica em Delta?",
+    "pergunta": "Which prática aumenta risco de perda de recuperabilidade histórica em Delta?",
     "alternativas": [
       "A. MERGE",
       "B. VACUUM agressivo",
@@ -2151,7 +2151,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Um job falha intermitentemente por dependência externa. Qual configuração reduz impacto?",
+    "pergunta": "Um job failure intermitentemente por dependência externa. Which configuração reduz impacto?",
     "alternativas": [
       "A. Retry com backoff",
       "B. Cluster maior",
@@ -2161,17 +2161,17 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "Por que dividir um pipeline em várias tasks é melhor?",
+    "pergunta": "Why dividir um pipeline em várias tasks é Best?",
     "alternativas": [
       "A. Menos código",
-      "B. Reexecução parcial e isolamento de falhas",
-      "C. Menos governança",
+      "B. re-run parcial e isolamento de failures",
+      "C. Menos governance",
       "D. Menos clusters"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "O job está caro, mas rápido. Qual ação mantém SLA e reduz custo?",
+    "pergunta": "O job está caro, mas rápido. Which ação mantém SLA e reduz cost?",
     "alternativas": [
       "A. Menos workers fixos",
       "B. Autoscaling com limites",
@@ -2181,7 +2181,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Onde identificar skew severo?",
+    "pergunta": "Where identificar skew severo?",
     "alternativas": [
       "A. Unity Catalog",
       "B. Spark UI → Tasks",
@@ -2191,7 +2191,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Você quer alertar apenas falhas críticas. Melhor prática:",
+    "pergunta": "You want to alertar Only failures críticas. Best prática:",
     "alternativas": [
       "A. Alertar tudo",
       "B. Alertas condicionais por status",
@@ -2211,7 +2211,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual situação favorece serverless?",
+    "pergunta": "Which situação favorece serverless?",
     "alternativas": [
       "A. Configuração custom Spark",
       "B. Carga imprevisível e intermitente",
@@ -2221,7 +2221,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Para análise de custo detalhada por job:",
+    "pergunta": "Para análise de cost detalhada por job:",
     "alternativas": [
       "A. Spark UI",
       "B. System Tables (billing)",
@@ -2231,10 +2231,10 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Falhas silenciosas geralmente ocorrem quando:",
+    "pergunta": "failures silenciosas geralmente ocorrem When:",
     "alternativas": [
       "A. Há retry",
-      "B. Não há validações de dados",
+      "B. No há validações de dados",
       "C. Há logs",
       "D. Há alertas"
     ],
@@ -2243,28 +2243,28 @@ RAW_DATA = [
   {
     "pergunta": "Observabilidade madura inclui:",
     "alternativas": [
-      "A. Apenas logs",
+      "A. Only logs",
       "B. Logs + métricas + alertas",
-      "C. Apenas UI",
-      "D. Apenas retry"
+      "C. Only UI",
+      "D. Only retry"
     ],
     "resposta": "B"
   },
   {
     "pergunta": "Row-Level Security mal implementado causa:",
     "alternativas": [
-      "A. Lentidão apenas",
+      "A. Lentidão Only",
       "B. Vazamento de dados",
-      "C. Custo alto",
-      "D. Falha de job"
+      "C. cost alto",
+      "D. failure de job"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Por que masking é feito em tempo de query?",
+    "pergunta": "Why masking é feito em tempo de query?",
     "alternativas": [
       "A. Performance",
-      "B. Flexibilidade por usuário",
+      "B. Flexibilidade por user",
       "C. Storage",
       "D. Simplicidade"
     ],
@@ -2291,7 +2291,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Data Lineage é mais crítico quando:",
+    "pergunta": "Data Lineage é mais crítico When:",
     "alternativas": [
       "A. Há poucos pipelines",
       "B. Muitas dependências downstream",
@@ -2305,7 +2305,7 @@ RAW_DATA = [
     "alternativas": [
       "A. Quebra pipeline",
       "B. Vaza credencial",
-      "C. Aumenta custo",
+      "C. Aumenta cost",
       "D. Diminui performance"
     ],
     "resposta": "B"
@@ -2313,7 +2313,7 @@ RAW_DATA = [
   {
     "pergunta": "Permissões no UC são avaliadas:",
     "alternativas": [
-      "A. Em ingestão",
+      "A. Em ingestion",
       "B. Em tempo de execução",
       "C. Em VACUUM",
       "D. Em OPTIMIZE"
@@ -2321,7 +2321,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Um erro comum em governança:",
+    "pergunta": "Um erro comum em governance:",
     "alternativas": [
       "A. Policies centralizadas",
       "B. Views seguras",
@@ -2341,7 +2341,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Unity Catalog falha em:",
+    "pergunta": "Unity Catalog failure em:",
     "alternativas": [
       "A. Governar",
       "B. Centralizar acesso",
@@ -2351,7 +2351,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Federation é preferida quando:",
+    "pergunta": "Federation é preferida When:",
     "alternativas": [
       "A. Precisa alta performance local",
       "B. Dados externos mudam frequentemente",
@@ -2363,9 +2363,9 @@ RAW_DATA = [
   {
     "pergunta": "Desvantagem da Federation:",
     "alternativas": [
-      "A. Custo zero",
+      "A. cost zero",
       "B. Latência dependente da fonte",
-      "C. Falta segurança",
+      "C. Falta security",
       "D. Falta SQL"
     ],
     "resposta": "B"
@@ -2381,17 +2381,17 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Photon acelera melhor:",
+    "pergunta": "Photon acelera Best:",
     "alternativas": [
       "A. Python loops",
       "B. SQL analítico",
-      "C. Ingestão",
+      "C. ingestion",
       "D. Streaming"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Photon pode ser menos efetivo quando:",
+    "pergunta": "Photon pode ser menos efetivo When:",
     "alternativas": [
       "A. Queries simples",
       "B. SQL pesado",
@@ -2401,7 +2401,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "Federation NÃO:",
+    "pergunta": "Federation No:",
     "alternativas": [
       "A. Move dados",
       "B. Executa SQL",
@@ -2411,7 +2411,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "Serverless não é indicado quando:",
+    "pergunta": "Serverless No é indicado When:",
     "alternativas": [
       "A. BI",
       "B. Queries ad-hoc",
@@ -2434,9 +2434,9 @@ RAW_DATA = [
     "pergunta": "Photon é:",
     "alternativas": [
       "A. Obrigatório",
-      "B. Automático quando disponível",
+      "B. Automático When disponível",
       "C. Um serviço externo",
-      "D. Apenas Azure"
+      "D. Only Azure"
     ],
     "resposta": "B"
   },
@@ -2455,7 +2455,7 @@ RAW_DATA = [
     "alternativas": [
       "A. Código",
       "B. Padronização e automação",
-      "C. Segurança",
+      "C. security",
       "D. Performance"
     ],
     "resposta": "B"
@@ -2466,7 +2466,7 @@ RAW_DATA = [
       "A. Lock-in",
       "B. Drift entre ambientes",
       "C. Latência",
-      "D. Falha de streaming"
+      "D. failure de streaming"
     ],
     "resposta": "B"
   },
@@ -2491,7 +2491,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Bundles integram melhor com:",
+    "pergunta": "Bundles integram Best com:",
     "alternativas": [
       "A. VACUUM",
       "B. Jenkins / GitHub Actions",
@@ -2501,7 +2501,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Qual erro indica maturidade baixa de deploy?",
+    "pergunta": "Which erro indica maturidade baixa de deploy?",
     "alternativas": [
       "A. Parametrização",
       "B. Deploy automatizado",
@@ -2511,7 +2511,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Asset Bundles NÃO substituem:",
+    "pergunta": "Asset Bundles No substituem:",
     "alternativas": [
       "A. Git",
       "B. Jobs UI",
@@ -2545,17 +2545,17 @@ RAW_DATA = [
     "alternativas": [
       "A. Notebooks soltos",
       "B. Bundles + Git + CI/CD + UC",
-      "C. Apenas UI",
-      "D. Apenas Jobs"
+      "C. Only UI",
+      "D. Only Jobs"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual é o principal benefício do Auto Loader em ambientes com muitos arquivos?",
+    "pergunta": "What is o principal benefício do Auto Loader em ambientes com muitos arquivos?",
     "alternativas": [
-      "A. Melhor compressão",
+      "A. Best compressão",
       "B. Inferência automática obrigatória",
-      "C. Escalabilidade e ingestão incremental eficiente",
+      "C. Escalabilidade e ingestion incremental eficiente",
       "D. Eliminação do Delta Lake"
     ],
     "resposta": "C"
@@ -2565,7 +2565,7 @@ RAW_DATA = [
     "alternativas": [
       "A. Append simples",
       "B. Repartition",
-      "C. Deduplicação por chave + checkpoint",
+      "C. Deduplicação por key + checkpoint",
       "D. Trigger once"
     ],
     "resposta": "C"
@@ -2574,24 +2574,24 @@ RAW_DATA = [
     "pergunta": "O checkpointLocation é essencial porque:",
     "alternativas": [
       "A. Compacta arquivos",
-      "B. Mantém estado e garante reprocessamento correto",
-      "C. Melhora schema inference",
-      "D. Reduz custo de storage"
+      "B. Mantém estado e ensures reprocessamento correto",
+      "C. improves schema inference",
+      "D. Reduz cost de storage"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Um MERGE é preferível a INSERT OVERWRITE quando:",
+    "pergunta": "Um MERGE is preferable a INSERT OVERWRITE When:",
     "alternativas": [
-      "A. A tabela é pequena",
+      "A. A table é pequena",
       "B. Há necessidade de updates incrementais",
-      "C. O dado é somente append",
-      "D. Não há chave de negócio"
+      "C. O dado é Only append",
+      "D. No há key de negócio"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual comando permite auditoria de mudanças em Delta?",
+    "pergunta": "Which comando allows auditoria de mudanças em Delta?",
     "alternativas": [
       "A. VACUUM",
       "B. DESCRIBE HISTORY",
@@ -2601,27 +2601,27 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Z-ORDER é mais efetivo quando:",
+    "pergunta": "Z-ORDER é mais efetivo When:",
     "alternativas": [
-      "A. Não há filtros",
-      "B. Há filtros recorrentes nas mesmas colunas",
-      "C. A tabela é pequena",
-      "D. A tabela não é Delta"
+      "A. No há filtros",
+      "B. Há filtros recorrentes nas mesmas columns",
+      "C. A table é pequena",
+      "D. A table No é Delta"
     ],
     "resposta": "B"
   },
   {
     "pergunta": "Pequenos arquivos impactam negativamente:",
     "alternativas": [
-      "A. Segurança",
+      "A. security",
       "B. Performance de leitura",
-      "C. Governança",
+      "C. governance",
       "D. Schema"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual ação resolve small files sem alterar dados?",
+    "pergunta": "Which ação resolve small files without changing dados?",
     "alternativas": [
       "A. MERGE",
       "B. OPTIMIZE",
@@ -2643,7 +2643,7 @@ RAW_DATA = [
   {
     "pergunta": "O maior risco de um VACUUM agressivo é:",
     "alternativas": [
-      "A. Custo alto",
+      "A. cost alto",
       "B. Perda de Time Travel",
       "C. Duplicação",
       "D. Lentidão"
@@ -2651,7 +2651,7 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Uma boa prática em pipelines é:",
+    "pergunta": "Uma best practice em pipelines é:",
     "alternativas": [
       "A. Um notebook único",
       "B. Tasks pequenas e reutilizáveis",
@@ -2661,22 +2661,22 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Se uma task falha, o workflow:",
+    "pergunta": "Se uma task failure, o workflow:",
     "alternativas": [
       "A. Precisa ser recriado",
-      "B. Pode reexecutar só a task",
+      "B. Pode re-run só a task",
       "C. Perde dados",
       "D. Deleta o cluster"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Autoscaling ajuda principalmente a:",
+    "pergunta": "Autoscaling helps principalmente a:",
     "alternativas": [
-      "A. Segurança",
+      "A. security",
       "B. Performance fixa",
-      "C. Reduzir custos",
-      "D. Governança"
+      "C. Reduzir costs",
+      "D. governance"
     ],
     "resposta": "C"
   },
@@ -2701,9 +2701,9 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Retry é útil quando:",
+    "pergunta": "Retry é útil When:",
     "alternativas": [
-      "A. Há falhas temporárias",
+      "A. Há failures temporárias",
       "B. Há erro de lógica",
       "C. O dado é inválido",
       "D. O schema mudou"
@@ -2711,7 +2711,7 @@ RAW_DATA = [
     "resposta": "A"
   },
   {
-    "pergunta": "Qual prática aumenta custo sem benefício?",
+    "pergunta": "Which prática aumenta cost sem benefício?",
     "alternativas": [
       "A. Auto-termination",
       "B. Clusters sempre ligados",
@@ -2721,11 +2721,11 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Logs estruturados ajudam principalmente em:",
+    "pergunta": "Logs estruturados help principalmente em:",
     "alternativas": [
-      "A. Ingestão",
+      "A. ingestion",
       "B. Observabilidade",
-      "C. Segurança",
+      "C. security",
       "D. Schema"
     ],
     "resposta": "B"
@@ -2734,8 +2734,8 @@ RAW_DATA = [
     "pergunta": "Um job bem desenhado deve priorizar:",
     "alternativas": [
       "A. Código curto",
-      "B. Confiabilidade e reexecução",
-      "C. Menos tabelas",
+      "B. reliability e re-run",
+      "C. Menos tables",
       "D. Menos tasks"
     ],
     "resposta": "B"
@@ -2744,7 +2744,7 @@ RAW_DATA = [
     "pergunta": "Row-Level Security controla:",
     "alternativas": [
       "A. Colunas",
-      "B. Linhas visíveis por usuário",
+      "B. rows visíveis por user",
       "C. Schema",
       "D. Storage"
     ],
@@ -2753,7 +2753,7 @@ RAW_DATA = [
   {
     "pergunta": "Column Masking é aplicado:",
     "alternativas": [
-      "A. Em ingestão",
+      "A. Em ingestion",
       "B. Em tempo de query",
       "C. Em VACUUM",
       "D. Em OPTIMIZE"
@@ -2766,12 +2766,12 @@ RAW_DATA = [
       "A. ETL",
       "B. Auditoria e billing",
       "C. Streaming",
-      "D. Compartilhamento"
+      "D. sharing"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Qual tabela ajuda a analisar custos?",
+    "pergunta": "Which table helps a analisar costs?",
     "alternativas": [
       "A. access.audit",
       "B. billing.usage",
@@ -2786,12 +2786,12 @@ RAW_DATA = [
       "A. Quem acessou",
       "B. Impacto de mudanças",
       "C. Performance",
-      "D. Custo"
+      "D. cost"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Onde secrets devem ser armazenados?",
+    "pergunta": "Where secrets devem ser armazenados?",
     "alternativas": [
       "A. Notebook",
       "B. Git",
@@ -2801,7 +2801,7 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Um erro comum de governança é:",
+    "pergunta": "Um erro comum de governance é:",
     "alternativas": [
       "A. Policies centralizadas",
       "B. Filtros no notebook",
@@ -2821,9 +2821,9 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Unity Catalog NÃO faz:",
+    "pergunta": "Unity Catalog No faz:",
     "alternativas": [
-      "A. Governança",
+      "A. governance",
       "B. Auditoria",
       "C. Execução de jobs",
       "D. Controle de acesso"
@@ -2831,10 +2831,10 @@ RAW_DATA = [
     "resposta": "C"
   },
   {
-    "pergunta": "Lakehouse Federation é ideal quando:",
+    "pergunta": "Lakehouse Federation é ideal When:",
     "alternativas": [
       "A. Quer copiar dados",
-      "B. Quer consultar dados externos sem mover",
+      "B. Quer consultar dados externos without moving",
       "C. Precisa write",
       "D. Precisa streaming"
     ],
@@ -2853,15 +2853,15 @@ RAW_DATA = [
   {
     "pergunta": "Principal desvantagem da Federation:",
     "alternativas": [
-      "A. Falta governança",
+      "A. Falta governance",
       "B. Latência dependente da fonte",
       "C. Falta SQL",
-      "D. Falta segurança"
+      "D. Falta security"
     ],
     "resposta": "B"
   },
   {
-    "pergunta": "Serverless SQL é mais indicado para:",
+    "pergunta": "Serverless SQL é most suitable para:",
     "alternativas": [
       "A. ETL pesado",
       "B. BI e queries ad-hoc",
@@ -2875,7 +2875,7 @@ RAW_DATA = [
     "alternativas": [
       "A. Python loops",
       "B. SQL analítico",
-      "C. Ingestão",
+      "C. ingestion",
       "D. Streaming"
     ],
     "resposta": "B"
@@ -2884,9 +2884,9 @@ RAW_DATA = [
     "pergunta": "Photon exige alteração de código?",
     "alternativas": [
       "A. Sim",
-      "B. Apenas SQL",
-      "C. Não",
-      "D. Apenas Python"
+      "B. Only SQL",
+      "C. No",
+      "D. Only Python"
     ],
     "resposta": "C"
   },
@@ -2901,12 +2901,12 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Bundles ajudam principalmente em:",
+    "pergunta": "Bundles help principalmente em:",
     "alternativas": [
       "A. Performance",
       "B. CI/CD",
       "C. Streaming",
-      "D. Custo"
+      "D. cost"
     ],
     "resposta": "B"
   },
@@ -2921,12 +2921,12 @@ RAW_DATA = [
     "resposta": "B"
   },
   {
-    "pergunta": "Variáveis por ambiente permitem:",
+    "pergunta": "Variáveis por ambiente allow:",
     "alternativas": [
       "A. Hardcode",
       "B. Reutilização dev/qa/prod",
-      "C. Ignorar governança",
-      "D. Apenas produção"
+      "C. Ignorar governance",
+      "D. Only produção"
     ],
     "resposta": "B"
   },
@@ -2955,8 +2955,8 @@ RAW_DATA = [
     "alternativas": [
       "A. Notebooks soltos",
       "B. Bundles + Git + CI/CD + UC",
-      "C. Apenas UI",
-      "D. Apenas Jobs"
+      "C. Only UI",
+      "D. Only Jobs"
     ],
     "resposta": "B"
   }
@@ -2970,7 +2970,7 @@ def restart_quiz():
     all_indices = list(range(len(RAW_DATA)))
     random.shuffle(all_indices)
     
-    # Seleciona as primeiras 45 (ou todas se for menor)
+    # Seleciona as primeiras 50 (ou todas se for menor)
     selected_indices = all_indices[:50]
     
     st.session_state.quiz_indices = selected_indices
