@@ -1866,7 +1866,7 @@ else:
         
         if submitted and choice:
             letter = choice.split(".")[0].strip() # Pega o "A" de "A. Texto..."
-            correct_letter = question_data["Answer"].strip().upper()
+            correct_letter = question_data["answer"].strip().upper()
             
             if letter == correct_letter:
                 st.session_state.answer_state = "correct"
