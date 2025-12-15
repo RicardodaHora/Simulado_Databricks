@@ -37,1342 +37,2930 @@ st.markdown("""
 # DADOS DAS PERGUNTAS (Baseado no seu JSON original)
 # ---------------------------------------------------------
 RAW_DATA = [
-    {
-        "pergunta": "A data organization leader is upset about the data analysis teams reports being different from the data \nengineering teams reports. The leader believes the siloed nature of their organizations data engineering and data analysis architectures \nis to blame. Which of the following describes how a data lakehouse could alleviate this issue?",
-        "alternativas": [
-            "A. Both teams would autoscale their work as data size evolves",
-            "B. Both teams would use the same source of truth for their work",
-            "C. Both teams would reorganize to report to the same department",
-            "D. Both teams would be able to collaborate on projects in real-time",
-            "E. Both teams would respond more quickly to ad-hoc requests"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which of the following describes a scenario in which a data team will want to utilize cluster pools?",
-        "alternativas": [
-            "A. An automated report needs to be refreshed as quickly as possible.",
-            "B. An automated report needs to be made reproducible.",
-            "C. An automated report needs to be tested to identify errors.",
-            "D. An automated report needs to be version-controlled across multiple collaborators.",
-            "E. An automated report needs to be runnable by all stakeholders."
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which of the following is hosted completely in the control plane of the classic Databricks architecture?",
-        "alternativas": [
-            "A. Worker node",
-            "B. JDBC data source",
-            "C. Databricks web application",
-            "D. Databricks Filesystem",
-            "E. Driver node"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which of the following benefits of using the Databricks Lakehouse Platform is provided by Delta Lake?",
-        "alternativas": [
-            "A. The ability to manipulate the same data using a variety of languages",
-            "B. The ability to collaborate in real time on a single notebook",
-            "C. The ability to set up alerts for query failures",
-            "D. The ability to support batch and streaming workloads",
-            "E. The ability to distribute complex data operations"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following describes the storage organization of a Delta table?",
-        "alternativas": [
-            "A. Delta tables are stored in a single file that contains data, history, metadata, and other attributes.",
-            "B. Delta tables store their data in a single file and all metadata in a collection of files in a separate location.",
-            "C. Delta tables are stored in a collection of files that contain data, history, metadata, and other attributes.",
-            "D. Delta tables are stored in a collection of files that contain only the data stored within the table.",
-            "E. Delta tables are stored in a single file that contains only the data stored within the table."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which of the following code blocks will remove the rows where the value in column age is greater than 25 from \nthe existing Delta table my_table and save the updated table?",
-        "alternativas": [
-            "A. SELECT * FROM my_table WHERE age > 25;",
-            "B. UPDATE my_table WHERE age > 25;",
-            "C. DELETE FROM my_table WHERE age > 25;",
-            "D. UPDATE my_table WHERE age <= 25;",
-            "E. DELETE FROM my_table WHERE age <= 25;"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer has realized that they made a mistake when making a daily update to a table. They need to use \nDelta time travel to restore the table to a version that is 3 days old. However, when the data engineer attempts to time travel to the \nolder version, they are unable to restore the data because the data files have been deleted. Which of the following explains why the data \nfiles are no longer present?",
-        "alternativas": [
-            "A. The VACUUM command was run on the table",
-            "B. The TIME TRAVEL command was run on the table",
-            "C. The DELETE HISTORY command was run on the table",
-            "D. The OPTIMIZE command was nun on the table",
-            "E. The HISTORY command was run on the table"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which of the following Git operations must be performed outside of Databricks Repos?",
-        "alternativas": [
-            "A. Commit",
-            "B. Pull",
-            "C. Push",
-            "D. Clone",
-            "E. Merge"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake?",
-        "alternativas": [
-            "A. A data lakehouse provides storage solutions for structured and unstructured data.",
-            "B. A data lakehouse supports ACID-compliant transactions.",
-            "C. A data lakehouse allows the use of SQL queries to examine data.",
-            "D. A data lakehouse stores data in open formats.",
-            "E. A data lakehouse enables machine learning and artificial Intelligence workloads."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their project using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks Notebooks versioning?",
-        "alternativas": [
-            "A. Databricks Repos automatically saves development progress",
-            "B. Databricks Repos supports the use of multiple branches",
-            "C. Databricks Repos allows users to revert to previous versions of a notebook",
-            "D. Databricks Repos provides the ability to comment on specific changes",
-            "E. Databricks Repos is wholly housed within the Databricks Lakehouse Platform"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has left the organization. The data team needs to transfer ownership of the data engineers \nDelta tables to a new data engineer. The new data engineer is the lead engineer on the data team. Assuming the original data engineer \nno longer has access, which of the following individuals must be the one to transfer ownership of the Delta tables in Data Explorer? ",
-        "alternativas": [
-            "A. Databricks account representative ",
-            "B. This transfer is not possible ",
-            "C. Workspace administrator ",
-            "D. New lead data engineer ",
-            "E. Original data engineer "
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data analyst has created a Delta table sales that is used by the entire data analysis team. They want help from \nthe data engineering team to implement a series of tests to ensure the data is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following commands could the data engineering team use to access sales in PySpark?",
-        "alternativas": [
-            "A. SELECT * FROM sales",
-            "B. There is no way to share data between PySpark and SQL. ",
-            "C. spark.sql(\"sales\") ",
-            "D. spark.delta.table(\"sales\") ",
-            "E. spark.table(\"sales\") "
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "Which of the following commands will return the location of database customer360?",
-        "alternativas": [
-            "A. DESCRIBE LOCATION customer360;",
-            "B. DROP DATABASE customer360;",
-            "C. DESCRIBE DATABASE customer360;",
-            "D. ALTER DATABASE customer360 SET DBPROPERTIES ('location' = '/user'};",
-            "E. USE DATABASE customer360;"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer wants to create a new table containing the names of customers that live in France. \nThey have written the following command: \n \nA senior data engineer mentions that it is organization policy to include a table property indicating that the new table includes personally \nidentifiable information (PII). \nWhich of the following lines of code fills in the above blank to successfully complete the task?",
-        "alternativas": [
-            "A. There is no way to indicate whether a table contains PII.",
-            "B. \"COMMENT PII\"",
-            "C. TBLPROPERTIES PII",
-            "D. COMMENT \"Contains PII\"",
-            "E. PII"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following benefits is provided by the array functions from Spark SQL?",
-        "alternativas": [
-            "A. An ability to work with data in a variety of types at once",
-            "B. An ability to work with data within certain partitions and windows",
-            "C. An ability to work with time-related data in specified intervals",
-            "D. An ability to work with complex, nested data ingested from JSON files",
-            "E. An ability to work with an array of tables for procedural automation"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following commands can be used to write data into a Delta table while avoiding the writing of \nduplicate records?",
-        "alternativas": [
-            "A. DROP",
-            "B. IGNORE",
-            "C. MERGE",
-            "D. APPEND",
-            "E. INSERT"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which command can be used to write data into a Delta table while avoiding the writing of duplicate records?",
-        "alternativas": [
-            "A. DROP",
-            "B. INSERT",
-            "C. MERGE",
-            "D. APPEND"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer needs to apply custom logic to the string column `city` in table `stores` for a specific use case. In order to apply this custom logic at scale, the data engineer wants to create a SQL user-defined function (UDF). Which of the following code blocks creates this SQL UDF?",
-        "alternativas": [
-            "A. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;",
-            "B. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING AS (CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END);",
-            "C. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING BEGIN RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END; END;",
-            "D. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING AS CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;",
-            "E. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data analyst has a series of queries in a SQL program. The data analyst wants this program to run every day. \nThey only want the final query in the program to run on Sundays. They ask for help from the data engineering team to complete this task. \nWhich of the following approaches could be used by the data engineering team to complete this task?",
-        "alternativas": [
-            "A. They could submit a feature request with Databricks to add this functionality.",
-            "B. They could wrap the queries using PySpark and use Pythons control flow system to determine when to run the final query.",
-            "C. They could only run the entire program on Sundays.",
-            "D. They could automatically restrict access to the source table in the final query so that it is only accessible on Sundays.",
-            "E. They could redesign the data model to separate the data used in the final query into a new table."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer only wants to execute the final block of a Python program if the Python variable `day_of_week` is equal to `1` and the Python variable `review_period` is `True`. Which of the following control flow statements should the data engineer use to begin this conditionally executed code block?",
-        "alternativas": [
-            "A. if day_of_week == 1 and review_period:",
-            "B. if day_of_week == 1 and review_period == \"True\":",
-            "C. if day_of_week == 1 and review_period == True:",
-            "D. if day_of_week == 1 & review_period:",
-            "E. if (day_of_week == 1) and (review_period == True):"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table. The data engineer wants to delete all table \nmetadata and data. \nThey run the following command: \nDROP TABLE IF EXISTS my_table - \nWhile the object no longer appears when they run SHOW TABLES, the data files still exist. \nWhich of the following describes why the data files still exist and the metadata files were deleted?",
-        "alternativas": [
-            "A. The tables data was larger than 10 GB ",
-            "B. The tables data was smaller than 10 GB ",
-            "C. The table was external ",
-            "D. The table did not have a location ",
-            "E. The table was managed "
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table and runs the following command: DROP TABLE \nIF EXISTS my_table; After running this command, the engineer notices that the data files and metadata files have been deleted from the \nfile system. Which of the following describes why all of these files were deleted?",
-        "alternativas": [
-            "A. The table was managed",
-            "B. The tables data was smaller than 10 GB",
-            "C. The tables data was larger than 10 GB",
-            "D. The table was external",
-            "E. The table did not have a location"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table and runs the following command: \nDROP TABLE IF EXISTS my_table; \nAfter running this command, the engineer notices that the data files and metadata files have been deleted from the file system. What is \nthe reason behind the deletion of all these files?",
-        "alternativas": [
-            "A. The table was managed",
-            "B. The tables data was smaller than 10 GB",
-            "C. The table did not have a location",
-            "D. The table was external"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer wants to create a data entity from a couple of tables. The data entity must be used by other \ndata engineers in other sessions. It also must be saved to a physical location. Which of the following data entities should the data \nengineer create?",
-        "alternativas": [
-            "A. Database",
-            "B. Function",
-            "C. View",
-            "D. Temporary view",
-            "E. Table"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer wants to create a data entity from a couple of tables. The data entity must be used by other \ndata engineers in other sessions. It also must be saved to a physical location. Which of the following data entities should the data \nengineer create?",
-        "alternativas": [
-            "A. Table",
-            "B. Function",
-            "C. View",
-            "D. Temporary view"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer runs a statement every day to copy the previous days sales into the table `transactions`. Each days sales are in their own file in the location `/transactions/raw/`. \n\nToday, the data engineer runs the following command to complete this task:\n\nAfter running the command today, the data engineer notices that the number of records in table `transactions` has not changed. \n\nWhich of the following describes why the statement might not have copied any new records into the table?",
-        "alternativas": [
-            "A. The format of the files to be copied were not included with the FORMAT_OPTIONS keyword.",
-            "B. The names of the files to be copied were not included with the FILES keyword.",
-            "C. The previous days file has already been copied into the table.",
-            "D. The PARQUET file format does not support COPY INTO.",
-            "E. The COPY INTO statement requires the table to be refreshed to view the copied rows."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": " A data engineer needs to create a table in Databricks using data from their organizations existing SQLite \ndatabase. \nThey run the following command: \nWhich of the following lines of code fills in the above blank to successfully complete the task? ",
-        "alternativas": [
-            "A. org.apache.spark.sql.jdbc ",
-            "B. autoloader ",
-            "C. DELTA ",
-            "D. sqlite ",
-            "E. org.apache.spark.sql.sqlite "
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineering team has two tables. The first table march_transactions is a collection of all retail \ntransactions in the month of March. The second table april_transactions is a collection of all retail transactions in the month of April. \nThere are no duplicate records between the tables. \nWhich of the following commands should be run to create a new table all_transactions that contains all records from march_transactions \nand april_transactions without duplicate records?",
-        "alternativas": [
-            "A. CREATE TABLE all_transactions AS SELECT * FROM march_transactions INNER JOIN SELECT * FROM april_transactions;",
-            "B. CREATE TABLE all_transactions AS SELECT * FROM march_transactions UNION SELECT * FROM april_transactions;",
-            "C. CREATE TABLE all_transactions AS SELECT * FROM march_transactions OUTER JOIN SELECT * FROM april_transactions;",
-            "D. CREATE TABLE all_transactions AS SELECT * FROM march_transactions INTERSECT SELECT * from april_transactions;",
-            "E. CREATE TABLE all_transactions AS SELECT * FROM march_transactions MERGE SELECT * FROM april_transactions;"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
-        "alternativas": [
-            "A. Unity Catalog",
-            "B. Data Explorer",
-            "C. Delta Lake",
-            "D. Delta Live Tables",
-            "E. Auto Loader"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
-        "alternativas": [
-            "A. Auto Loader",
-            "B. Unity Catalog",
-            "C. Delta Lake",
-            "D. Delta Live Tables"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A Delta Live Table pipeline includes two datasets defined using STREAMING LIVE TABLE. Three datasets are \ndefined against Delta Lake table sources using LIVE TABLE. The table is configured to run in Production mode using the Continuous Pipeline Mode. Assuming previously unprocessed data exists and all definitions are valid, what is the expected outcome after clicking Start to update the pipeline?",
-        "alternativas": [
-            "A. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will persist to allow for additional testing.",
-            "B. All datasets will be updated once and the pipeline will persist without any processing. The compute resources will persist but go unused.",
-            "C. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will be deployed for the update and terminated when the pipeline is stopped.",
-            "D. All datasets will be updated once and the pipeline will shut down. The compute resources will be terminated.",
-            "E. All datasets will be updated once and the pipeline will shut down. The compute resources will persist to allow for additional testing."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A Delta Live Table pipeline includes two datasets defined using STREAMING LIVE TABLE. Three datasets are \ndefined against Delta Lake table sources using LIVE TABLE. The table is configured to run in Production mode using the Continuous \nPipeline Mode. What is the expected outcome after clicking Start to update the pipeline assuming previously unprocessed data exists and \nall definitions are valid?",
-        "alternativas": [
-            "A. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will persist to allow for additional testing.",
-            "B. All datasets will be updated once and the pipeline will shut down. The compute resources will persist to allow for additional testing.",
-            "C. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will be deployed for the update and terminated when the pipeline is stopped.",
-            "D. All datasets will be updated once and the pipeline will shut down. The compute resources will be terminated."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "In order for Structured Streaming to reliably track the exact progress of the processing so that it can handle any \nkind of failure by restarting and/or reprocessing, which of the following two approaches is used by Spark to record the offset range of the \ndata being processed in each trigger?",
-        "alternativas": [
-            "A. Checkpointing and Write-ahead Logs",
-            "B. Structured Streaming cannot record the offset range of the data being processed in each trigger.",
-            "C. Replayable Sources and Idempotent Sinks",
-            "D. Write-ahead Logs and Idempotent Sinks",
-            "E. Checkpointing and Idempotent Sinks"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which of the following describes the relationship between Gold tables and Silver tables?",
-        "alternativas": [
-            "A. Gold tables are more likely to contain aggregations than Silver tables.",
-            "B. Gold tables are more likely to contain valuable data than Silver tables.",
-            "C. Gold tables are more likely to contain a less refined view of data than Silver tables.",
-            "D. Gold tables are more likely to contain more data than Silver tables.",
-            "E. Gold tables are more likely to contain truthful data than Silver tables."
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "What describes the relationship between Gold tables and Silver tables?",
-        "alternativas": [
-            "A. Gold tables are more likely to contain aggregations than Silver tables.",
-            "B. Gold tables are more likely to contain valuable data than Silver tables.",
-            "C. Gold tables are more likely to contain a less refined view of data than Silver tables.",
-            "D. Gold tables are more likely to contain truthful data than Silver tables."
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which of the following describes the relationship between Bronze tables and raw data?",
-        "alternativas": [
-            "A. Bronze tables contain less data than raw data files.",
-            "B. Bronze tables contain more truthful data than raw data.",
-            "C. Bronze tables contain aggregates while raw data is unaggregated.",
-            "D. Bronze tables contain a less refined view of data than raw data.",
-            "E. Bronze tables contain raw data with a schema applied."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which of the following tools is used by Auto Loader process data incrementally?",
-        "alternativas": [
-            "A. Checkpointing",
-            "B. Spark Structured Streaming",
-            "C. Data Explorer",
-            "D. Unity Catalog",
-            "E. Databricks SQL"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has configured a Structured Streaming job to read from a table, manipulate the data, and then perform a streaming write into a new table.\n\nThe code block used by the data engineer is below:\n\nWhich line of code should the data engineer use to fill in the blank if the data engineer only wants the query to execute a micro-batch to process data every 5 seconds?",
-        "alternativas": [
-            "A. trigger(\"5 seconds\")",
-            "B. trigger(continuous=\"5 seconds\")",
-            "C. trigger(once=\"5 seconds\")",
-            "D. trigger(processingTime=\"5 seconds\")"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION DROP ROW \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
-        "alternativas": [
-            "A. Records that violate the expectation are dropped from the target dataset and loaded into a quarantine table.",
-            "B. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset.",
-            "C. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
-            "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log.",
-            "E. Records that violate the expectation cause the job to fail."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION DROP ROW \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
-        "alternativas": [
-            "A. Records that violate the expectation cause the job to fail.",
-            "B. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset.",
-            "C. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
-            "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION FAIL UPDATE \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
-        "alternativas": [
-            "A. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
-            "B. Records that violate the expectation cause the job to fail.",
-            "C. Records that violate the expectation are dropped from the target dataset and loaded into a quarantine table.",
-            "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log.",
-            "E. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which of the following describes when to use the CREATE STREAMING LIVE TABLE (formerly CREATE \nINCREMENTAL LIVE TABLE) syntax over the CREATE LIVE TABLE syntax when creating Delta Live Tables (DLT) tables using SQL?",
-        "alternativas": [
-            "A. CREATE STREAMING LIVE TABLE should be used when the subsequent step in the DLT pipeline is static.",
-            "B. CREATE STREAMING LIVE TABLE should be used when data needs to be processed incrementally.",
-            "C. CREATE STREAMING LIVE TABLE is redundant for DLT and it does not need to be used.",
-            "D. CREATE STREAMING LIVE TABLE should be used when data needs to be processed through complicated aggregations.",
-            "E. CREATE STREAMING LIVE TABLE should be used when the previous step in the DLT pipeline is static."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer is designing a data pipeline. The source system generates files in a shared directory that is also \nused by other processes. As a result, the files should be kept as is and will accumulate in the directory. The data engineer needs to \nidentify which files are new since the previous run in the pipeline, and set up the pipeline to only ingest those new files with each run. \nWhich of the following tools can the data engineer use to solve this problem?",
-        "alternativas": [
-            "A. Unity Catalog",
-            "B. Delta Lake",
-            "C. Databricks SQL",
-            "D. Data Explorer",
-            "E. Auto Loader"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "Which of the following Structured Streaming queries is performing a hop from a Silver table to a Gold table? ",
-        "alternativas": [
-            "A. They can set up separate expectations for each table when developing their DLT pipeline.",
-            "B. They cannot determine which table is dropping the records.",
-            "C. They can set up DLT to notify them via email when records are dropped.",
-            "D. They can navigate to the DLT pipeline page, click on each table, and view the data quality statistics.",
-            "E. They can navigate to the DLT pipeline page, click on the “Error” button, and review the present errors."
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer has three tables in a Delta Live Tables (DLT) pipeline. They have configured the pipeline to drop \ninvalid records at each table. They notice that some data is being dropped due to quality concerns at some point in the DLT pipeline. They \nwould like to determine at which table in their pipeline the data is being dropped. Which approach can the data engineer take to identify \nthe table that is dropping the records?",
-        "alternativas": [
-            "A. They can set up separate expectations for each table when developing their DLT pipeline.",
-            "B. They can navigate to the DLT pipeline page, click on the “Error” button, and review the present errors.",
-            "C. They can set up DLT to notify them via email when records are dropped.",
-            "D. They can navigate to the DLT pipeline page, click on each table, and view the data quality statistics."
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer has a single-task Job that runs each morning before they begin working. After identifying an \nupstream data issue, they need to set up another task to run a new notebook prior to the original task. \nWhich of the following approaches can the data engineer use to set up the new task?",
-        "alternativas": [
-            "A. They can clone the existing task in the existing Job and update it to run the new notebook.",
-            "B. They can create a new task in the existing Job and then add it as a dependency of the original task.",
-            "C. They can create a new task in the existing Job and then add the original task as a dependency of the new task.",
-            "D. They can create a new job from scratch and add both tasks to run concurrently.",
-            "E. They can clone the existing task to a new Job and then edit it to run the new notebook."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer has a single-task Job that runs each morning before they begin working. After identifying an \nupstream data issue, they need to set up another task to run a new notebook prior to the original task. Which approach can the data \nengineer use to set up the new task?",
-        "alternativas": [
-            "A. They can clone the existing task in the existing Job and update it to run the new notebook.",
-            "B. They can create a new task in the existing Job and then add it as a dependency of the original task.",
-            "C. They can create a new task in the existing Job and then add the original task as a dependency of the new task.",
-            "D. They can create a new job from scratch and add both tasks to run concurrently."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "An engineering manager wants to monitor the performance of a recent project using a Databricks SQL query. For \nthe first week following the projects release, the manager wants the query results to be updated every minute. However, the manager is \nconcerned that the compute resources used for the query will be left running and cost the organization a lot of money beyond the first \nweek of the projects release. \nWhich of the following approaches can the engineering team use to ensure the query does not cost the organization any money beyond \nthe first week of the projects release?",
-        "alternativas": [
-            "A. They can set a limit to the number of DBUs that are consumed by the SQL Endpoint.",
-            "B. They can set the querys refresh schedule to end after a certain number of refreshes.",
-            "C. They cannot ensure the query does not cost the organization money beyond the first week of the projects release.",
-            "D. They can set a limit to the number of individuals that are able to manage the querys refresh schedule.",
-            "E. They can set the querys refresh schedule to end on a certain date in the query scheduler."
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "An engineering manager wants to monitor the performance of a recent project using a Databricks SQL query. \nFor the first week following the projects release, the manager wants the query results to be updated every minute. However, the \nmanager is concerned that the compute resources used for the query will be left running and cost the organization a lot of money \nbeyond the first week of the projects release. Which approach can the engineering team use to ensure the query does not cost the \norganization any money beyond the first week of the projects release?",
-        "alternativas": [
-            "A. They can set a limit to the number of DBUs that are consumed by the SQL Endpoint.",
-            "B. They can set the querys refresh schedule to end after a certain number of refreshes.",
-            "C. They can set the querys refresh schedule to end on a certain date in the query scheduler.",
-            "D. They can set a limit to the number of individuals that are able to manage the querys refresh schedule."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data analysis team has noticed that their Databricks SQL queries are running too slowly when connected to \ntheir always-on SQL endpoint. They claim that this issue is present when many members of the team are running small queries \nsimultaneously. They ask the data engineering team for help. The data engineering team notices that each of the teams queries uses the \nsame SQL endpoint. \nWhich of the following approaches can the data engineering team use to improve the latency of the teams queries?",
-        "alternativas": [
-            "A. They can increase the cluster size of the SQL endpoint.",
-            "B. They can increase the maximum bound of the SQL endpoints scaling range.",
-            "C. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "D. They can turn on the Serverless feature for the SQL endpoint.",
-            "E. They can turn on the Serverless feature for the SQL endpoint and change the Spot Instance Policy to “Reliability Optimized.”"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh once per day, but they only want \nthe associated SQL endpoint to be running when it is necessary. \nWhich of the following approaches can the data engineer use to minimize the total running time of the SQL endpoint used in the refresh \nschedule of their dashboard?",
-        "alternativas": [
-            "A. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
-            "B. They can set up the dashboards SQL endpoint to be serverless.",
-            "C. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "D. They can reduce the cluster size of the SQL endpoint.",
-            "E. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh once per day, but they only want \nthe associated SQL endpoint to be running when it is necessary. Which approach can the data engineer use to minimize the total running \ntime of the SQL endpoint used in the refresh schedule of their dashboard?",
-        "alternativas": [
-            "A. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
-            "B. They can set up the dashboards SQL endpoint to be serverless.",
-            "C. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "D. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to an \nELT job. The ELT job has its Databricks SQL query that returns the number of input records containing unexpected NULL values. The data \nengineer wants their entire team to be notified via a messaging webhook whenever this value reaches 100. \nWhich of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the number \nof NULL values reaches 100?",
-        "alternativas": [
-            "A. They can set up an Alert with a custom template.",
-            "B. They can set up an Alert with a new email alert destination.",
-            "C. They can set up an Alert with a new webhook alert destination.",
-            "D. They can set up an Alert with one-time notifications.",
-            "E. They can set up an Alert without notifications."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to an \nELT job. The ELT job has its Databricks SQL query that returns the number of input records containing unexpected NULL values. The data \nengineer wants their entire team to be notified via a messaging webhook whenever this value reaches 100. Which approach can the data \nengineer use to notify their entire team via a messaging webhook whenever the number of NULL values reaches 100?",
-        "alternativas": [
-            "A. They can set up an Alert with a custom template.",
-            "B. They can set up an Alert with a new email alert destination.",
-            "C. They can set up an Alert with a new webhook alert destination.",
-            "D. They can set up an Alert with one-time notifications."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A single Job runs two notebooks as two separate tasks. A data engineer has noticed that one of the notebooks is \nrunning slowly in the Jobs current run. The data engineer asks a tech lead for help in identifying why this might be the case. \nWhich of the following approaches can the tech lead use to identify why the notebook is running slowly as part of the Job?",
-        "alternativas": [
-            "A. They can navigate to the Runs tab in the Jobs UI to immediately review the processing notebook.",
-            "B. They can navigate to the Tasks tab in the Jobs UI and click on the active run to review the processing notebook.",
-            "C. They can navigate to the Runs tab in the Jobs UI and click on the active run to review the processing notebook.",
-            "D. There is no way to determine why a Job task is running slowly.",
-            "E. They can navigate to the Tasks tab in the Jobs UI to immediately review the processing notebook."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A single Job runs two notebooks as two separate tasks. A data engineer has noticed that one of the notebooks \nis running slowly in the Jobs current run. The data engineer asks a tech lead for help in identifying why this might be the case. Which \napproach can the tech lead use to identify why the notebook is running slowly as part of the Job?",
-        "alternativas": [
-            "A. They can navigate to the Runs tab in the Jobs UI to immediately review the processing notebook.",
-            "B. They can navigate to the Tasks tab in the Jobs UI and click on the active run to review the processing notebook.",
-            "C. They can navigate to the Runs tab in the Jobs UI and click on the active run to review the processing notebook.",
-            "D. They can navigate to the Tasks tab in the Jobs UI to immediately review the processing notebook."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer has a Job with multiple tasks that runs nightly. Each of the tasks runs slowly because the clusters \ntake a long time to start. \nWhich of the following actions can the data engineer perform to improve the start up time for the clusters used for the Job?",
-        "alternativas": [
-            "A. They can use endpoints available in Databricks SQL",
-            "B. They can use jobs clusters instead of all-purpose clusters",
-            "C. They can configure the clusters to be single-node",
-            "D. They can use clusters that are from a cluster pool",
-            "E. They can configure the clusters to autoscale for larger data sizes"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A new data engineering team team. has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the database customers to fully manage the project. \nWhich of the following commands can be used to grant full permissions on the database to the new data engineering team?",
-        "alternativas": [
-            "A. GRANT USAGE ON DATABASE customers TO team;",
-            "B. GRANT ALL PRIVILEGES ON DATABASE team TO customers;",
-            "C. GRANT SELECT PRIVILEGES ON DATABASE customers TO teams;",
-            "D. GRANT SELECT CREATE MODIFY USAGE PRIVILEGES ON DATABASE customers TO team;",
-            "E. GRANT ALL PRIVILEGES ON DATABASE customers TO team;"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. \nWhich of the following commands can be used to grant the necessary permission on the entire database to the new team?",
-        "alternativas": [
-            "A. GRANT VIEW ON CATALOG customers TO team;",
-            "B. GRANT CREATE ON DATABASE customers TO team;",
-            "C. GRANT USAGE ON CATALOG team TO customers;",
-            "D. GRANT CREATE ON DATABASE team TO customers;",
-            "E. GRANT USAGE ON DATABASE customers TO team;"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "Which of the following is a benefit of the Databricks Lakehouse Platform embracing open source technologies? ",
-        "alternativas": [
-            "A. Cloud-specific integrations ",
-            "B. Simplified governance ",
-            "C. Ability to scale storage ",
-            "D. Ability to scale workloads ",
-            "E. Avoiding vendor lock-in "
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which of the following locations can the data engineer review their permissions on the table?",
-        "alternativas": [
-            "A. Databricks Filesystem",
-            "B. Jobs",
-            "C. Dashboards",
-            "D. Repos",
-            "E. Data Explorer"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer has been given a new record of data: \nid STRING = 'a1' \nrank INTEGER = 6 \nrating FLOAT = 9.4 \nWhich of the following SQL commands can be used to append the new record to an existing Delta table my_table?",
-        "alternativas": [
-            "A. INSERT INTO my_table VALUES ('a1', 6, 9.4)",
-            "B. my_table UNION VALUES ('a1', 6, 9.4)",
-            "C. INSERT VALUES ( 'a1' , 6, 9.4) INTO my_table",
-            "D. UPDATE my_table VALUES ('a1', 6, 9.4)",
-            "E. UPDATE VALUES ('a1', 6, 9.4) my_table"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which of the following describes a scenario in which a data engineer will want to use a single-node cluster? ",
-        "alternativas": [
-            "A. When they are working interactively with a small amount of data",
-            "B. When they are running automated reports to be refreshed as quickly as possible",
-            "C. When they are working with SQL within Databricks SQL",
-            "D. When they are concerned about the ability to automatically scale with larger data",
-            "E. When they are manually running reports with a large amount of data"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer has realized that the data files associated with a Delta table are incredibly small. They want to \ncompact the small files to form larger files to improve performance. Which of the following keywords can be used to compact the small \nfiles?",
-        "alternativas": [
-            "A. REDUCE",
-            "B. OPTIMIZE",
-            "C. COMPACTION",
-            "D. REPARTITION",
-            "E. VACUUM"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "In which of the following file formats is data from Delta Lake tables primarily stored?",
-        "alternativas": [
-            "A. Delta",
-            "B. CSV",
-            "C. Parquet",
-            "D. JSON",
-            "E. A proprietary, optimized format specific to Databricks"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which of the following is stored in the Databricks customers cloud account?",
-        "alternativas": [
-            "A. Databricks web application",
-            "B. Cluster management metadata",
-            "C. Repos",
-            "D. Data",
-            "E. Notebooks"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following can be used to simplify and unify siloed data architectures that are specialized for specific \nuse cases?",
-        "alternativas": [
-            "A. None of these",
-            "B. Data lake",
-            "C. Data warehouse",
-            "D. All of these",
-            "E. Data lakehouse"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data architect has determined that a table with the following format is necessary:\n\n employeeId  | startDate  | avgRating \n------------|-----------|---------- \n a1         | 2009-01-06 | 5.5 \n a2         | 2018-11-21 | 7.1 \n\nWhich of the following code blocks uses SQL DDL commands to create an empty Delta table in this format, regardless of whether a table already exists with this name?",
-        "alternativas": [
-            "A. CREATE TABLE IF NOT EXISTS table_name ( employeeId STRING, startDate DATE, avgRating FLOAT );",
-            "B. CREATE OR REPLACE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT USING DELTA;",
-            "C. CREATE OR REPLACE TABLE table_name WITH COLUMNS ( employeeId STRING, startDate DATE, avgRating FLOAT ) USING DELTA;",
-            "D. CREATE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT;",
-            "E. CREATE OR REPLACE TABLE table_name ( employeeId STRING, startDate DATE, avgRating FLOAT );"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer has a Python notebook in Databricks, but they need to use SQL to accomplish a specific task \nwithin a cell. They still want all of the other cells to use Python without making any changes to those cells. Which of the following \ndescribes how the data engineer can use SQL within a cell of their Python notebook?",
-        "alternativas": [
-            "A. It is not possible to use SQL in a Python notebook",
-            "B. They can attach the cell to a SQL endpoint rather than a Databricks cluster",
-            "C. They can simply write SQL syntax in the cell",
-            "D. They can add %sql to the first line of the cell",
-            "E. They can change the default language of the notebook to SQL"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following describes a benefit of creating an external table from Parquet rather than CSV when \nusing a CREATE TABLE AS SELECT statement?",
-        "alternativas": [
-            "A. Parquet files can be partitioned",
-            "B. CREATE TABLE AS SELECT statements cannot be used on files",
-            "C. Parquet files have a well-defined schema",
-            "D. Parquet files have the ability to be optimized",
-            "E. Parquet files will become Delta tables"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer wants to create a relational object by pulling data from two tables. The relational object does \nnot need to be used by other data engineers in other sessions. In order to save on storage costs, the data engineer wants to avoid \ncopying and storing physical data. Which of the following relational objects should the data engineer create?",
-        "alternativas": [
-            "A. Spark SQL Table",
-            "B. View",
-            "C. Database",
-            "D. Temporary view",
-            "E. Delta Table"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data analyst has developed a query that runs against Delta table. They want help from the data engineering \nteam to implement a series of tests to ensure the data returned by the query is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following operations could the data engineering team use to run the query and operate with \nthe results in PySpark?",
-        "alternativas": [
-            "A. SELECT * FROM sales",
-            "B. spark.delta.table",
-            "C. spark.sql",
-            "D. There is no way to share data between PySpark and SQL.",
-            "E. spark.table"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "Which of the following commands will return the number of null values in the member_id column?",
-        "alternativas": [
-            "A. SELECT count(member_id) FROM my_table;",
-            "B. SELECT count(member_id) - count_null(member_id) FROM my_table;",
-            "C. SELECT count_if(member_id IS NULL) FROM my_table;",
-            "D. SELECT null(member_id) FROM my_table;",
-            "E. SELECT count_null(member_id) FROM my_table;"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer needs to apply custom logic to identify employees with more than 5 years of experience in the array column `employees` in table `stores`. The custom logic should create a new column `exp_employees` that is an array of all employees with more than 5 years of experience for each row. In order to apply this custom logic at scale, the data engineer wants to use the `FILTER` higher-order function. Which of the following code blocks successfully completes this task?",
-        "alternativas": [
-            "A. SELECT store_id, employees, FILTER(employees, i -> i.years_exp > 5) AS exp_employees FROM stores;",
-            "B. SELECT store_id, employees, FILTER(exp_employees, years_exp > 5) AS exp_employees FROM stores;",
-            "C. SELECT store_id, employees, FILTER(employees, years_exp > 5) AS exp_employees FROM stores;",
-            "D. SELECT store_id, employees, CASE WHEN employees.years_exp > 5 THEN employees ELSE NULL END AS exp_employees FROM stores;",
-            "E. SELECT store_id, employees, FILTER(exp_employees, i -> i.years_exp > 5) AS exp_employees FROM stores;"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to \nconstruct a Python code block that will run the query using table_name. They have the following incomplete code block: \n____(f\"SELECT customer_id, spend FROM {table_name}\"). Which of the following can be used to fill in the blank to successfully complete \nthe task?",
-        "alternativas": [
-            "A. spark.delta.sql",
-            "B. spark.delta.table",
-            "C. spark.table",
-            "D. dbutils.sql",
-            "E. spark.sql"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer has created a new database using the following command: CREATE DATABASE IF NOT EXISTS \ncustomer360; In which of the following locations will the customer360 database be located?",
-        "alternativas": [
-            "A. dbfs:/user/hive/database/customer360",
-            "B. dbfs:/user/hive/warehouse",
-            "C. dbfs:/user/hive/customer360",
-            "D. More information is needed to determine the correct response",
-            "E. dbfs:/user/hive/database"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer that is new to using Python needs to create a Python function to add two integers together and nreturn the sum? Which of the following code blocks can the data engineer use to complete this task?",
-        "alternativas": [
-            "A. function add_integers(x, y): return x + y",
-            "B. function add_integers(x, y): x + y",
-            "C. def add_integers(x, y): print(x + y)",
-            "D. def add_integers(x, y): return x + y",
-            "E. def add_integers(x, y): x + y"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "In which of the following scenarios should a data engineer use the MERGE INTO command instead of the INSERT \nINTO command?",
-        "alternativas": [
-            "A. When the location of the data needs to be changed",
-            "B. When the target table is an external table",
-            "C. When the source table can be deleted",
-            "D. When the target table cannot contain duplicate records",
-            "E. When the source is not a Delta table"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following must be specified when creating a new Delta Live Tables pipeline?",
-        "alternativas": [
-            "A. A key-value pair configuration",
-            "B. The preferred DBU/hour cost",
-            "C. A path to cloud storage location for the written data",
-            "D. A location of a target database for the written data",
-            "E. At least one notebook library to be executed"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer needs to create a table in Databricks using data from a CSV file at location /path/to/csv. They \nrun the following command: \n \n \n \nWhich of the following lines of code fills in the above blank to successfully complete the task?",
-        "alternativas": [
-            "A. None of these lines of code are needed to successfully complete the task",
-            "B. USING CSV",
-            "C. FROM CSV",
-            "D. USING DELTA",
-            "E. FROM \"path/to/csv\""
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has configured a Structured Streaming job to read from a table, manipulate the data, and then \nperform a streaming write into a new table. The code block used by the data engineer is below: \n \n \n \nIf the data engineer only wants the query to process all of the available data in as many batches as required, which of the following lines \nof code should the data engineer use to fill in the blank?",
-        "alternativas": [
-            "A. processingTime(1)",
-            "B. trigger(availableNow=True)",
-            "C. trigger(parallelBatch=True)",
-            "D. trigger(processingTime=\"once\")",
-            "E. trigger(continuous=\"once\")"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Which of \nthe following describes why Auto Loader inferred all of the columns to be of the string type?",
-        "alternativas": [
-            "A. There was a type mismatch between the specific schema and the inferred schema",
-            "B. JSON data is a text-based format",
-            "C. Auto Loader only works with string data",
-            "D. All of the fields had at least one null value",
-            "E. Auto Loader cannot infer the schema of ingested data"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which of the following data workloads will utilize a Gold table as its source?",
-        "alternativas": [
-            "A. A job that enriches data by parsing its timestamps into a human-readable format",
-            "B. A job that aggregates uncleaned data to create standard summary statistics",
-            "C. A job that cleans data by removing malformatted records",
-            "D. A job that queries aggregated data designed to feed into a dashboard",
-            "E. A job that ingests raw data from a streaming source into the Lakehouse"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following describes the type of workloads that are always compatible with Auto Loader?",
-        "alternativas": [
-            "A. Streaming workloads",
-            "B. Machine learning workloads",
-            "C. Serverless workloads",
-            "D. Batch workloads",
-            "E. Dashboard workloads"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer has joined an existing project and they see the following query in the project repository: \nCREATE STREAMING LIVE TABLE loyal_customers AS \nSELECT customer_id - \nFROM STREAM(LIVE.customers) \nWHERE loyalty_level = 'high'; \nWhich of the following describes why the STREAM function is included in the query? ",
-        "alternativas": [
-            "A. The STREAM function is not needed and will cause an error.",
-            "B. The table being created is a live table.",
-            "C. The customers table is a streaming live table.",
-            "D. The customers table is a reference to a Structured Streaming query on a PySpark DataFrame.",
-            "E. The data in the customers table has been updated since its last run."
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer is using the following code block as part of a batch ingestion pipeline to read from a composable transactions_df = (spark.read.schema(schema).format(\"delta\") .table(\"transactions\") ) ",
-        "alternativas": [
-            "A. Replace predict with a stream-friendly prediction function",
-            "B. Replace schema(schema) with option (\"maxFilesPerTrigger\", 1) ",
-            "C. Replace \"transactions\" with the path to the location of the Delta table ",
-            "D. Replace format(\"delta\") with format(\"stream\") ",
-            "E. Replace spark.read with spark.readStream"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer and data analyst are working together on a data pipeline. The data engineer is working on the \nraw, bronze, and silver layers of the pipeline using Python, and the data analyst is working on the gold layer of the pipeline using SQL. The \nraw source of the pipeline is a streaming input. They now want to migrate their pipeline to use Delta Live Tables. Which of the following \nchanges will need to be made to the pipeline when migrating to Delta Live Tables?",
-        "alternativas": [
-            "A. None of these changes will need to be made",
-            "B. The pipeline will need to stop using the medallion-based multi-hop architecture",
-            "C. The pipeline will need to be written entirely in SQL",
-            "D. The pipeline will need to use a batch source in place of a streaming source",
-            "E. The pipeline will need to be written entirely in Python"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which of the following statements regarding the relationship between Silver tables and Bronze tables is always \ntrue?",
-        "alternativas": [
-            "A. Silver tables contain a less refined, less clean view of data than Bronze data.",
-            "B. Silver tables contain aggregates while Bronze data is unaggregated.",
-            "C. Silver tables contain more data than Bronze tables.",
-            "D. Silver tables contain a more refined and cleaner view of data than Bronze tables.",
-            "E. Silver tables contain less data than Bronze tables."
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineering team has noticed that their Databricks SQL queries are running too slowly when they are \nsubmitted to a non-running SQL endpoint. The data engineering team wants this issue to be resolved. Which of the following approaches \ncan the team use to reduce the time it takes to return results in this scenario?",
-        "alternativas": [
-            "A. They can turn on the Serverless feature for the SQL endpoint and change the Spot Instance Policy to \"Reliability Optimized.\"",
-            "B. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "C. They can increase the cluster size of the SQL endpoint.",
-            "D. They can turn on the Serverless feature for the SQL endpoint.",
-            "E. They can increase the maximum bound of the SQL endpoints scaling range."
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer has a Job that has a complex run schedule, and they want to transfer that schedule to other \nJobs. Rather than manually selecting each value in the scheduling form in Databricks, which of the following tools can the data engineer \nuse to represent and submit the schedule programmatically?",
-        "alternativas": [
-            "A. pyspark.sql.types.DateType",
-            "B. datetime",
-            "C. pyspark.sql.types.TimestampType",
-            "D. Cron syntax",
-            "E. There is no way to represent and submit this information programmatically"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following approaches should be used to send the Databricks Job owner an email in the case that \nthe Job fails?",
-        "alternativas": [
-            "A. Manually programming in an alert system in each cell of the Notebook",
-            "B. Setting up an Alert in the Job page",
-            "C. Setting up an Alert in the Notebook",
-            "D. There is no way to notify the Job owner in the case of Job failure",
-            "E. MLflow Model Registry Webhooks"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "An engineering manager uses a Databricks SQL query to monitor ingestion latency for each data source. The \nmanager checks the results of the query every day, but they are manually rerunning the query each day and waiting for the results. \nWhich of the following approaches can the manager use to ensure the results of the query are updated each day?",
-        "alternativas": [
-            "A. They can schedule the query to refresh every 1 day from the SQL endpoints page in Databricks SQL.",
-            "B. They can schedule the query to refresh every 12 hours from the SQL endpoints page in Databricks SQL.",
-            "C. They can schedule the query to refresh every 1 day from the querys page in Databricks SQL.",
-            "D. They can schedule the query to run every 1 day from the Jobs UI.",
-            "E. They can schedule the query to run every 12 hours from the Jobs UI."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "In which of the following scenarios should a data engineer select a Task in the Depends On field of a new \nDatabricks Job Task?",
-        "alternativas": [
-            "A. When another task needs to be replaced by the new task",
-            "B. When another task needs to fail before the new task begins",
-            "C. When another task has the same dependency libraries as the new task",
-            "D. When another task needs to use as little compute resources as possible",
-            "E. When another task needs to successfully complete before the new task begins"
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to a \ndata analytics dashboard for a retail use case. The job has a Databricks SQL query that returns the number of store-level records where \nsales is equal to zero. The data engineer wants their entire team to be notified via a messaging webhook whenever this value is greater \nthan 0. Which of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the \nnumber of stores with $0 in sales is greater than zero?",
-        "alternativas": [
-            "A. They can set up an Alert with a custom template.",
-            "B. They can set up an Alert with a new email alert destination.",
-            "C. They can set up an Alert with one-time notifications.",
-            "D. They can set up an Alert with a new webhook alert destination.",
-            "E. They can set up an Alert without notifications."
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh every hour, but they only want the \nassociated SQL endpoint to be running when it is necessary. The dashboard has multiple queries on multiple datasets associated with it. \nThe data that feeds the dashboard is automatically processed using a Databricks Job. Which of the following approaches can the data \nengineer use to minimize the total running time of the SQL endpoint used in the refresh schedule of their dashboard?",
-        "alternativas": [
-            "A. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "B. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint.",
-            "C. They can reduce the cluster size of the SQL endpoint.",
-            "D. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
-            "E. They can set up the dashboards SQL endpoint to be serverless."
-        ],
-        "resposta": "E"
-    },
-    {
-        "pergunta": "A data engineer needs access to a table new_table, but they do not have the correct permissions. They can ask \nthe table owner for permission, but they do not know who the table owner is. Which of the following approaches can be used to identify \nthe owner of new_table?",
-        "alternativas": [
-            "A. Review the Permissions tab in the tables page in Data Explorer",
-            "B. All of these options can be used to identify the owner of the table",
-            "C. Review the Owner field in the tables page in Data Explorer",
-            "D. Review the Owner field in the tables page in the cloud storage solution",
-            "E. There is no way to identify the owner of the table"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which of the following commands can be used to grant full permissions \non the database to the new data engineering team?",
-        "alternativas": [
-            "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
-            "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
-            "C. GRANT SELECT ON TABLE sales TO team;",
-            "D. GRANT USAGE ON TABLE sales TO team;",
-            "E. GRANT ALL PRIVILEGES ON TABLE team TO sales;"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "Which data lakehouse feature results in improved data quality over a traditional data lake?",
-        "alternativas": [
-            "A. A data lakehouse stores data in open formats.",
-            "B. A data lakehouse allows the use of SQL queries to examine data.",
-            "C. A data lakehouse provides storage solutions for structured and unstructured data.",
-            "D. A data lakehouse supports ACID-compliant transactions."
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake?",
-        "alternativas": [
-            "A. A data lakehouse provides storage solutions for structured and unstructured data.",
-            "B. A data lakehouse supports ACID-compliant transactions. ",
-            "C. A data lakehouse allows the use of SQL queries to examine data.",
-            "D. A data lakehouse stores data in open formats.",
-            "E. A data lakehouse enables machine learning and artificial Intelligence workloads."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "In which scenario will a data team want to utilize cluster pools?",
-        "alternativas": [
-            "A. An automated report needs to be version-controlled across multiple collaborators.",
-            "B. An automated report needs to be runnable by all stakeholders.",
-            "C. An automated report needs to be refreshed as quickly as possible.",
-            "D. An automated report needs to be made reproducible."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "What is hosted completely in the control plane of the classic Databricks architecture?",
-        "alternativas": [
-            "A. Worker node",
-            "B. Databricks web application",
-            "C. Driver node",
-            "D. Databricks Filesystem"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their \nproject using Databricks Repos. What is an advantage of using Databricks Repos over the Databricks Notebooks versioning?",
-        "alternativas": [
-            "A. Databricks Repos allows users to revert to previous versions of a notebook",
-            "B. Databricks Repos is wholly housed within the Databricks Data Intelligence Platform",
-            "C. Databricks Repos provides the ability to comment on specific changes",
-            "D. Databricks Repos supports the use of multiple branches"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "What is a benefit of the Databricks Lakehouse Architecture embracing open source technologies?",
-        "alternativas": [
-            "A. Avoiding vendor lock-in",
-            "B. Simplified governance",
-            "C. Ability to scale workloads",
-            "D. Cloud-specific integrations"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which location can the data engineer review their permissions on the table?",
-        "alternativas": [
-            "A. Jobs",
-            "B. Dashboards",
-            "C. Catalog Explorer",
-            "D. Repos"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer is running code in a Databricks Repo that is cloned from a central Git repository. A colleague of \nthe data engineer informs them that changes have been made and synced to the central Git repository. The data engineer now needs to \nsync their Databricks Repo to get the changes from the central Git repository.  Which Git operation does the data engineer need to run to \naccomplish this task?",
-        "alternativas": [
-            "A. Clone",
-            "B. Pull",
-            "C. Merge",
-            "D. Push"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which file format is used for storing Delta Lake Table?",
-        "alternativas": [
-            "A. CSV",
-            "B. Parquet",
-            "C. JSON",
-            "D. Delta"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has realized that the data files associated with a Delta table are incredibly small. They want to \ncompact the small files to form larger files to improve performance. Which keyword can be used to compact the small files?",
-        "alternativas": [
-            "A. OPTIMIZE",
-            "B. VACUUM",
-            "C. COMPACTION",
-            "D. REPARTITION"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data architect has determined that a table of the following format is necessary: \n \n \n \nWhich code block is used by SQL DDL command to create an empty Delta table in the above format regardless of whether a table already \nexists with this name?",
-        "alternativas": [
-            "A. CREATE OR REPLACE TABLE table_name ( employeeId STRING, startDate DATE, avgRating FLOAT )",
-            "B. CREATE OR REPLACE TABLE table_name WITH COLUMNS ( employeeId STRING, startDate DATE, avgRating FLOAT ) USING \nDELTA",
-            "C. CREATE TABLE IF NOT EXISTS table_name ( employeeId STRING, startDate DATE, avgRating FLOAT )",
-            "D. CREATE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "What is a benefit of creating an external table from Parquet rather than CSV when using a CREATE TABLE AS \nSELECT statement?",
-        "alternativas": [
-            "A. Parquet files can be partitioned",
-            "B. Parquet files will become Delta tables",
-            "C. Parquet files have a well-defined schema",
-            "D. Parquet files have the ability to be optimized"
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data engineer runs a statement every day to copy the previous days sales into the table transactions. Each \ndays sales are in their own file in the location \"/transactions/raw\". Today, the data engineer runs the following command to complete \nthis task: \n \n \n \nAfter running the command today, the data engineer notices that the number of records in table transactions has not changed. \nWhat explains why the statement might not have copied any new records into the table?",
-        "alternativas": [
-            "A. The format of the files to be copied were not included with the FORMAT_OPTIONS keyword.",
-            "B. The COPY INTO statement requires the table to be refreshed to view the copied rows.",
-            "C. The previous days file has already been copied into the table.",
-            "D. The PARQUET file format does not support COPY INTO."
-        ],
-        "resposta": "C"
-    },
-    {
-        "pergunta": "A data analyst has created a Delta table sales that is used by the entire data analysis team. They want help from \nthe data engineering team to implement a series of tests to ensure the data is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which command could the data engineering team use to access sales in PySpark?",
-        "alternativas": [
-            "A. SELECT * FROM sales",
-            "B. spark.table(\"sales\")",
-            "C. spark.sql(\"sales\")",
-            "D. spark.delta.table(\"sales\")"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has created a new database using the following command: \nCREATE DATABASE IF NOT EXISTS customer360; \nIn which location will the customer360 database be located?",
-        "alternativas": [
-            "A. dbfs:/user/hive/database/customer360",
-            "B. dbfs:/user/hive/warehouse",
-            "C. dbfs:/user/hive/customer360",
-            "D. dbfs:/user/hive/database"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer needs to create a table in Databricks using data from a CSV file at location `/path/to/csv`.\n\nThey run the following command:\n\nWhich of the following lines of code fills in the above blank to successfully complete the task?",
-        "alternativas": [
-            "A. FROM \"path/to/csv\"",
-            "B. USING CSV",
-            "C. FROM CSV",
-            "D. USING DELTA"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which SQL keyword can be used to convert a table from a long format to a wide format?",
-        "alternativas": [
-            "A. TRANSFORM",
-            "B. PIVOT",
-            "C. SUM",
-            "D. CONVERT"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to construct a Python code block that will run the query using table_name. They have the following incomplete code block: ____(f\\\"SELECT customer_id, spend FROM {table_name}\\\"). What can be used to fill in the blank to successfully complete the task?",
-        "alternativas": [
-            "A. spark.delta.sql",
-            "B. spark.sql",
-            "C. spark.table",
-            "D. dbutils.sql"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "What is used by Spark to record the offset range of the data being processed in each trigger in order for \nStructured Streaming to reliably track the exact progress of the processing so that it can handle any kind of failure by restarting and/or \nreprocessing?",
-        "alternativas": [
-            "A. Checkpointing and Write-ahead Logs",
-            "B. Replayable Sources and Idempotent Sinks",
-            "C. Write-ahead Logs and Idempotent Sinks",
-            "D. Checkpointing and Idempotent Sinks"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "What describes when to use the CREATE STREAMING LIVE TABLE (formerly CREATE INCREMENTAL LIVE TABLE) \nsyntax over the CREATE LIVE TABLE syntax when creating Delta Live Tables (DLT) tables using SQL?",
-        "alternativas": [
-            "A. CREATE STREAMING LIVE TABLE should be used when the subsequent step in the DLT pipeline is static.",
-            "B. CREATE STREAMING LIVE TABLE should be used when data needs to be processed incrementally.",
-            "C. CREATE STREAMING LIVE TABLE should be used when data needs to be processed through complicated aggregations.",
-            "D. CREATE STREAMING LIVE TABLE should be used when the previous step in the DLT pipeline is static."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which type of workloads are compatible with Auto Loader?",
-        "alternativas": [
-            "A. Streaming workloads",
-            "B. Machine learning workloads",
-            "C. Serverless workloads",
-            "D. Batch workloads"
-        ],
-        "resposta": "A"
-    },
-    {
-        "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Why has \nAuto Loader inferred all of the columns to be of the string type?",
-        "alternativas": [
-            "A. Auto Loader cannot infer the schema of ingested data",
-            "B. JSON data is a text-based format",
-            "C. Auto Loader only works with string data",
-            "D. All of the fields had at least one null value"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which statement regarding the relationship between Silver tables and Bronze tables is always true?",
-        "alternativas": [
-            "A. Silver tables contain a less refined, less clean view of data than Bronze data.",
-            "B. Silver tables contain aggregates while Bronze data is unaggregated.",
-            "C. Silver tables contain more data than Bronze tables.",
-            "D. Silver tables contain less data than Bronze tables."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "Which query is performing a streaming hop from raw data to a Bronze table?",
-        "alternativas": [
-            "A. \n(spark.table(\"sales\")\n .groupBy(\"store\")\n .agg(sum(\"sales\"))\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"complete\")\n .table(\"newSales\"))",
-            "B. \n(spark.read.load(rawSalesLocation)\n .write\n .mode(\"append\")\n .table(\"newSales\"))",
-            "C. \n(spark.table(\"sales\")\n .withColumn(\"avgPrice\", col(\"sales\") / col(\"units\"))\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"append\")\n .table(\"newSales\"))",
-            "D. \n(spark.readStream.load(rawSalesLocation)\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"append\")\n .table(\"newSales\"))"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A data engineer has a Job with multiple tasks that runs nightly. Each of the tasks runs slowly because the \nclusters take a long time to start. Which action can the data engineer perform to improve the start up time for the clusters used for the \nJob?",
-        "alternativas": [
-            "A. They can use endpoints available in Databricks SQL",
-            "B. They can use jobs clusters instead of all-purpose clusters",
-            "C. They can configure the clusters to autoscale for larger data sizes",
-            "D. They can use clusters that are from a cluster pool"
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A data analysis team has noticed that their Databricks SQL queries are running too slowly when connected to \ntheir always-on SQL endpoint. They claim that this issue is present when many members of the team are running small queries \nsimultaneously. They ask the data engineering team for help. The data engineering team notices that each of the teams queries uses the \nsame SQL endpoint. Which approach can the data engineering team use to improve the latency of the teams queries?",
-        "alternativas": [
-            "A. They can increase the cluster size of the SQL endpoint.",
-            "B. They can increase the maximum bound of the SQL endpoints scaling range.",
-            "C. They can turn on the Auto Stop feature for the SQL endpoint.",
-            "D. They can turn on the Serverless feature for the SQL endpoint."
-        ],
-        "resposta": "B"
-    },
-    {
-        "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. Which command can be used to grant the \nnecessary permission on the entire database to the new team?",
-        "alternativas": [
-            "A. GRANT VIEW ON CATALOG customers TO team;",
-            "B. GRANT CREATE ON DATABASE customers TO team;",
-            "C. GRANT USAGE ON CATALOG team TO customers;",
-            "D. GRANT USAGE ON DATABASE customers TO team;"
-        ],
-        "resposta": "D"
-    },
-    {
-        "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which command can be used to grant full permissions on the database \nto the new data engineering team?",
-        "alternativas": [
-            "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
-            "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
-            "C. GRANT SELECT ON TABLE sales TO team;",
-            "D. GRANT ALL PRIVILEGES ON TABLE team TO sales;"
-        ],
-        "resposta": "A"
-    }
+  {
+    "pergunta": "A data organization leader is upset about the data analysis teams reports being different from the data \nengineering teams reports. The leader believes the siloed nature of their organizations data engineering and data analysis architectures \nis to blame. Which of the following describes how a data lakehouse could alleviate this issue?",
+    "alternativas": [
+      "A. Both teams would autoscale their work as data size evolves",
+      "B. Both teams would use the same source of truth for their work",
+      "C. Both teams would reorganize to report to the same department",
+      "D. Both teams would be able to collaborate on projects in real-time",
+      "E. Both teams would respond more quickly to ad-hoc requests"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which of the following describes a scenario in which a data team will want to utilize cluster pools?",
+    "alternativas": [
+      "A. An automated report needs to be refreshed as quickly as possible.",
+      "B. An automated report needs to be made reproducible.",
+      "C. An automated report needs to be tested to identify errors.",
+      "D. An automated report needs to be version-controlled across multiple collaborators.",
+      "E. An automated report needs to be runnable by all stakeholders."
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which of the following is hosted completely in the control plane of the classic Databricks architecture?",
+    "alternativas": [
+      "A. Worker node",
+      "B. JDBC data source",
+      "C. Databricks web application",
+      "D. Databricks Filesystem",
+      "E. Driver node"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which of the following benefits of using the Databricks Lakehouse Platform is provided by Delta Lake?",
+    "alternativas": [
+      "A. The ability to manipulate the same data using a variety of languages",
+      "B. The ability to collaborate in real time on a single notebook",
+      "C. The ability to set up alerts for query failures",
+      "D. The ability to support batch and streaming workloads",
+      "E. The ability to distribute complex data operations"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following describes the storage organization of a Delta table?",
+    "alternativas": [
+      "A. Delta tables are stored in a single file that contains data, history, metadata, and other attributes.",
+      "B. Delta tables store their data in a single file and all metadata in a collection of files in a separate location.",
+      "C. Delta tables are stored in a collection of files that contain data, history, metadata, and other attributes.",
+      "D. Delta tables are stored in a collection of files that contain only the data stored within the table.",
+      "E. Delta tables are stored in a single file that contains only the data stored within the table."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which of the following code blocks will remove the rows where the value in column age is greater than 25 from \nthe existing Delta table my_table and save the updated table?",
+    "alternativas": [
+      "A. SELECT * FROM my_table WHERE age > 25;",
+      "B. UPDATE my_table WHERE age > 25;",
+      "C. DELETE FROM my_table WHERE age > 25;",
+      "D. UPDATE my_table WHERE age <= 25;",
+      "E. DELETE FROM my_table WHERE age <= 25;"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer has realized that they made a mistake when making a daily update to a table. They need to use \nDelta time travel to restore the table to a version that is 3 days old. However, when the data engineer attempts to time travel to the \nolder version, they are unable to restore the data because the data files have been deleted. Which of the following explains why the data \nfiles are no longer present?",
+    "alternativas": [
+      "A. The VACUUM command was run on the table",
+      "B. The TIME TRAVEL command was run on the table",
+      "C. The DELETE HISTORY command was run on the table",
+      "D. The OPTIMIZE command was nun on the table",
+      "E. The HISTORY command was run on the table"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which of the following Git operations must be performed outside of Databricks Repos?",
+    "alternativas": [
+      "A. Commit",
+      "B. Pull",
+      "C. Push",
+      "D. Clone",
+      "E. Merge"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake? \nAnswer : C \n• \nA. A data lakehouse provides storage solutions for structured and unstructured data. \n• \nB. A data lakehouse supports ACID-compliant transactions. \n• \nC. A data lakehouse allows the use of SQL queries to examine data. \n• \nD. A data lakehouse stores data in open formats. \n• \nE. A data lakehouse enables machine learning and artificial Intelligence workloads. \n \nQuestion 10 ( Exam A ) - A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their \nproject using Databricks Repos. Which of the following is an advantage of using Databricks Repos over the Databricks Notebooks \nversioning?",
+    "alternativas": [
+      "A. Databricks Repos automatically saves development progress",
+      "B. Databricks Repos supports the use of multiple branches",
+      "C. Databricks Repos allows users to revert to previous versions of a notebook",
+      "D. Databricks Repos provides the ability to comment on specific changes",
+      "E. Databricks Repos is wholly housed within the Databricks Lakehouse Platform"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has left the organization. The data team needs to transfer ownership of the data engineers \nDelta tables to a new data engineer. The new data engineer is the lead engineer on the data team. Assuming the original data engineer \nno longer has access, which of the following individuals must be the one to transfer ownership of the Delta tables in Data Explorer? ",
+    "alternativas": [
+      "A. Databricks account representative ",
+      "B. This transfer is not possible ",
+      "C. Workspace administrator ",
+      "D. New lead data engineer ",
+      "E. Original data engineer "
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data analyst has created a Delta table sales that is used by the entire data analysis team. They want help from \nthe data engineering team to implement a series of tests to ensure the data is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following commands could the data engineering team use to access sales in PySpark?",
+    "alternativas": [
+      "A. SELECT * FROM sales",
+      "B. There is no way to share data between PySpark and SQL. ",
+      "C. spark.sql(\"sales\") ",
+      "D. spark.delta.table(\"sales\") ",
+      "E. spark.table(\"sales\") "
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "Which of the following commands will return the location of database customer360?",
+    "alternativas": [
+      "A. DESCRIBE LOCATION customer360;",
+      "B. DROP DATABASE customer360;",
+      "C. DESCRIBE DATABASE customer360;",
+      "D. ALTER DATABASE customer360 SET DBPROPERTIES ('location' = '/user'};",
+      "E. USE DATABASE customer360;"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer wants to create a new table containing the names of customers that live in France. \nThey have written the following command: \n \nA senior data engineer mentions that it is organization policy to include a table property indicating that the new table includes personally \nidentifiable information (PII). \nWhich of the following lines of code fills in the above blank to successfully complete the task?",
+    "alternativas": [
+      "A. There is no way to indicate whether a table contains PII.",
+      "B. \"COMMENT PII\"",
+      "C. TBLPROPERTIES PII",
+      "D. COMMENT \"Contains PII\"",
+      "E. PII"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following benefits is provided by the array functions from Spark SQL?",
+    "alternativas": [
+      "A. An ability to work with data in a variety of types at once",
+      "B. An ability to work with data within certain partitions and windows",
+      "C. An ability to work with time-related data in specified intervals",
+      "D. An ability to work with complex, nested data ingested from JSON files",
+      "E. An ability to work with an array of tables for procedural automation"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following commands can be used to write data into a Delta table while avoiding the writing of \nduplicate records?",
+    "alternativas": [
+      "A. DROP",
+      "B. IGNORE",
+      "C. MERGE",
+      "D. APPEND",
+      "E. INSERT"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which command can be used to write data into a Delta table while avoiding the writing of duplicate records?",
+    "alternativas": [
+      "A. DROP",
+      "B. INSERT",
+      "C. MERGE",
+      "D. APPEND"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer needs to apply custom logic to the string column `city` in table `stores` for a specific use case. In order to apply this custom logic at scale, the data engineer wants to create a SQL user-defined function (UDF). Which of the following code blocks creates this SQL UDF?",
+    "alternativas": [
+      "A. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;",
+      "B. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING AS (CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END);",
+      "C. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING BEGIN RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END; END;",
+      "D. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING AS CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;",
+      "E. CREATE FUNCTION combine_nyc(city STRING) RETURNS STRING RETURN CASE WHEN city = 'brooklyn' THEN 'new york' ELSE city END;"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data analyst has a series of queries in a SQL program. The data analyst wants this program to run every day. \nThey only want the final query in the program to run on Sundays. They ask for help from the data engineering team to complete this task. \nWhich of the following approaches could be used by the data engineering team to complete this task?",
+    "alternativas": [
+      "A. They could submit a feature request with Databricks to add this functionality.",
+      "B. They could wrap the queries using PySpark and use Pythons control flow system to determine when to run the final query.",
+      "C. They could only run the entire program on Sundays.",
+      "D. They could automatically restrict access to the source table in the final query so that it is only accessible on Sundays.",
+      "E. They could redesign the data model to separate the data used in the final query into a new table."
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer only wants to execute the final block of a Python program if the Python variable `day_of_week` is equal to `1` and the Python variable `review_period` is `True`. Which of the following control flow statements should the data engineer use to begin this conditionally executed code block?",
+    "alternativas": [
+      "A. if day_of_week == 1 and review_period:",
+      "B. if day_of_week == 1 and review_period == \"True\":",
+      "C. if day_of_week == 1 and review_period == True:",
+      "D. if day_of_week == 1 & review_period:",
+      "E. if (day_of_week == 1) and (review_period == True):"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table. The data engineer wants to delete all table \nmetadata and data. \nThey run the following command: \nDROP TABLE IF EXISTS my_table - \nWhile the object no longer appears when they run SHOW TABLES, the data files still exist. \nWhich of the following describes why the data files still exist and the metadata files were deleted?",
+    "alternativas": [
+      "A. The tables data was larger than 10 GB ",
+      "B. The tables data was smaller than 10 GB ",
+      "C. The table was external ",
+      "D. The table did not have a location ",
+      "E. The table was managed "
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table and runs the following command: DROP TABLE \nIF EXISTS my_table; After running this command, the engineer notices that the data files and metadata files have been deleted from the \nfile system. Which of the following describes why all of these files were deleted?",
+    "alternativas": [
+      "A. The table was managed",
+      "B. The tables data was smaller than 10 GB",
+      "C. The tables data was larger than 10 GB",
+      "D. The table was external",
+      "E. The table did not have a location"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer is attempting to drop a Spark SQL table my_table and runs the following command: \nDROP TABLE IF EXISTS my_table; \nAfter running this command, the engineer notices that the data files and metadata files have been deleted from the file system. What is \nthe reason behind the deletion of all these files?",
+    "alternativas": [
+      "A. The table was managed",
+      "B. The tables data was smaller than 10 GB",
+      "C. The table did not have a location",
+      "D. The table was external"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer wants to create a data entity from a couple of tables. The data entity must be used by other \ndata engineers in other sessions. It also must be saved to a physical location. Which of the following data entities should the data \nengineer create?",
+    "alternativas": [
+      "A. Database",
+      "B. Function",
+      "C. View",
+      "D. Temporary view",
+      "E. Table"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer wants to create a data entity from a couple of tables. The data entity must be used by other \ndata engineers in other sessions. It also must be saved to a physical location. Which of the following data entities should the data \nengineer create?",
+    "alternativas": [
+      "A. Table",
+      "B. Function",
+      "C. View",
+      "D. Temporary view"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer runs a statement every day to copy the previous days sales into the table `transactions`. Each days sales are in their own file in the location `/transactions/raw/`. \n\nToday, the data engineer runs the following command to complete this task:\n\nAfter running the command today, the data engineer notices that the number of records in table `transactions` has not changed. \n\nWhich of the following describes why the statement might not have copied any new records into the table?",
+    "alternativas": [
+      "A. The format of the files to be copied were not included with the FORMAT_OPTIONS keyword.",
+      "B. The names of the files to be copied were not included with the FILES keyword.",
+      "C. The previous days file has already been copied into the table.",
+      "D. The PARQUET file format does not support COPY INTO.",
+      "E. The COPY INTO statement requires the table to be refreshed to view the copied rows."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": " A data engineer needs to create a table in Databricks using data from their organizations existing SQLite \ndatabase. \nThey run the following command: \nWhich of the following lines of code fills in the above blank to successfully complete the task? ",
+    "alternativas": [
+      "A. org.apache.spark.sql.jdbc ",
+      "B. autoloader ",
+      "C. DELTA ",
+      "D. sqlite ",
+      "E. org.apache.spark.sql.sqlite "
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineering team has two tables. The first table march_transactions is a collection of all retail \ntransactions in the month of March. The second table april_transactions is a collection of all retail transactions in the month of April. \nThere are no duplicate records between the tables. \nWhich of the following commands should be run to create a new table all_transactions that contains all records from march_transactions \nand april_transactions without duplicate records?",
+    "alternativas": [
+      "A. CREATE TABLE all_transactions AS SELECT * FROM march_transactions INNER JOIN SELECT * FROM april_transactions;",
+      "B. CREATE TABLE all_transactions AS SELECT * FROM march_transactions UNION SELECT * FROM april_transactions;",
+      "C. CREATE TABLE all_transactions AS SELECT * FROM march_transactions OUTER JOIN SELECT * FROM april_transactions;",
+      "D. CREATE TABLE all_transactions AS SELECT * FROM march_transactions INTERSECT SELECT * from april_transactions;",
+      "E. CREATE TABLE all_transactions AS SELECT * FROM march_transactions MERGE SELECT * FROM april_transactions;"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "alternativas": [
+      "A. Unity Catalog",
+      "B. Data Explorer",
+      "C. Delta Lake",
+      "D. Delta Live Tables",
+      "E. Auto Loader"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer is maintaining a data pipeline. Upon data ingestion, the data engineer notices that the source \ndata is starting to have a lower level of quality. The data engineer would like to automate the process of monitoring the quality level. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "alternativas": [
+      "A. Auto Loader",
+      "B. Unity Catalog",
+      "C. Delta Lake",
+      "D. Delta Live Tables"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A Delta Live Table pipeline includes two datasets defined using STREAMING LIVE TABLE. Three datasets are \ndefined against Delta Lake table sources using LIVE TABLE. The table is configured to run in Production mode using the Continuous Pipeline Mode. Assuming previously unprocessed data exists and all definitions are valid, what is the expected outcome after clicking Start to update the pipeline?",
+    "alternativas": [
+      "A. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will persist to allow for additional testing.",
+      "B. All datasets will be updated once and the pipeline will persist without any processing. The compute resources will persist but go unused.",
+      "C. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will be deployed for the update and terminated when the pipeline is stopped.",
+      "D. All datasets will be updated once and the pipeline will shut down. The compute resources will be terminated.",
+      "E. All datasets will be updated once and the pipeline will shut down. The compute resources will persist to allow for additional testing."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A Delta Live Table pipeline includes two datasets defined using STREAMING LIVE TABLE. Three datasets are \ndefined against Delta Lake table sources using LIVE TABLE. The table is configured to run in Production mode using the Continuous \nPipeline Mode. What is the expected outcome after clicking Start to update the pipeline assuming previously unprocessed data exists and \nall definitions are valid?",
+    "alternativas": [
+      "A. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will persist to allow for additional testing.",
+      "B. All datasets will be updated once and the pipeline will shut down. The compute resources will persist to allow for additional testing.",
+      "C. All datasets will be updated at set intervals until the pipeline is shut down. The compute resources will be deployed for the update and terminated when the pipeline is stopped.",
+      "D. All datasets will be updated once and the pipeline will shut down. The compute resources will be terminated."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "In order for Structured Streaming to reliably track the exact progress of the processing so that it can handle any \nkind of failure by restarting and/or reprocessing, which of the following two approaches is used by Spark to record the offset range of the \ndata being processed in each trigger?",
+    "alternativas": [
+      "A. Checkpointing and Write-ahead Logs",
+      "B. Structured Streaming cannot record the offset range of the data being processed in each trigger.",
+      "C. Replayable Sources and Idempotent Sinks",
+      "D. Write-ahead Logs and Idempotent Sinks",
+      "E. Checkpointing and Idempotent Sinks"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which of the following describes the relationship between Gold tables and Silver tables?",
+    "alternativas": [
+      "A. Gold tables are more likely to contain aggregations than Silver tables.",
+      "B. Gold tables are more likely to contain valuable data than Silver tables.",
+      "C. Gold tables are more likely to contain a less refined view of data than Silver tables.",
+      "D. Gold tables are more likely to contain more data than Silver tables.",
+      "E. Gold tables are more likely to contain truthful data than Silver tables."
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "What describes the relationship between Gold tables and Silver tables?",
+    "alternativas": [
+      "A. Gold tables are more likely to contain aggregations than Silver tables.",
+      "B. Gold tables are more likely to contain valuable data than Silver tables.",
+      "C. Gold tables are more likely to contain a less refined view of data than Silver tables.",
+      "D. Gold tables are more likely to contain truthful data than Silver tables."
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which of the following describes the relationship between Bronze tables and raw data?",
+    "alternativas": [
+      "A. Bronze tables contain less data than raw data files.",
+      "B. Bronze tables contain more truthful data than raw data.",
+      "C. Bronze tables contain aggregates while raw data is unaggregated.",
+      "D. Bronze tables contain a less refined view of data than raw data.",
+      "E. Bronze tables contain raw data with a schema applied."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which of the following tools is used by Auto Loader process data incrementally?",
+    "alternativas": [
+      "A. Checkpointing",
+      "B. Spark Structured Streaming",
+      "C. Data Explorer",
+      "D. Unity Catalog",
+      "E. Databricks SQL"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has configured a Structured Streaming job to read from a table, manipulate the data, and then perform a streaming write into a new table.\n\nThe code block used by the data engineer is below:\n\nWhich line of code should the data engineer use to fill in the blank if the data engineer only wants the query to execute a micro-batch to process data every 5 seconds?",
+    "alternativas": [
+      "A. trigger(\"5 seconds\")",
+      "B. trigger(continuous=\"5 seconds\")",
+      "C. trigger(once=\"5 seconds\")",
+      "D. trigger(processingTime=\"5 seconds\")"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION DROP ROW \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
+    "alternativas": [
+      "A. Records that violate the expectation are dropped from the target dataset and loaded into a quarantine table.",
+      "B. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset.",
+      "C. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
+      "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log.",
+      "E. Records that violate the expectation cause the job to fail."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION DROP ROW \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
+    "alternativas": [
+      "A. Records that violate the expectation cause the job to fail.",
+      "B. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset.",
+      "C. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
+      "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A dataset has been defined using Delta Live Tables and includes an expectations clause: \nCONSTRAINT valid_timestamp EXPECT (timestamp > '2020-01-01') ON VIOLATION FAIL UPDATE \nWhat is the expected behavior when a batch of data containing data that violates these constraints is processed?",
+    "alternativas": [
+      "A. Records that violate the expectation are dropped from the target dataset and recorded as invalid in the event log.",
+      "B. Records that violate the expectation cause the job to fail.",
+      "C. Records that violate the expectation are dropped from the target dataset and loaded into a quarantine table.",
+      "D. Records that violate the expectation are added to the target dataset and recorded as invalid in the event log.",
+      "E. Records that violate the expectation are added to the target dataset and flagged as invalid in a field added to the target \ndataset."
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which of the following describes when to use the CREATE STREAMING LIVE TABLE (formerly CREATE \nINCREMENTAL LIVE TABLE) syntax over the CREATE LIVE TABLE syntax when creating Delta Live Tables (DLT) tables using SQL?",
+    "alternativas": [
+      "A. CREATE STREAMING LIVE TABLE should be used when the subsequent step in the DLT pipeline is static.",
+      "B. CREATE STREAMING LIVE TABLE should be used when data needs to be processed incrementally.",
+      "C. CREATE STREAMING LIVE TABLE is redundant for DLT and it does not need to be used.",
+      "D. CREATE STREAMING LIVE TABLE should be used when data needs to be processed through complicated aggregations.",
+      "E. CREATE STREAMING LIVE TABLE should be used when the previous step in the DLT pipeline is static."
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer is designing a data pipeline. The source system generates files in a shared directory that is also \nused by other processes. As a result, the files should be kept as is and will accumulate in the directory. The data engineer needs to \nidentify which files are new since the previous run in the pipeline, and set up the pipeline to only ingest those new files with each run. \nWhich of the following tools can the data engineer use to solve this problem?",
+    "alternativas": [
+      "A. Unity Catalog",
+      "B. Delta Lake",
+      "C. Databricks SQL",
+      "D. Data Explorer",
+      "E. Auto Loader"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "Which of the following Structured Streaming queries is performing a hop from a Silver table to a Gold table? ",
+    "alternativas": [
+      "A. They can set up separate expectations for each table when developing their DLT pipeline.",
+      "B. They cannot determine which table is dropping the records.",
+      "C. They can set up DLT to notify them via email when records are dropped.",
+      "D. They can navigate to the DLT pipeline page, click on each table, and view the data quality statistics.",
+      "E. They can navigate to the DLT pipeline page, click on the “Error” button, and review the present errors."
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer has three tables in a Delta Live Tables (DLT) pipeline. They have configured the pipeline to drop \ninvalid records at each table. They notice that some data is being dropped due to quality concerns at some point in the DLT pipeline. They \nwould like to determine at which table in their pipeline the data is being dropped. Which approach can the data engineer take to identify \nthe table that is dropping the records?",
+    "alternativas": [
+      "A. They can set up separate expectations for each table when developing their DLT pipeline.",
+      "B. They can navigate to the DLT pipeline page, click on the “Error” button, and review the present errors.",
+      "C. They can set up DLT to notify them via email when records are dropped.",
+      "D. They can navigate to the DLT pipeline page, click on each table, and view the data quality statistics."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer has a single-task Job that runs each morning before they begin working. After identifying an \nupstream data issue, they need to set up another task to run a new notebook prior to the original task. \nWhich of the following approaches can the data engineer use to set up the new task?",
+    "alternativas": [
+      "A. They can clone the existing task in the existing Job and update it to run the new notebook.",
+      "B. They can create a new task in the existing Job and then add it as a dependency of the original task.",
+      "C. They can create a new task in the existing Job and then add the original task as a dependency of the new task.",
+      "D. They can create a new job from scratch and add both tasks to run concurrently.",
+      "E. They can clone the existing task to a new Job and then edit it to run the new notebook."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer has a single-task Job that runs each morning before they begin working. After identifying an \nupstream data issue, they need to set up another task to run a new notebook prior to the original task. Which approach can the data \nengineer use to set up the new task?",
+    "alternativas": [
+      "A. They can clone the existing task in the existing Job and update it to run the new notebook.",
+      "B. They can create a new task in the existing Job and then add it as a dependency of the original task.",
+      "C. They can create a new task in the existing Job and then add the original task as a dependency of the new task.",
+      "D. They can create a new job from scratch and add both tasks to run concurrently."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "An engineering manager wants to monitor the performance of a recent project using a Databricks SQL query. For \nthe first week following the projects release, the manager wants the query results to be updated every minute. However, the manager is \nconcerned that the compute resources used for the query will be left running and cost the organization a lot of money beyond the first \nweek of the projects release. \nWhich of the following approaches can the engineering team use to ensure the query does not cost the organization any money beyond \nthe first week of the projects release?",
+    "alternativas": [
+      "A. They can set a limit to the number of DBUs that are consumed by the SQL Endpoint.",
+      "B. They can set the querys refresh schedule to end after a certain number of refreshes.",
+      "C. They cannot ensure the query does not cost the organization money beyond the first week of the projects release.",
+      "D. They can set a limit to the number of individuals that are able to manage the querys refresh schedule.",
+      "E. They can set the querys refresh schedule to end on a certain date in the query scheduler."
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "An engineering manager wants to monitor the performance of a recent project using a Databricks SQL query. \nFor the first week following the projects release, the manager wants the query results to be updated every minute. However, the \nmanager is concerned that the compute resources used for the query will be left running and cost the organization a lot of money \nbeyond the first week of the projects release. Which approach can the engineering team use to ensure the query does not cost the \norganization any money beyond the first week of the projects release?",
+    "alternativas": [
+      "A. They can set a limit to the number of DBUs that are consumed by the SQL Endpoint.",
+      "B. They can set the querys refresh schedule to end after a certain number of refreshes.",
+      "C. They can set the querys refresh schedule to end on a certain date in the query scheduler.",
+      "D. They can set a limit to the number of individuals that are able to manage the querys refresh schedule."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data analysis team has noticed that their Databricks SQL queries are running too slowly when connected to \ntheir always-on SQL endpoint. They claim that this issue is present when many members of the team are running small queries \nsimultaneously. They ask the data engineering team for help. The data engineering team notices that each of the teams queries uses the \nsame SQL endpoint. \nWhich of the following approaches can the data engineering team use to improve the latency of the teams queries?",
+    "alternativas": [
+      "A. They can increase the cluster size of the SQL endpoint.",
+      "B. They can increase the maximum bound of the SQL endpoints scaling range.",
+      "C. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "D. They can turn on the Serverless feature for the SQL endpoint.",
+      "E. They can turn on the Serverless feature for the SQL endpoint and change the Spot Instance Policy to “Reliability Optimized.”"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh once per day, but they only want \nthe associated SQL endpoint to be running when it is necessary. \nWhich of the following approaches can the data engineer use to minimize the total running time of the SQL endpoint used in the refresh \nschedule of their dashboard?",
+    "alternativas": [
+      "A. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
+      "B. They can set up the dashboards SQL endpoint to be serverless.",
+      "C. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "D. They can reduce the cluster size of the SQL endpoint.",
+      "E. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh once per day, but they only want \nthe associated SQL endpoint to be running when it is necessary. Which approach can the data engineer use to minimize the total running \ntime of the SQL endpoint used in the refresh schedule of their dashboard?",
+    "alternativas": [
+      "A. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
+      "B. They can set up the dashboards SQL endpoint to be serverless.",
+      "C. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "D. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to an \nELT job. The ELT job has its Databricks SQL query that returns the number of input records containing unexpected NULL values. The data \nengineer wants their entire team to be notified via a messaging webhook whenever this value reaches 100. \nWhich of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the number \nof NULL values reaches 100?",
+    "alternativas": [
+      "A. They can set up an Alert with a custom template.",
+      "B. They can set up an Alert with a new email alert destination.",
+      "C. They can set up an Alert with a new webhook alert destination.",
+      "D. They can set up an Alert with one-time notifications.",
+      "E. They can set up an Alert without notifications."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to an \nELT job. The ELT job has its Databricks SQL query that returns the number of input records containing unexpected NULL values. The data \nengineer wants their entire team to be notified via a messaging webhook whenever this value reaches 100. Which approach can the data \nengineer use to notify their entire team via a messaging webhook whenever the number of NULL values reaches 100?",
+    "alternativas": [
+      "A. They can set up an Alert with a custom template.",
+      "B. They can set up an Alert with a new email alert destination.",
+      "C. They can set up an Alert with a new webhook alert destination.",
+      "D. They can set up an Alert with one-time notifications."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A single Job runs two notebooks as two separate tasks. A data engineer has noticed that one of the notebooks is \nrunning slowly in the Jobs current run. The data engineer asks a tech lead for help in identifying why this might be the case. \nWhich of the following approaches can the tech lead use to identify why the notebook is running slowly as part of the Job?",
+    "alternativas": [
+      "A. They can navigate to the Runs tab in the Jobs UI to immediately review the processing notebook.",
+      "B. They can navigate to the Tasks tab in the Jobs UI and click on the active run to review the processing notebook.",
+      "C. They can navigate to the Runs tab in the Jobs UI and click on the active run to review the processing notebook.",
+      "D. There is no way to determine why a Job task is running slowly.",
+      "E. They can navigate to the Tasks tab in the Jobs UI to immediately review the processing notebook."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A single Job runs two notebooks as two separate tasks. A data engineer has noticed that one of the notebooks \nis running slowly in the Jobs current run. The data engineer asks a tech lead for help in identifying why this might be the case. Which \napproach can the tech lead use to identify why the notebook is running slowly as part of the Job?",
+    "alternativas": [
+      "A. They can navigate to the Runs tab in the Jobs UI to immediately review the processing notebook.",
+      "B. They can navigate to the Tasks tab in the Jobs UI and click on the active run to review the processing notebook.",
+      "C. They can navigate to the Runs tab in the Jobs UI and click on the active run to review the processing notebook.",
+      "D. They can navigate to the Tasks tab in the Jobs UI to immediately review the processing notebook."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer has a Job with multiple tasks that runs nightly. Each of the tasks runs slowly because the clusters \ntake a long time to start. \nWhich of the following actions can the data engineer perform to improve the start up time for the clusters used for the Job?",
+    "alternativas": [
+      "A. They can use endpoints available in Databricks SQL",
+      "B. They can use jobs clusters instead of all-purpose clusters",
+      "C. They can configure the clusters to be single-node",
+      "D. They can use clusters that are from a cluster pool",
+      "E. They can configure the clusters to autoscale for larger data sizes"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A new data engineering team team. has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the database customers to fully manage the project. \nWhich of the following commands can be used to grant full permissions on the database to the new data engineering team?",
+    "alternativas": [
+      "A. GRANT USAGE ON DATABASE customers TO team;",
+      "B. GRANT ALL PRIVILEGES ON DATABASE team TO customers;",
+      "C. GRANT SELECT PRIVILEGES ON DATABASE customers TO teams;",
+      "D. GRANT SELECT CREATE MODIFY USAGE PRIVILEGES ON DATABASE customers TO team;",
+      "E. GRANT ALL PRIVILEGES ON DATABASE customers TO team;"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. \nWhich of the following commands can be used to grant the necessary permission on the entire database to the new team?",
+    "alternativas": [
+      "A. GRANT VIEW ON CATALOG customers TO team;",
+      "B. GRANT CREATE ON DATABASE customers TO team;",
+      "C. GRANT USAGE ON CATALOG team TO customers;",
+      "D. GRANT CREATE ON DATABASE team TO customers;",
+      "E. GRANT USAGE ON DATABASE customers TO team;"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "Which of the following is a benefit of the Databricks Lakehouse Platform embracing open source technologies? ",
+    "alternativas": [
+      "A. Cloud-specific integrations ",
+      "B. Simplified governance ",
+      "C. Ability to scale storage ",
+      "D. Ability to scale workloads ",
+      "E. Avoiding vendor lock-in "
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which of the following locations can the data engineer review their permissions on the table?",
+    "alternativas": [
+      "A. Databricks Filesystem",
+      "B. Jobs",
+      "C. Dashboards",
+      "D. Repos",
+      "E. Data Explorer"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer has been given a new record of data: \nid STRING = 'a1' \nrank INTEGER = 6 \nrating FLOAT = 9.4 \nWhich of the following SQL commands can be used to append the new record to an existing Delta table my_table?",
+    "alternativas": [
+      "A. INSERT INTO my_table VALUES ('a1', 6, 9.4)",
+      "B. my_table UNION VALUES ('a1', 6, 9.4)",
+      "C. INSERT VALUES ( 'a1' , 6, 9.4) INTO my_table",
+      "D. UPDATE my_table VALUES ('a1', 6, 9.4)",
+      "E. UPDATE VALUES ('a1', 6, 9.4) my_table"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which of the following describes a scenario in which a data engineer will want to use a single-node cluster? ",
+    "alternativas": [
+      "A. When they are working interactively with a small amount of data",
+      "B. When they are running automated reports to be refreshed as quickly as possible",
+      "C. When they are working with SQL within Databricks SQL",
+      "D. When they are concerned about the ability to automatically scale with larger data",
+      "E. When they are manually running reports with a large amount of data"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer has realized that the data files associated with a Delta table are incredibly small. They want to \ncompact the small files to form larger files to improve performance. Which of the following keywords can be used to compact the small \nfiles?",
+    "alternativas": [
+      "A. REDUCE",
+      "B. OPTIMIZE",
+      "C. COMPACTION",
+      "D. REPARTITION",
+      "E. VACUUM"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "In which of the following file formats is data from Delta Lake tables primarily stored?",
+    "alternativas": [
+      "A. Delta",
+      "B. CSV",
+      "C. Parquet",
+      "D. JSON",
+      "E. A proprietary, optimized format specific to Databricks"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which of the following is stored in the Databricks customers cloud account?",
+    "alternativas": [
+      "A. Databricks web application",
+      "B. Cluster management metadata",
+      "C. Repos",
+      "D. Data",
+      "E. Notebooks"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following can be used to simplify and unify siloed data architectures that are specialized for specific \nuse cases?",
+    "alternativas": [
+      "A. None of these",
+      "B. Data lake",
+      "C. Data warehouse",
+      "D. All of these",
+      "E. Data lakehouse"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data architect has determined that a table with the following format is necessary:\n\n employeeId  | startDate  | avgRating \n------------|-----------|---------- \n a1         | 2009-01-06 | 5.5 \n a2         | 2018-11-21 | 7.1 \n\nWhich of the following code blocks uses SQL DDL commands to create an empty Delta table in this format, regardless of whether a table already exists with this name?",
+    "alternativas": [
+      "A. CREATE TABLE IF NOT EXISTS table_name ( employeeId STRING, startDate DATE, avgRating FLOAT );",
+      "B. CREATE OR REPLACE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT USING DELTA;",
+      "C. CREATE OR REPLACE TABLE table_name WITH COLUMNS ( employeeId STRING, startDate DATE, avgRating FLOAT ) USING DELTA;",
+      "D. CREATE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT;",
+      "E. CREATE OR REPLACE TABLE table_name ( employeeId STRING, startDate DATE, avgRating FLOAT );"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer has a Python notebook in Databricks, but they need to use SQL to accomplish a specific task \nwithin a cell. They still want all of the other cells to use Python without making any changes to those cells. Which of the following \ndescribes how the data engineer can use SQL within a cell of their Python notebook?",
+    "alternativas": [
+      "A. It is not possible to use SQL in a Python notebook",
+      "B. They can attach the cell to a SQL endpoint rather than a Databricks cluster",
+      "C. They can simply write SQL syntax in the cell",
+      "D. They can add %sql to the first line of the cell",
+      "E. They can change the default language of the notebook to SQL"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following describes a benefit of creating an external table from Parquet rather than CSV when \nusing a CREATE TABLE AS SELECT statement?",
+    "alternativas": [
+      "A. Parquet files can be partitioned",
+      "B. CREATE TABLE AS SELECT statements cannot be used on files",
+      "C. Parquet files have a well-defined schema",
+      "D. Parquet files have the ability to be optimized",
+      "E. Parquet files will become Delta tables"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer wants to create a relational object by pulling data from two tables. The relational object does \nnot need to be used by other data engineers in other sessions. In order to save on storage costs, the data engineer wants to avoid \ncopying and storing physical data. Which of the following relational objects should the data engineer create?",
+    "alternativas": [
+      "A. Spark SQL Table",
+      "B. View",
+      "C. Database",
+      "D. Temporary view",
+      "E. Delta Table"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data analyst has developed a query that runs against Delta table. They want help from the data engineering \nteam to implement a series of tests to ensure the data returned by the query is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which of the following operations could the data engineering team use to run the query and operate with \nthe results in PySpark?",
+    "alternativas": [
+      "A. SELECT * FROM sales",
+      "B. spark.delta.table",
+      "C. spark.sql",
+      "D. There is no way to share data between PySpark and SQL.",
+      "E. spark.table"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Which of the following commands will return the number of null values in the member_id column?",
+    "alternativas": [
+      "A. SELECT count(member_id) FROM my_table;",
+      "B. SELECT count(member_id) - count_null(member_id) FROM my_table;",
+      "C. SELECT count_if(member_id IS NULL) FROM my_table;",
+      "D. SELECT null(member_id) FROM my_table;",
+      "E. SELECT count_null(member_id) FROM my_table;"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer needs to apply custom logic to identify employees with more than 5 years of experience in the array column `employees` in table `stores`. The custom logic should create a new column `exp_employees` that is an array of all employees with more than 5 years of experience for each row. In order to apply this custom logic at scale, the data engineer wants to use the `FILTER` higher-order function. Which of the following code blocks successfully completes this task?",
+    "alternativas": [
+      "A. SELECT store_id, employees, FILTER(employees, i -> i.years_exp > 5) AS exp_employees FROM stores;",
+      "B. SELECT store_id, employees, FILTER(exp_employees, years_exp > 5) AS exp_employees FROM stores;",
+      "C. SELECT store_id, employees, FILTER(employees, years_exp > 5) AS exp_employees FROM stores;",
+      "D. SELECT store_id, employees, CASE WHEN employees.years_exp > 5 THEN employees ELSE NULL END AS exp_employees FROM stores;",
+      "E. SELECT store_id, employees, FILTER(exp_employees, i -> i.years_exp > 5) AS exp_employees FROM stores;"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to \nconstruct a Python code block that will run the query using table_name. They have the following incomplete code block: \n____(f\"SELECT customer_id, spend FROM {table_name}\"). Which of the following can be used to fill in the blank to successfully complete \nthe task?",
+    "alternativas": [
+      "A. spark.delta.sql",
+      "B. spark.delta.table",
+      "C. spark.table",
+      "D. dbutils.sql",
+      "E. spark.sql"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer has created a new database using the following command: CREATE DATABASE IF NOT EXISTS \ncustomer360; In which of the following locations will the customer360 database be located?",
+    "alternativas": [
+      "A. dbfs:/user/hive/database/customer360",
+      "B. dbfs:/user/hive/warehouse",
+      "C. dbfs:/user/hive/customer360",
+      "D. More information is needed to determine the correct response",
+      "E. dbfs:/user/hive/database"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer that is new to using Python needs to create a Python function to add two integers together and nreturn the sum? Which of the following code blocks can the data engineer use to complete this task?",
+    "alternativas": [
+      "A. function add_integers(x, y): return x + y",
+      "B. function add_integers(x, y): x + y",
+      "C. def add_integers(x, y): print(x + y)",
+      "D. def add_integers(x, y): return x + y",
+      "E. def add_integers(x, y): x + y"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "In which of the following scenarios should a data engineer use the MERGE INTO command instead of the INSERT \nINTO command?",
+    "alternativas": [
+      "A. When the location of the data needs to be changed",
+      "B. When the target table is an external table",
+      "C. When the source table can be deleted",
+      "D. When the target table cannot contain duplicate records",
+      "E. When the source is not a Delta table"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following must be specified when creating a new Delta Live Tables pipeline?",
+    "alternativas": [
+      "A. A key-value pair configuration",
+      "B. The preferred DBU/hour cost",
+      "C. A path to cloud storage location for the written data",
+      "D. A location of a target database for the written data",
+      "E. At least one notebook library to be executed"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer needs to create a table in Databricks using data from a CSV file at location /path/to/csv. They \nrun the following command: \n \n \n \nWhich of the following lines of code fills in the above blank to successfully complete the task?",
+    "alternativas": [
+      "A. None of these lines of code are needed to successfully complete the task",
+      "B. USING CSV",
+      "C. FROM CSV",
+      "D. USING DELTA",
+      "E. FROM \"path/to/csv\""
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has configured a Structured Streaming job to read from a table, manipulate the data, and then \nperform a streaming write into a new table. The code block used by the data engineer is below: \n \n \n \nIf the data engineer only wants the query to process all of the available data in as many batches as required, which of the following lines \nof code should the data engineer use to fill in the blank?",
+    "alternativas": [
+      "A. processingTime(1)",
+      "B. trigger(availableNow=True)",
+      "C. trigger(parallelBatch=True)",
+      "D. trigger(processingTime=\"once\")",
+      "E. trigger(continuous=\"once\")"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Which of \nthe following describes why Auto Loader inferred all of the columns to be of the string type?",
+    "alternativas": [
+      "A. There was a type mismatch between the specific schema and the inferred schema",
+      "B. JSON data is a text-based format",
+      "C. Auto Loader only works with string data",
+      "D. All of the fields had at least one null value",
+      "E. Auto Loader cannot infer the schema of ingested data"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which of the following data workloads will utilize a Gold table as its source?",
+    "alternativas": [
+      "A. A job that enriches data by parsing its timestamps into a human-readable format",
+      "B. A job that aggregates uncleaned data to create standard summary statistics",
+      "C. A job that cleans data by removing malformatted records",
+      "D. A job that queries aggregated data designed to feed into a dashboard",
+      "E. A job that ingests raw data from a streaming source into the Lakehouse"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following describes the type of workloads that are always compatible with Auto Loader?",
+    "alternativas": [
+      "A. Streaming workloads",
+      "B. Machine learning workloads",
+      "C. Serverless workloads",
+      "D. Batch workloads",
+      "E. Dashboard workloads"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer has joined an existing project and they see the following query in the project repository: \nCREATE STREAMING LIVE TABLE loyal_customers AS \nSELECT customer_id - \nFROM STREAM(LIVE.customers) \nWHERE loyalty_level = 'high'; \nWhich of the following describes why the STREAM function is included in the query? ",
+    "alternativas": [
+      "A. The STREAM function is not needed and will cause an error.",
+      "B. The table being created is a live table.",
+      "C. The customers table is a streaming live table.",
+      "D. The customers table is a reference to a Structured Streaming query on a PySpark DataFrame.",
+      "E. The data in the customers table has been updated since its last run."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer is using the following code block as part of a batch ingestion pipeline to read from a composable transactions_df = (spark.read.schema(schema).format(\"delta\") .table(\"transactions\") ) ",
+    "alternativas": [
+      "A. Replace predict with a stream-friendly prediction function",
+      "B. Replace schema(schema) with option (\"maxFilesPerTrigger\", 1) ",
+      "C. Replace \"transactions\" with the path to the location of the Delta table ",
+      "D. Replace format(\"delta\") with format(\"stream\") ",
+      "E. Replace spark.read with spark.readStream"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer and data analyst are working together on a data pipeline. The data engineer is working on the \nraw, bronze, and silver layers of the pipeline using Python, and the data analyst is working on the gold layer of the pipeline using SQL. The \nraw source of the pipeline is a streaming input. They now want to migrate their pipeline to use Delta Live Tables. Which of the following \nchanges will need to be made to the pipeline when migrating to Delta Live Tables?",
+    "alternativas": [
+      "A. None of these changes will need to be made",
+      "B. The pipeline will need to stop using the medallion-based multi-hop architecture",
+      "C. The pipeline will need to be written entirely in SQL",
+      "D. The pipeline will need to use a batch source in place of a streaming source",
+      "E. The pipeline will need to be written entirely in Python"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which of the following statements regarding the relationship between Silver tables and Bronze tables is always \ntrue?",
+    "alternativas": [
+      "A. Silver tables contain a less refined, less clean view of data than Bronze data.",
+      "B. Silver tables contain aggregates while Bronze data is unaggregated.",
+      "C. Silver tables contain more data than Bronze tables.",
+      "D. Silver tables contain a more refined and cleaner view of data than Bronze tables.",
+      "E. Silver tables contain less data than Bronze tables."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineering team has noticed that their Databricks SQL queries are running too slowly when they are \nsubmitted to a non-running SQL endpoint. The data engineering team wants this issue to be resolved. Which of the following approaches \ncan the team use to reduce the time it takes to return results in this scenario?",
+    "alternativas": [
+      "A. They can turn on the Serverless feature for the SQL endpoint and change the Spot Instance Policy to \"Reliability Optimized.\"",
+      "B. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "C. They can increase the cluster size of the SQL endpoint.",
+      "D. They can turn on the Serverless feature for the SQL endpoint.",
+      "E. They can increase the maximum bound of the SQL endpoints scaling range."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer has a Job that has a complex run schedule, and they want to transfer that schedule to other \nJobs. Rather than manually selecting each value in the scheduling form in Databricks, which of the following tools can the data engineer \nuse to represent and submit the schedule programmatically?",
+    "alternativas": [
+      "A. pyspark.sql.types.DateType",
+      "B. datetime",
+      "C. pyspark.sql.types.TimestampType",
+      "D. Cron syntax",
+      "E. There is no way to represent and submit this information programmatically"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following approaches should be used to send the Databricks Job owner an email in the case that \nthe Job fails?",
+    "alternativas": [
+      "A. Manually programming in an alert system in each cell of the Notebook",
+      "B. Setting up an Alert in the Job page",
+      "C. Setting up an Alert in the Notebook",
+      "D. There is no way to notify the Job owner in the case of Job failure",
+      "E. MLflow Model Registry Webhooks"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "An engineering manager uses a Databricks SQL query to monitor ingestion latency for each data source. The \nmanager checks the results of the query every day, but they are manually rerunning the query each day and waiting for the results. \nWhich of the following approaches can the manager use to ensure the results of the query are updated each day?",
+    "alternativas": [
+      "A. They can schedule the query to refresh every 1 day from the SQL endpoints page in Databricks SQL.",
+      "B. They can schedule the query to refresh every 12 hours from the SQL endpoints page in Databricks SQL.",
+      "C. They can schedule the query to refresh every 1 day from the querys page in Databricks SQL.",
+      "D. They can schedule the query to run every 1 day from the Jobs UI.",
+      "E. They can schedule the query to run every 12 hours from the Jobs UI."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "In which of the following scenarios should a data engineer select a Task in the Depends On field of a new \nDatabricks Job Task?",
+    "alternativas": [
+      "A. When another task needs to be replaced by the new task",
+      "B. When another task needs to fail before the new task begins",
+      "C. When another task has the same dependency libraries as the new task",
+      "D. When another task needs to use as little compute resources as possible",
+      "E. When another task needs to successfully complete before the new task begins"
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer has been using a Databricks SQL dashboard to monitor the cleanliness of the input data to a \ndata analytics dashboard for a retail use case. The job has a Databricks SQL query that returns the number of store-level records where \nsales is equal to zero. The data engineer wants their entire team to be notified via a messaging webhook whenever this value is greater \nthan 0. Which of the following approaches can the data engineer use to notify their entire team via a messaging webhook whenever the \nnumber of stores with $0 in sales is greater than zero?",
+    "alternativas": [
+      "A. They can set up an Alert with a custom template.",
+      "B. They can set up an Alert with a new email alert destination.",
+      "C. They can set up an Alert with one-time notifications.",
+      "D. They can set up an Alert with a new webhook alert destination.",
+      "E. They can set up an Alert without notifications."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer wants to schedule their Databricks SQL dashboard to refresh every hour, but they only want the \nassociated SQL endpoint to be running when it is necessary. The dashboard has multiple queries on multiple datasets associated with it. \nThe data that feeds the dashboard is automatically processed using a Databricks Job. Which of the following approaches can the data \nengineer use to minimize the total running time of the SQL endpoint used in the refresh schedule of their dashboard?",
+    "alternativas": [
+      "A. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "B. They can ensure the dashboards SQL endpoint is not one of the included querys SQL endpoint.",
+      "C. They can reduce the cluster size of the SQL endpoint.",
+      "D. They can ensure the dashboards SQL endpoint matches each of the queries SQL endpoints.",
+      "E. They can set up the dashboards SQL endpoint to be serverless."
+    ],
+    "resposta": "E"
+  },
+  {
+    "pergunta": "A data engineer needs access to a table new_table, but they do not have the correct permissions. They can ask \nthe table owner for permission, but they do not know who the table owner is. Which of the following approaches can be used to identify \nthe owner of new_table?",
+    "alternativas": [
+      "A. Review the Permissions tab in the tables page in Data Explorer",
+      "B. All of these options can be used to identify the owner of the table",
+      "C. Review the Owner field in the tables page in Data Explorer",
+      "D. Review the Owner field in the tables page in the cloud storage solution",
+      "E. There is no way to identify the owner of the table"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which of the following commands can be used to grant full permissions \non the database to the new data engineering team?",
+    "alternativas": [
+      "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
+      "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
+      "C. GRANT SELECT ON TABLE sales TO team;",
+      "D. GRANT USAGE ON TABLE sales TO team;",
+      "E. GRANT ALL PRIVILEGES ON TABLE team TO sales;"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Which data lakehouse feature results in improved data quality over a traditional data lake?",
+    "alternativas": [
+      "A. A data lakehouse stores data in open formats.",
+      "B. A data lakehouse allows the use of SQL queries to examine data.",
+      "C. A data lakehouse provides storage solutions for structured and unstructured data.",
+      "D. A data lakehouse supports ACID-compliant transactions."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which of the following data lakehouse features results in improved data quality over a traditional data lake?",
+    "alternativas": [
+      "A. A data lakehouse provides storage solutions for structured and unstructured data.",
+      "B. A data lakehouse supports ACID-compliant transactions. ",
+      "C. A data lakehouse allows the use of SQL queries to examine data.",
+      "D. A data lakehouse stores data in open formats.",
+      "E. A data lakehouse enables machine learning and artificial Intelligence workloads."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "In which scenario will a data team want to utilize cluster pools?",
+    "alternativas": [
+      "A. An automated report needs to be version-controlled across multiple collaborators.",
+      "B. An automated report needs to be runnable by all stakeholders.",
+      "C. An automated report needs to be refreshed as quickly as possible.",
+      "D. An automated report needs to be made reproducible."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "What is hosted completely in the control plane of the classic Databricks architecture?",
+    "alternativas": [
+      "A. Worker node",
+      "B. Databricks web application",
+      "C. Driver node",
+      "D. Databricks Filesystem"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer needs to determine whether to use the built-in Databricks Notebooks versioning or version their \nproject using Databricks Repos. What is an advantage of using Databricks Repos over the Databricks Notebooks versioning?",
+    "alternativas": [
+      "A. Databricks Repos allows users to revert to previous versions of a notebook",
+      "B. Databricks Repos is wholly housed within the Databricks Data Intelligence Platform",
+      "C. Databricks Repos provides the ability to comment on specific changes",
+      "D. Databricks Repos supports the use of multiple branches"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "What is a benefit of the Databricks Lakehouse Architecture embracing open source technologies?",
+    "alternativas": [
+      "A. Avoiding vendor lock-in",
+      "B. Simplified governance",
+      "C. Ability to scale workloads",
+      "D. Cloud-specific integrations"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer needs to use a Delta table as part of a data pipeline, but they do not know if they have the \nappropriate permissions. In which location can the data engineer review their permissions on the table?",
+    "alternativas": [
+      "A. Jobs",
+      "B. Dashboards",
+      "C. Catalog Explorer",
+      "D. Repos"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer is running code in a Databricks Repo that is cloned from a central Git repository. A colleague of \nthe data engineer informs them that changes have been made and synced to the central Git repository. The data engineer now needs to \nsync their Databricks Repo to get the changes from the central Git repository.  Which Git operation does the data engineer need to run to \naccomplish this task?",
+    "alternativas": [
+      "A. Clone",
+      "B. Pull",
+      "C. Merge",
+      "D. Push"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which file format is used for storing Delta Lake Table?",
+    "alternativas": [
+      "A. CSV",
+      "B. Parquet",
+      "C. JSON",
+      "D. Delta"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has realized that the data files associated with a Delta table are incredibly small. They want to \ncompact the small files to form larger files to improve performance. Which keyword can be used to compact the small files?",
+    "alternativas": [
+      "A. OPTIMIZE",
+      "B. VACUUM",
+      "C. COMPACTION",
+      "D. REPARTITION"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data architect has determined that a table of the following format is necessary: \n \n \n \nWhich code block is used by SQL DDL command to create an empty Delta table in the above format regardless of whether a table already \nexists with this name?",
+    "alternativas": [
+      "A. CREATE OR REPLACE TABLE table_name ( employeeId STRING, startDate DATE, avgRating FLOAT )",
+      "B. CREATE OR REPLACE TABLE table_name WITH COLUMNS ( employeeId STRING, startDate DATE, avgRating FLOAT ) USING \nDELTA",
+      "C. CREATE TABLE IF NOT EXISTS table_name ( employeeId STRING, startDate DATE, avgRating FLOAT )",
+      "D. CREATE TABLE table_name AS SELECT employeeId STRING, startDate DATE, avgRating FLOAT"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "What is a benefit of creating an external table from Parquet rather than CSV when using a CREATE TABLE AS \nSELECT statement?",
+    "alternativas": [
+      "A. Parquet files can be partitioned",
+      "B. Parquet files will become Delta tables",
+      "C. Parquet files have a well-defined schema",
+      "D. Parquet files have the ability to be optimized"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data engineer runs a statement every day to copy the previous days sales into the table transactions. Each \ndays sales are in their own file in the location \"/transactions/raw\". Today, the data engineer runs the following command to complete \nthis task: \n \n \n \nAfter running the command today, the data engineer notices that the number of records in table transactions has not changed. \nWhat explains why the statement might not have copied any new records into the table?",
+    "alternativas": [
+      "A. The format of the files to be copied were not included with the FORMAT_OPTIONS keyword.",
+      "B. The COPY INTO statement requires the table to be refreshed to view the copied rows.",
+      "C. The previous days file has already been copied into the table.",
+      "D. The PARQUET file format does not support COPY INTO."
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "A data analyst has created a Delta table sales that is used by the entire data analysis team. They want help from \nthe data engineering team to implement a series of tests to ensure the data is clean. However, the data engineering team uses Python \nfor its tests rather than SQL. Which command could the data engineering team use to access sales in PySpark?",
+    "alternativas": [
+      "A. SELECT * FROM sales",
+      "B. spark.table(\"sales\")",
+      "C. spark.sql(\"sales\")",
+      "D. spark.delta.table(\"sales\")"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has created a new database using the following command: \nCREATE DATABASE IF NOT EXISTS customer360; \nIn which location will the customer360 database be located?",
+    "alternativas": [
+      "A. dbfs:/user/hive/database/customer360",
+      "B. dbfs:/user/hive/warehouse",
+      "C. dbfs:/user/hive/customer360",
+      "D. dbfs:/user/hive/database"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer needs to create a table in Databricks using data from a CSV file at location `/path/to/csv`.\n\nThey run the following command:\n\nWhich of the following lines of code fills in the above blank to successfully complete the task?",
+    "alternativas": [
+      "A. FROM \"path/to/csv\"",
+      "B. USING CSV",
+      "C. FROM CSV",
+      "D. USING DELTA"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which SQL keyword can be used to convert a table from a long format to a wide format?",
+    "alternativas": [
+      "A. TRANSFORM",
+      "B. PIVOT",
+      "C. SUM",
+      "D. CONVERT"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data engineer has a Python variable table_name that they would like to use in a SQL query. They want to construct a Python code block that will run the query using table_name. They have the following incomplete code block: ____(f\\\"SELECT customer_id, spend FROM {table_name}\\\"). What can be used to fill in the blank to successfully complete the task?",
+    "alternativas": [
+      "A. spark.delta.sql",
+      "B. spark.sql",
+      "C. spark.table",
+      "D. dbutils.sql"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "What is used by Spark to record the offset range of the data being processed in each trigger in order for \nStructured Streaming to reliably track the exact progress of the processing so that it can handle any kind of failure by restarting and/or \nreprocessing?",
+    "alternativas": [
+      "A. Checkpointing and Write-ahead Logs",
+      "B. Replayable Sources and Idempotent Sinks",
+      "C. Write-ahead Logs and Idempotent Sinks",
+      "D. Checkpointing and Idempotent Sinks"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "What describes when to use the CREATE STREAMING LIVE TABLE (formerly CREATE INCREMENTAL LIVE TABLE) \nsyntax over the CREATE LIVE TABLE syntax when creating Delta Live Tables (DLT) tables using SQL?",
+    "alternativas": [
+      "A. CREATE STREAMING LIVE TABLE should be used when the subsequent step in the DLT pipeline is static.",
+      "B. CREATE STREAMING LIVE TABLE should be used when data needs to be processed incrementally.",
+      "C. CREATE STREAMING LIVE TABLE should be used when data needs to be processed through complicated aggregations.",
+      "D. CREATE STREAMING LIVE TABLE should be used when the previous step in the DLT pipeline is static."
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which type of workloads are compatible with Auto Loader?",
+    "alternativas": [
+      "A. Streaming workloads",
+      "B. Machine learning workloads",
+      "C. Serverless workloads",
+      "D. Batch workloads"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "A data engineer has developed a data pipeline to ingest data from a JSON source using Auto Loader, but the \nengineer has not provided any type inference or schema hints in their pipeline. Upon reviewing the data, the data engineer has noticed \nthat all of the columns in the target table are of the string type despite some of the fields only including float or boolean values. Why has \nAuto Loader inferred all of the columns to be of the string type?",
+    "alternativas": [
+      "A. Auto Loader cannot infer the schema of ingested data",
+      "B. JSON data is a text-based format",
+      "C. Auto Loader only works with string data",
+      "D. All of the fields had at least one null value"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Which statement regarding the relationship between Silver tables and Bronze tables is always true?",
+    "alternativas": [
+      "A. Silver tables contain a less refined, less clean view of data than Bronze data.",
+      "B. Silver tables contain aggregates while Bronze data is unaggregated.",
+      "C. Silver tables contain more data than Bronze tables.",
+      "D. Silver tables contain less data than Bronze tables."
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "Which query is performing a streaming hop from raw data to a Bronze table?",
+    "alternativas": [
+      "A. \n(spark.table(\"sales\")\n .groupBy(\"store\")\n .agg(sum(\"sales\"))\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"complete\")\n .table(\"newSales\"))",
+      "B. \n(spark.read.load(rawSalesLocation)\n .write\n .mode(\"append\")\n .table(\"newSales\"))",
+      "C. \n(spark.table(\"sales\")\n .withColumn(\"avgPrice\", col(\"sales\") / col(\"units\"))\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"append\")\n .table(\"newSales\"))",
+      "D. \n(spark.readStream.load(rawSalesLocation)\n .writeStream\n .option(\"checkpointLocation\", checkpointPath)\n .outputMode(\"append\")\n .table(\"newSales\"))"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A data engineer has a Job with multiple tasks that runs nightly. Each of the tasks runs slowly because the \nclusters take a long time to start. Which action can the data engineer perform to improve the start up time for the clusters used for the \nJob?",
+    "alternativas": [
+      "A. They can use endpoints available in Databricks SQL",
+      "B. They can use jobs clusters instead of all-purpose clusters",
+      "C. They can configure the clusters to autoscale for larger data sizes",
+      "D. They can use clusters that are from a cluster pool"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A data analysis team has noticed that their Databricks SQL queries are running too slowly when connected to \ntheir always-on SQL endpoint. They claim that this issue is present when many members of the team are running small queries \nsimultaneously. They ask the data engineering team for help. The data engineering team notices that each of the teams queries uses the \nsame SQL endpoint. Which approach can the data engineering team use to improve the latency of the teams queries?",
+    "alternativas": [
+      "A. They can increase the cluster size of the SQL endpoint.",
+      "B. They can increase the maximum bound of the SQL endpoints scaling range.",
+      "C. They can turn on the Auto Stop feature for the SQL endpoint.",
+      "D. They can turn on the Serverless feature for the SQL endpoint."
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "A new data engineering team has been assigned to work on a project. The team will need access to database \ncustomers in order to see what tables already exist. The team has its own group team. Which command can be used to grant the \nnecessary permission on the entire database to the new team?",
+    "alternativas": [
+      "A. GRANT VIEW ON CATALOG customers TO team;",
+      "B. GRANT CREATE ON DATABASE customers TO team;",
+      "C. GRANT USAGE ON CATALOG team TO customers;",
+      "D. GRANT USAGE ON DATABASE customers TO team;"
+    ],
+    "resposta": "D"
+  },
+  {
+    "pergunta": "A new data engineering team team has been assigned to an ELT project. The new data engineering team will \nneed full privileges on the table sales to fully manage the project. Which command can be used to grant full permissions on the database \nto the new data engineering team?",
+    "alternativas": [
+      "A. GRANT ALL PRIVILEGES ON TABLE sales TO team;",
+      "B. GRANT SELECT CREATE MODIFY ON TABLE sales TO team;",
+      "C. GRANT SELECT ON TABLE sales TO team;",
+      "D. GRANT ALL PRIVILEGES ON TABLE team TO sales;"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Você precisa carregar diariamente uma tabela Bronze (Delta) a partir de arquivos novos em cloud storage, garantindo reprocessamento idempotente e evitando duplicidades. Qual abordagem é a mais adequada?",
+    "alternativas": [
+      "A. INSERT OVERWRITE diário na tabela Bronze",
+      "B. COPY INTO com rastreio de arquivos + MERGE na Silver por chave natural",
+      "C. VACUUM antes de cada carga",
+      "D. OPTIMIZE antes de cada carga"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você tem um stream chegando em Delta e precisa garantir exactly-once na escrita. O que é mais importante configurar?",
+    "alternativas": [
+      "A. Apenas trigger(once=True)",
+      "B. Apenas repartition() antes do write",
+      "C. Checkpoint location estável + sink transacional (Delta)",
+      "D. cache() do DataFrame"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Chega um JSON aninhado com dezenas de campos e mudanças frequentes. Você quer controlar evolução sem quebrar downstream. Melhor opção:",
+    "alternativas": [
+      "A. Inferir schema sempre e gravar tudo automaticamente",
+      "B. Definir schema explicitamente e versionar contrato; permitir evolução controlada quando necessário",
+      "C. Converter tudo para CSV antes de persistir",
+      "D. Usar apenas views temporárias"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você recebe eventos com possível duplicidade (mesmo event_id). Qual padrão é mais robusto antes do MERGE?",
+    "alternativas": [
+      "A. dropDuplicates(['event_id']) sem ordenação",
+      "B. Window com row_number() por event_id ordenando por ingestion_time desc e filtrar rn=1",
+      "C. distinct() global",
+      "D. coalesce(1) e depois MERGE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Sua tabela Delta tem milhares de arquivos pequenos e consultas ficaram lentas. A ação mais apropriada:",
+    "alternativas": [
+      "A. VACUUM 0 HOURS",
+      "B. OPTIMIZE para compactar arquivos (e considerar ZORDER quando fizer sentido)",
+      "C. CACHE TABLE permanentemente",
+      "D. REFRESH TABLE repetidamente"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Quando o Z-ORDER tende a ajudar mais?",
+    "alternativas": [
+      "A. Consultas full scan sem filtros",
+      "B. Consultas com filtros seletivos recorrentes em colunas específicas",
+      "C. Somente em tabelas pequenas",
+      "D. Em tabelas que não são Delta"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você precisa garantir que um time veja somente linhas do próprio país (RLS) e que colunas sensíveis sejam mascaradas (CLM). Onde isso é implementado de forma mais governável?",
+    "alternativas": [
+      "A. Em cada notebook via filtros manuais",
+      "B. Na camada de storage via pastas por país",
+      "C. No Unity Catalog, com policies/recursos de governança (ex.: views/policies para RLS e masking)",
+      "D. No cluster, via init script"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Um usuário consegue abrir um notebook mas não consegue executá-lo em um cluster compartilhado. A causa mais provável:",
+    "alternativas": [
+      "A. Falta permissão no workspace para Can Read",
+      "B. Falta permissão de uso no cluster (ex.: Can Attach To / uso equivalente conforme configuração)",
+      "C. Falta permissão no Git repo",
+      "D. Falta permissão para criar jobs"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você tem um pipeline com 5 tasks e quer evitar custos quando uma task falha, além de garantir reexecução controlada. Melhor prática:",
+    "alternativas": [
+      "A. Rodar tudo em um único notebook monolítico",
+      "B. Quebrar em tasks, usar dependências e políticas de retry/timeout por task",
+      "C. Rodar apenas manualmente",
+      "D. Remover alertas para reduzir ruído"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você quer aplicar regras de qualidade e rastrear violações automaticamente em uma pipeline declarativa. Melhor recurso:",
+    "alternativas": [
+      "A. VACUUM",
+      "B. EXPECTATIONS em DLT com métricas de qualidade",
+      "C. OPTIMIZE ZORDER",
+      "D. DESCRIBE HISTORY"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para consumo analítico e BI, qual modelagem tende a ser preferida na camada Gold?",
+    "alternativas": [
+      "A. Apenas 3NF em todas as camadas",
+      "B. Data Vault somente",
+      "C. Modelo dimensional (fato/dimensões) na camada Gold",
+      "D. JSON aninhado na Gold"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Você precisa manter histórico de alterações de atributos (ex.: endereço do cliente). Qual estratégia é a mais alinhada?",
+    "alternativas": [
+      "A. Atualizar linha existente (Type 1)",
+      "B. Criar tabela de eventos e nunca atualizar nada",
+      "C. SCD Type 2 com MERGE gerenciando valid_from/valid_to/is_current",
+      "D. Salvar apenas a última versão em uma view"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Você precisa compartilhar dados com consumidores externos sem expor credenciais do storage nem duplicar dados. Opção mais adequada:",
+    "alternativas": [
+      "A. Enviar CSV por e-mail",
+      "B. Criar cópia da tabela em outro workspace manualmente",
+      "C. Delta Sharing (quando aplicável)",
+      "D. Exportar para Parquet e subir em FTP"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para investigar lentidão em um job Spark, qual sequência faz mais sentido?",
+    "alternativas": [
+      "A. Ignorar UI e só aumentar o cluster",
+      "B. Ver Spark UI (stages/tasks/shuffle) e métricas de execução; identificar skew/shuffles e ajustes",
+      "C. Apenas rodar VACUUM",
+      "D. Apenas rodar REFRESH TABLE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Seu job roda bem, mas está caro. Qual ação costuma trazer ganho real sem mudar semântica?",
+    "alternativas": [
+      "A. Aumentar sempre o número de workers",
+      "B. Ajustar paralelismo/particionamento, evitar shuffles desnecessários, escolher instâncias adequadas e autoscaling com limites",
+      "C. Desabilitar checkpoints",
+      "D. Converter Delta para CSV"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você precisa usar credenciais de API em notebooks. Boa prática:",
+    "alternativas": [
+      "A. Colar o token no notebook",
+      "B. Guardar em variável de ambiente do driver e commitar no repo",
+      "C. Usar Secret Scope/gerenciador de segredos e referenciar via dbutils.secrets (ou mecanismo equivalente)",
+      "D. Salvar em uma tabela Delta"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Você quer promover notebooks/pipelines entre dev → qa → prod com rastreabilidade. Melhor abordagem:",
+    "alternativas": [
+      "A. Copiar/colar no workspace manualmente",
+      "B. Usar controle de versão + automação (CI/CD) e parametrização por ambiente",
+      "C. Manter ambientes iguais e editar em produção",
+      "D. Rodar somente local"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual é um teste mais útil para pipeline de dados?",
+    "alternativas": [
+      "A. Testar apenas se o notebook rodou sem erro",
+      "B. Testes de qualidade: contagens, chaves únicas, null checks, regras de negócio, amostras e reconciliação",
+      "C. Só testar performance com cache()",
+      "D. Só testar permissões do workspace"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um relatório quebrou porque alguém fez um update incorreto ontem. Você quer recuperar dados do estado anterior rapidamente. Qual recurso ajuda?",
+    "alternativas": [
+      "A. OPTIMIZE",
+      "B. DESCRIBE HISTORY + Time Travel (consulta por versão/timestamp) para restaurar/validar",
+      "C. VACUUM",
+      "D. REPARTITION"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Sobre VACUUM em Delta, qual afirmação é mais correta?",
+    "alternativas": [
+      "A. Deve ser executado sempre com retenção 0 horas em produção",
+      "B. Remove versões antigas e arquivos não referenciados, mas precisa respeitar retenção/segurança para não quebrar time travel/reprocessamentos",
+      "C. Substitui OPTIMIZE",
+      "D. É obrigatório antes de cada MERGE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual é a principal vantagem do Auto Loader em relação ao spark.read tradicional?",
+    "alternativas": [
+      "A. Leitura mais rápida de CSV",
+      "B. Suporte exclusivo a JSON",
+      "C. Escalabilidade e ingestão incremental eficiente",
+      "D. Elimina a necessidade de Delta"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "No Auto Loader, o modo File Notification é preferido quando:",
+    "alternativas": [
+      "A. Há poucos arquivos",
+      "B. O storage não suporta eventos",
+      "C. Há milhões de arquivos novos frequentemente",
+      "D. Não existe checkpoint"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para garantir ingestão idempotente em Delta, o padrão mais correto é:",
+    "alternativas": [
+      "A. INSERT OVERWRITE",
+      "B. DELETE + INSERT",
+      "C. MERGE baseado em chave de negócio",
+      "D. DROP TABLE"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "O que o checkpoint garante em Structured Streaming?",
+    "alternativas": [
+      "A. Compactação de arquivos",
+      "B. Controle de schema",
+      "C. Recuperação de estado e exactly-once",
+      "D. Melhor paralelismo"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Qual comando ajuda a investigar alterações passadas em uma tabela Delta?",
+    "alternativas": [
+      "A. OPTIMIZE",
+      "B. DESCRIBE HISTORY",
+      "C. VACUUM",
+      "D. REFRESH"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "VACUUM remove:",
+    "alternativas": [
+      "A. Dados atuais",
+      "B. Metadados do catálogo",
+      "C. Arquivos não referenciados e versões antigas",
+      "D. Estatísticas de query"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Qual recurso permite restaurar dados para um estado anterior?",
+    "alternativas": [
+      "A. Photon",
+      "B. Time Travel",
+      "C. Auto Loader",
+      "D. Federation"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual problema o OPTIMIZE resolve?",
+    "alternativas": [
+      "A. Dados duplicados",
+      "B. Pequenos arquivos",
+      "C. Falta de schema",
+      "D. Falta de permissões"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual é o risco de rodar VACUUM RETAIN 0 HOURS em produção?",
+    "alternativas": [
+      "A. Aumentar custo",
+      "B. Quebrar Time Travel e reprocessamentos",
+      "C. Duplicar dados",
+      "D. Aumentar latência de query"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Databricks Workflows permitem:",
+    "alternativas": [
+      "A. Apenas execução manual",
+      "B. Orquestração com dependências entre tasks",
+      "C. Apenas SQL",
+      "D. Apenas clusters all-purpose"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual é uma boa prática em Workflows?",
+    "alternativas": [
+      "A. Um notebook gigante",
+      "B. Tasks pequenas e reutilizáveis",
+      "C. Sem retry",
+      "D. Cluster fixo sempre ligado"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Se uma task falha em um workflow:",
+    "alternativas": [
+      "A. Todo job precisa ser recriado",
+      "B. Apenas a task pode ser reexecutada",
+      "C. Os dados são perdidos",
+      "D. O cluster é deletado"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Onde analisar shuffle, skew e stages?",
+    "alternativas": [
+      "A. Unity Catalog",
+      "B. Spark UI",
+      "C. DLT UI",
+      "D. Git"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para alertas de falha de pipeline, você usa:",
+    "alternativas": [
+      "A. VACUUM",
+      "B. Notifications do Workflow",
+      "C. OPTIMIZE",
+      "D. Z-ORDER"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual prática reduz custos em Jobs?",
+    "alternativas": [
+      "A. Clusters sempre ativos",
+      "B. Autoscaling + auto-termination",
+      "C. Mais workers fixos",
+      "D. Cache permanente"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual métrica NÃO é típica de observabilidade?",
+    "alternativas": [
+      "A. Tempo de execução",
+      "B. Volume processado",
+      "C. Quantidade de notebooks",
+      "D. Falhas"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para investigar custo por job, você usa:",
+    "alternativas": [
+      "A. OPTIMIZE",
+      "B. System Tables",
+      "C. Photon",
+      "D. Auto Loader"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual vantagem de jobs serverless?",
+    "alternativas": [
+      "A. Menos governança",
+      "B. Gerenciamento automático de compute",
+      "C. Menos segurança",
+      "D. Não usa Delta"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual erro comum em jobs?",
+    "alternativas": [
+      "A. Parâmetros por ambiente",
+      "B. Hardcode de paths e secrets",
+      "C. Uso de retries",
+      "D. Logs estruturados"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Unity Catalog centraliza:",
+    "alternativas": [
+      "A. Apenas storage",
+      "B. Metadados, permissões e lineage",
+      "C. Apenas clusters",
+      "D. Apenas notebooks"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Row-Level Security é aplicada:",
+    "alternativas": [
+      "A. No storage",
+      "B. No cluster",
+      "C. Em views/policies no catálogo",
+      "D. No notebook"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Column Masking é avaliado:",
+    "alternativas": [
+      "A. Em tempo de ingestão",
+      "B. Em tempo de query",
+      "C. Em VACUUM",
+      "D. No Auto Loader"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "System Tables permitem:",
+    "alternativas": [
+      "A. Criar dados",
+      "B. Auditoria e billing",
+      "C. Ingestão de streaming",
+      "D. Compartilhamento externo"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual System Table ajuda em custos?",
+    "alternativas": [
+      "A. lineage",
+      "B. billing.usage",
+      "C. table_history",
+      "D. expectations"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Data Lineage responde:",
+    "alternativas": [
+      "A. Quem pode acessar",
+      "B. Quem alterou schema",
+      "C. Impacto de mudanças",
+      "D. Performance"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Secrets devem ser armazenados:",
+    "alternativas": [
+      "A. No notebook",
+      "B. No Git",
+      "C. Em Secret Scopes",
+      "D. Em tabelas Delta"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Permissões no UC são:",
+    "alternativas": [
+      "A. Por notebook",
+      "B. Por cluster",
+      "C. Granulares (catálogo, schema, tabela)",
+      "D. Apenas globais"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Qual NÃO é função do UC?",
+    "alternativas": [
+      "A. Governança",
+      "B. Lineage",
+      "C. Execução de jobs",
+      "D. Controle de acesso"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Mascaramento de dados serve para:",
+    "alternativas": [
+      "A. Performance",
+      "B. Compliance",
+      "C. Ingestão",
+      "D. Streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Delta Sharing permite:",
+    "alternativas": [
+      "A. Escrita externa",
+      "B. Compartilhar dados sem expor storage",
+      "C. Replicação física",
+      "D. ETL automático"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Lakehouse Federation é usada quando:",
+    "alternativas": [
+      "A. Você quer copiar dados",
+      "B. Precisa consultar dados externos sem mover",
+      "C. Precisa streaming",
+      "D. Precisa DLT"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Federation funciona via:",
+    "alternativas": [
+      "A. Python",
+      "B. Spark Streaming",
+      "C. SQL",
+      "D. CSV"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Diferença principal entre Federation e Delta Sharing:",
+    "alternativas": [
+      "A. Federation escreve dados",
+      "B. Delta Sharing executa queries remotas",
+      "C. Federation consulta remoto",
+      "D. Não há diferença"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Serverless SQL é ideal para:",
+    "alternativas": [
+      "A. Heavy ETL",
+      "B. BI e queries ad-hoc",
+      "C. Streaming",
+      "D. ML training"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon melhora:",
+    "alternativas": [
+      "A. Segurança",
+      "B. SQL performance",
+      "C. Ingestão",
+      "D. Governança"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon exige mudança de código?",
+    "alternativas": [
+      "A. Sim",
+      "B. Apenas SQL",
+      "C. Não",
+      "D. Apenas Python"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Federation evita:",
+    "alternativas": [
+      "A. Custo de compute",
+      "B. Duplicação de dados",
+      "C. Governança",
+      "D. Segurança"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Delta Sharing é:",
+    "alternativas": [
+      "A. Proprietário",
+      "B. Open protocol",
+      "C. Apenas Azure",
+      "D. Apenas AWS"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Serverless é mais indicado quando:",
+    "alternativas": [
+      "A. Precisa controle total de cluster",
+      "B. Carga imprevisível",
+      "C. ETL pesado contínuo",
+      "D. Custom Spark configs"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Databricks Asset Bundles servem para:",
+    "alternativas": [
+      "A. Backup",
+      "B. Versionar e promover assets",
+      "C. Ingestão",
+      "D. Compartilhar dados"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Asset Bundles ajudam principalmente em:",
+    "alternativas": [
+      "A. SQL performance",
+      "B. CI/CD",
+      "C. Streaming",
+      "D. Segurança"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um Asset Bundle pode conter:",
+    "alternativas": [
+      "A. Apenas notebooks",
+      "B. Apenas jobs",
+      "C. Notebooks, jobs, pipelines, configs",
+      "D. Apenas dados"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Qual formato é usado nos Bundles?",
+    "alternativas": [
+      "A. XML",
+      "B. YAML",
+      "C. JSON",
+      "D. CSV"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Vantagem clara dos Bundles:",
+    "alternativas": [
+      "A. Mais custo",
+      "B. Deploy manual",
+      "C. Padronização e reprodutibilidade",
+      "D. Menos governança"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Bundles permitem:",
+    "alternativas": [
+      "A. Hardcode de paths",
+      "B. Parametrização por ambiente",
+      "C. Ignorar dev/qa/prod",
+      "D. Apenas produção"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Asset Bundles substituem:",
+    "alternativas": [
+      "A. Unity Catalog",
+      "B. Git",
+      "C. Copy/paste manual",
+      "D. Delta"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Um erro comum sem Bundles é:",
+    "alternativas": [
+      "A. Versionamento",
+      "B. Drift entre ambientes",
+      "C. Parametrização",
+      "D. Automação"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Asset Bundles integram bem com:",
+    "alternativas": [
+      "A. Jenkins / GitHub Actions",
+      "B. VACUUM",
+      "C. Photon",
+      "D. Auto Loader"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Para deploy enterprise, a combinação ideal é:",
+    "alternativas": [
+      "A. Notebooks soltos",
+      "B. Asset Bundles + Git + CI/CD",
+      "C. Apenas UI",
+      "D. Apenas Jobs manuais"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você ingere milhões de arquivos/dia via Auto Loader. O time reclama de custo e latência crescente no listing. Qual configuração é mais adequada?",
+    "alternativas": [
+      "A. Directory listing + checkpoint",
+      "B. File Notification + checkpoint",
+      "C. Reprocessar diariamente com batch",
+      "D. Converter para CSV"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um stream é reiniciado após falha. Alguns arquivos são reprocessados. Por que não há duplicação em Delta?",
+    "alternativas": [
+      "A. Porque o Spark ignora arquivos antigos",
+      "B. Porque Delta é append-only",
+      "C. Porque o checkpoint + transações garantem idempotência",
+      "D. Porque o schema é fixo"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Você precisa evoluir schema automaticamente, mas sem quebrar downstream. Qual abordagem é mais segura?",
+    "alternativas": [
+      "A. mergeSchema=true sempre",
+      "B. Inferência automática sem validação",
+      "C. Contrato explícito + evolução controlada",
+      "D. CSV sem schema"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Um MERGE está lento devido a skew em uma chave. Qual mitigação é mais apropriada?",
+    "alternativas": [
+      "A. Z-ORDER",
+      "B. Broadcast join",
+      "C. Salting da chave",
+      "D. VACUUM"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Time Travel falhou após manutenção. O motivo mais provável é:",
+    "alternativas": [
+      "A. OPTIMIZE excessivo",
+      "B. Photon habilitado",
+      "C. VACUUM com retenção agressiva",
+      "D. Checkpoint corrompido"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Você quer garantir exactly-once lógico em streaming. Qual combinação é correta?",
+    "alternativas": [
+      "A. Trigger once",
+      "B. Cache + append",
+      "C. Checkpoint + chave de deduplicação",
+      "D. Repartition"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Em uma tabela muito grande com filtros por data e customer_id, a melhor otimização é:",
+    "alternativas": [
+      "A. Apenas OPTIMIZE",
+      "B. Z-ORDER por colunas filtradas",
+      "C. VACUUM diário",
+      "D. Cache global"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Pequenos arquivos continuam sendo gerados mesmo após OPTIMIZE. Qual a causa provável?",
+    "alternativas": [
+      "A. Photon",
+      "B. Auto Loader escrevendo micro-batches pequenos",
+      "C. Z-ORDER",
+      "D. Time Travel"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para reprocessar apenas um período histórico sem impacto em produção, você deve:",
+    "alternativas": [
+      "A. DROP TABLE",
+      "B. Time Travel + overwrite controlado",
+      "C. VACUUM",
+      "D. Refresh catalog"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual prática aumenta risco de perda de recuperabilidade histórica em Delta?",
+    "alternativas": [
+      "A. MERGE",
+      "B. VACUUM agressivo",
+      "C. Checkpoint",
+      "D. Schema enforcement"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um job falha intermitentemente por dependência externa. Qual configuração reduz impacto?",
+    "alternativas": [
+      "A. Retry com backoff",
+      "B. Cluster maior",
+      "C. Cache",
+      "D. Disable alerts"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Por que dividir um pipeline em várias tasks é melhor?",
+    "alternativas": [
+      "A. Menos código",
+      "B. Reexecução parcial e isolamento de falhas",
+      "C. Menos governança",
+      "D. Menos clusters"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "O job está caro, mas rápido. Qual ação mantém SLA e reduz custo?",
+    "alternativas": [
+      "A. Menos workers fixos",
+      "B. Autoscaling com limites",
+      "C. Remover retries",
+      "D. Desabilitar logs"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Onde identificar skew severo?",
+    "alternativas": [
+      "A. Unity Catalog",
+      "B. Spark UI → Tasks",
+      "C. System Tables",
+      "D. Git"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Você quer alertar apenas falhas críticas. Melhor prática:",
+    "alternativas": [
+      "A. Alertar tudo",
+      "B. Alertas condicionais por status",
+      "C. Sem alertas",
+      "D. Logs manuais"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Métrica mais útil para tuning de job:",
+    "alternativas": [
+      "A. Nº de notebooks",
+      "B. Tempo por stage",
+      "C. Nome do cluster",
+      "D. Workspace ID"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual situação favorece serverless?",
+    "alternativas": [
+      "A. Configuração custom Spark",
+      "B. Carga imprevisível e intermitente",
+      "C. ETL pesado contínuo",
+      "D. Streaming stateful"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para análise de custo detalhada por job:",
+    "alternativas": [
+      "A. Spark UI",
+      "B. System Tables (billing)",
+      "C. Photon",
+      "D. DLT UI"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Falhas silenciosas geralmente ocorrem quando:",
+    "alternativas": [
+      "A. Há retry",
+      "B. Não há validações de dados",
+      "C. Há logs",
+      "D. Há alertas"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Observabilidade madura inclui:",
+    "alternativas": [
+      "A. Apenas logs",
+      "B. Logs + métricas + alertas",
+      "C. Apenas UI",
+      "D. Apenas retry"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Row-Level Security mal implementado causa:",
+    "alternativas": [
+      "A. Lentidão apenas",
+      "B. Vazamento de dados",
+      "C. Custo alto",
+      "D. Falha de job"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Por que masking é feito em tempo de query?",
+    "alternativas": [
+      "A. Performance",
+      "B. Flexibilidade por usuário",
+      "C. Storage",
+      "D. Simplicidade"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "System Tables são úteis porque:",
+    "alternativas": [
+      "A. Substituem logs",
+      "B. São governadas e consultáveis via SQL",
+      "C. São externas",
+      "D. São temporárias"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para auditoria de acesso, você consulta:",
+    "alternativas": [
+      "A. lineage",
+      "B. access.audit",
+      "C. billing",
+      "D. optimize"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Data Lineage é mais crítico quando:",
+    "alternativas": [
+      "A. Há poucos pipelines",
+      "B. Muitas dependências downstream",
+      "C. Só batch",
+      "D. Só streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Segredo hardcoded é problema porque:",
+    "alternativas": [
+      "A. Quebra pipeline",
+      "B. Vaza credencial",
+      "C. Aumenta custo",
+      "D. Diminui performance"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Permissões no UC são avaliadas:",
+    "alternativas": [
+      "A. Em ingestão",
+      "B. Em tempo de execução",
+      "C. Em VACUUM",
+      "D. Em OPTIMIZE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um erro comum em governança:",
+    "alternativas": [
+      "A. Policies centralizadas",
+      "B. Views seguras",
+      "C. Filtros no notebook",
+      "D. Masking"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para compliance (LGPD/GDPR), o mais relevante é:",
+    "alternativas": [
+      "A. OPTIMIZE",
+      "B. Masking + RLS",
+      "C. Auto Loader",
+      "D. Photon"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Unity Catalog falha em:",
+    "alternativas": [
+      "A. Governar",
+      "B. Centralizar acesso",
+      "C. Executar jobs",
+      "D. Auditar"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Federation é preferida quando:",
+    "alternativas": [
+      "A. Precisa alta performance local",
+      "B. Dados externos mudam frequentemente",
+      "C. Precisa streaming",
+      "D. Precisa write"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Desvantagem da Federation:",
+    "alternativas": [
+      "A. Custo zero",
+      "B. Latência dependente da fonte",
+      "C. Falta segurança",
+      "D. Falta SQL"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Delta Sharing é ideal para:",
+    "alternativas": [
+      "A. Write cross-org",
+      "B. Read-only seguro",
+      "C. ETL",
+      "D. Streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon acelera melhor:",
+    "alternativas": [
+      "A. Python loops",
+      "B. SQL analítico",
+      "C. Ingestão",
+      "D. Streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon pode ser menos efetivo quando:",
+    "alternativas": [
+      "A. Queries simples",
+      "B. SQL pesado",
+      "C. BI",
+      "D. Joins grandes"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Federation NÃO:",
+    "alternativas": [
+      "A. Move dados",
+      "B. Executa SQL",
+      "C. Consulta remoto",
+      "D. Usa conectores"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Serverless não é indicado quando:",
+    "alternativas": [
+      "A. BI",
+      "B. Queries ad-hoc",
+      "C. Configuração Spark custom",
+      "D. Baixa previsibilidade"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Sharing e Federation têm em comum:",
+    "alternativas": [
+      "A. ETL",
+      "B. Evitam duplicação",
+      "C. Write externo",
+      "D. Streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon é:",
+    "alternativas": [
+      "A. Obrigatório",
+      "B. Automático quando disponível",
+      "C. Um serviço externo",
+      "D. Apenas Azure"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Performance tuning começa por:",
+    "alternativas": [
+      "A. Aumentar cluster",
+      "B. Entender plano de execução",
+      "C. VACUUM",
+      "D. Cache"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "O maior valor dos Asset Bundles é:",
+    "alternativas": [
+      "A. Código",
+      "B. Padronização e automação",
+      "C. Segurança",
+      "D. Performance"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles reduzem risco de:",
+    "alternativas": [
+      "A. Lock-in",
+      "B. Drift entre ambientes",
+      "C. Latência",
+      "D. Falha de streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um Bundle bem feito evita:",
+    "alternativas": [
+      "A. YAML",
+      "B. Copy/paste manual",
+      "C. Git",
+      "D. CI/CD"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Variáveis de ambiente em Bundles servem para:",
+    "alternativas": [
+      "A. Código",
+      "B. Paths, configs e referências a secrets",
+      "C. Dados",
+      "D. SQL only"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles integram melhor com:",
+    "alternativas": [
+      "A. VACUUM",
+      "B. Jenkins / GitHub Actions",
+      "C. Photon",
+      "D. Auto Loader"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual erro indica maturidade baixa de deploy?",
+    "alternativas": [
+      "A. Parametrização",
+      "B. Deploy automatizado",
+      "C. Alterar produção manualmente",
+      "D. Versionamento"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Asset Bundles NÃO substituem:",
+    "alternativas": [
+      "A. Git",
+      "B. Jobs UI",
+      "C. Copy/paste",
+      "D. Scripts manuais"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "O ciclo correto é:",
+    "alternativas": [
+      "A. Prod → Dev",
+      "B. Dev → QA → Prod",
+      "C. Prod → QA",
+      "D. Manual"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles facilitam rollback porque:",
+    "alternativas": [
+      "A. Apagam dados",
+      "B. São versionados",
+      "C. Usam Photon",
+      "D. Usam Delta"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Deploy enterprise correto combina:",
+    "alternativas": [
+      "A. Notebooks soltos",
+      "B. Bundles + Git + CI/CD + UC",
+      "C. Apenas UI",
+      "D. Apenas Jobs"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual é o principal benefício do Auto Loader em ambientes com muitos arquivos?",
+    "alternativas": [
+      "A. Melhor compressão",
+      "B. Inferência automática obrigatória",
+      "C. Escalabilidade e ingestão incremental eficiente",
+      "D. Eliminação do Delta Lake"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para evitar duplicação lógica em streaming, o padrão correto é:",
+    "alternativas": [
+      "A. Append simples",
+      "B. Repartition",
+      "C. Deduplicação por chave + checkpoint",
+      "D. Trigger once"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "O checkpointLocation é essencial porque:",
+    "alternativas": [
+      "A. Compacta arquivos",
+      "B. Mantém estado e garante reprocessamento correto",
+      "C. Melhora schema inference",
+      "D. Reduz custo de storage"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um MERGE é preferível a INSERT OVERWRITE quando:",
+    "alternativas": [
+      "A. A tabela é pequena",
+      "B. Há necessidade de updates incrementais",
+      "C. O dado é somente append",
+      "D. Não há chave de negócio"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual comando permite auditoria de mudanças em Delta?",
+    "alternativas": [
+      "A. VACUUM",
+      "B. DESCRIBE HISTORY",
+      "C. OPTIMIZE",
+      "D. CACHE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Z-ORDER é mais efetivo quando:",
+    "alternativas": [
+      "A. Não há filtros",
+      "B. Há filtros recorrentes nas mesmas colunas",
+      "C. A tabela é pequena",
+      "D. A tabela não é Delta"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Pequenos arquivos impactam negativamente:",
+    "alternativas": [
+      "A. Segurança",
+      "B. Performance de leitura",
+      "C. Governança",
+      "D. Schema"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual ação resolve small files sem alterar dados?",
+    "alternativas": [
+      "A. MERGE",
+      "B. OPTIMIZE",
+      "C. VACUUM",
+      "D. Time Travel"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Time Travel depende diretamente de:",
+    "alternativas": [
+      "A. Photon",
+      "B. Retenção de versões",
+      "C. Z-ORDER",
+      "D. Cache"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "O maior risco de um VACUUM agressivo é:",
+    "alternativas": [
+      "A. Custo alto",
+      "B. Perda de Time Travel",
+      "C. Duplicação",
+      "D. Lentidão"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Uma boa prática em pipelines é:",
+    "alternativas": [
+      "A. Um notebook único",
+      "B. Tasks pequenas e reutilizáveis",
+      "C. Sem retries",
+      "D. Sem logs"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Se uma task falha, o workflow:",
+    "alternativas": [
+      "A. Precisa ser recriado",
+      "B. Pode reexecutar só a task",
+      "C. Perde dados",
+      "D. Deleta o cluster"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Autoscaling ajuda principalmente a:",
+    "alternativas": [
+      "A. Segurança",
+      "B. Performance fixa",
+      "C. Reduzir custos",
+      "D. Governança"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Para jobs intermitentes e imprevisíveis, o ideal é:",
+    "alternativas": [
+      "A. Cluster fixo",
+      "B. Serverless",
+      "C. Cache permanente",
+      "D. Repartition manual"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para investigar lentidão, o primeiro passo é:",
+    "alternativas": [
+      "A. Aumentar cluster",
+      "B. Analisar Spark UI",
+      "C. Rodar VACUUM",
+      "D. Ativar Photon"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Retry é útil quando:",
+    "alternativas": [
+      "A. Há falhas temporárias",
+      "B. Há erro de lógica",
+      "C. O dado é inválido",
+      "D. O schema mudou"
+    ],
+    "resposta": "A"
+  },
+  {
+    "pergunta": "Qual prática aumenta custo sem benefício?",
+    "alternativas": [
+      "A. Auto-termination",
+      "B. Clusters sempre ligados",
+      "C. Autoscaling",
+      "D. Tasks dependentes"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Logs estruturados ajudam principalmente em:",
+    "alternativas": [
+      "A. Ingestão",
+      "B. Observabilidade",
+      "C. Segurança",
+      "D. Schema"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Um job bem desenhado deve priorizar:",
+    "alternativas": [
+      "A. Código curto",
+      "B. Confiabilidade e reexecução",
+      "C. Menos tabelas",
+      "D. Menos tasks"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Row-Level Security controla:",
+    "alternativas": [
+      "A. Colunas",
+      "B. Linhas visíveis por usuário",
+      "C. Schema",
+      "D. Storage"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Column Masking é aplicado:",
+    "alternativas": [
+      "A. Em ingestão",
+      "B. Em tempo de query",
+      "C. Em VACUUM",
+      "D. Em OPTIMIZE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "System Tables são usadas para:",
+    "alternativas": [
+      "A. ETL",
+      "B. Auditoria e billing",
+      "C. Streaming",
+      "D. Compartilhamento"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Qual tabela ajuda a analisar custos?",
+    "alternativas": [
+      "A. access.audit",
+      "B. billing.usage",
+      "C. lineage",
+      "D. table_history"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Lineage responde principalmente:",
+    "alternativas": [
+      "A. Quem acessou",
+      "B. Impacto de mudanças",
+      "C. Performance",
+      "D. Custo"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Onde secrets devem ser armazenados?",
+    "alternativas": [
+      "A. Notebook",
+      "B. Git",
+      "C. Secret Scopes",
+      "D. Delta"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Um erro comum de governança é:",
+    "alternativas": [
+      "A. Policies centralizadas",
+      "B. Filtros no notebook",
+      "C. Masking",
+      "D. Views seguras"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Para LGPD/GDPR, o mais relevante é:",
+    "alternativas": [
+      "A. Photon",
+      "B. Masking + RLS",
+      "C. Auto Loader",
+      "D. OPTIMIZE"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Unity Catalog NÃO faz:",
+    "alternativas": [
+      "A. Governança",
+      "B. Auditoria",
+      "C. Execução de jobs",
+      "D. Controle de acesso"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "Lakehouse Federation é ideal quando:",
+    "alternativas": [
+      "A. Quer copiar dados",
+      "B. Quer consultar dados externos sem mover",
+      "C. Precisa write",
+      "D. Precisa streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Federation executa queries via:",
+    "alternativas": [
+      "A. Python",
+      "B. SQL",
+      "C. REST",
+      "D. CSV"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Principal desvantagem da Federation:",
+    "alternativas": [
+      "A. Falta governança",
+      "B. Latência dependente da fonte",
+      "C. Falta SQL",
+      "D. Falta segurança"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Serverless SQL é mais indicado para:",
+    "alternativas": [
+      "A. ETL pesado",
+      "B. BI e queries ad-hoc",
+      "C. Streaming",
+      "D. ML training"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon acelera principalmente:",
+    "alternativas": [
+      "A. Python loops",
+      "B. SQL analítico",
+      "C. Ingestão",
+      "D. Streaming"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Photon exige alteração de código?",
+    "alternativas": [
+      "A. Sim",
+      "B. Apenas SQL",
+      "C. Não",
+      "D. Apenas Python"
+    ],
+    "resposta": "C"
+  },
+  {
+    "pergunta": "O tuning correto começa por:",
+    "alternativas": [
+      "A. Mais hardware",
+      "B. Entender o plano de execução",
+      "C. VACUUM",
+      "D. Cache"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles ajudam principalmente em:",
+    "alternativas": [
+      "A. Performance",
+      "B. CI/CD",
+      "C. Streaming",
+      "D. Custo"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles usam principalmente:",
+    "alternativas": [
+      "A. JSON",
+      "B. YAML",
+      "C. XML",
+      "D. CSV"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Variáveis por ambiente permitem:",
+    "alternativas": [
+      "A. Hardcode",
+      "B. Reutilização dev/qa/prod",
+      "C. Ignorar governança",
+      "D. Apenas produção"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Bundles evitam principalmente:",
+    "alternativas": [
+      "A. Git",
+      "B. Drift entre ambientes",
+      "C. Logs",
+      "D. Schema"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Rollback é facilitado porque Bundles são:",
+    "alternativas": [
+      "A. Dinâmicos",
+      "B. Versionados",
+      "C. Serverless",
+      "D. Temporários"
+    ],
+    "resposta": "B"
+  },
+  {
+    "pergunta": "Deploy enterprise ideal combina:",
+    "alternativas": [
+      "A. Notebooks soltos",
+      "B. Bundles + Git + CI/CD + UC",
+      "C. Apenas UI",
+      "D. Apenas Jobs"
+    ],
+    "resposta": "B"
+  }
 ]
-
 # ---------------------------------------------------------
 # LÓGICA DO SIMULADO
 # ---------------------------------------------------------
