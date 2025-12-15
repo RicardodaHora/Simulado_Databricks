@@ -47,7 +47,7 @@ const App: React.FC = () => {
     
     // Logic: The answer provided in JSON is usually a single letter (e.g., "A").
     // Sometimes it might have whitespace.
-    const cleanAnswer = currentQ.resposta.trim().toUpperCase();
+    const cleanAnswer = currentQ.answer.trim().toUpperCase();
     
     if (letter === cleanAnswer) {
       setScore(s => s + 1);
@@ -190,7 +190,7 @@ const App: React.FC = () => {
         <div className="space-y-6">
           {/* Question Text */}
           <h2 className="text-lg font-semibold text-slate-800 leading-snug whitespace-pre-wrap">
-            {currentQ.pergunta}
+            {currentQ.question}
           </h2>
 
           {/* Options */}
