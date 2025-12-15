@@ -2971,7 +2971,7 @@ def restart_quiz():
     random.shuffle(all_indices)
     
     # Seleciona as primeiras 45 (ou todas se for menor)
-    selected_indices = all_indices[:45]
+    selected_indices = all_indices[:50]
     
     st.session_state.quiz_indices = selected_indices
     st.session_state.current_step = 0
