@@ -298,7 +298,7 @@ RAW_DATA = [
       "D. sqlite",
       "E. org.apache.spark.sql.sqlite"
     ],
-    "answer": "E"
+    "answer": "A"
   },
   {
     "question": "A data engineering team has two tables. The first table march_transactions is a collection of all retail transactions in the month of March. The second table april_transactions is a collection of all retail transactions in the month of April. There are no duplicate records between the tables. Which of the following commands should be run to create a new table all_transactions that contains all records from march_transactions and april_transactions without duplicate records?",
